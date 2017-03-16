@@ -1,0 +1,63 @@
+		<div class="navContainer">
+			<div class="nav row">
+				<h2 class="col-md-4 align-left nav-0" ng-click="openModal('aboutButton', 0 )" ng-mouseenter="textOnHover(0)" ng-mouseleave="textNotOnHover(0)">Nosotros</h2>
+				<h2 class="col-md-4 align-left nav-4" ng-click="openModal('saasButton', 4 )" ng-mouseenter="textOnHover(4)" ng-mouseleave="textNotOnHover(4)">Saas</h2>
+				<h2 class="col-md-4 align-left nav-3" ng-click="openModal('impButton', 3 )" ng-mouseenter="textOnHover(3)" ng-mouseleave="textNotOnHover(3)">Impulsores</h2>
+			</div>
+			<div class="logo" ng-include="'app/layout/logo/logo-landing.html'">
+				
+			</div>
+			<div class="nav row">
+				<h2 class="col-md-4 align-right nav-2" ng-click="openModal('developButton', 2 )" ng-mouseenter="textOnHover(2)" ng-mouseleave="textNotOnHover(2)">Desarrollo</h2>
+				<h2 class="col-md-4 align-right nav-5" ng-click="openModal('prodButton', 5 )" ng-mouseenter="textOnHover(5)" ng-mouseleave="textNotOnHover(5)">Productos</h2>
+				<h2 class="col-md-4 align-right nav-1" ng-click="openModal('clientButton', 1 )" ng-mouseenter="textOnHover(1)" ng-mouseleave="textNotOnHover(1)">Clientes</h2>
+			</div>
+		</div>
+		<div class="banner">
+			<h1 ng-bind-html="hoverText"></h1>
+		</div>
+
+		<!-- incluir modales -->
+		<div class="modal-section-down" id="modal" ng-include="'app/layout/modal.html'"></div>
+		<div class="modal-section-right" id="modal" ng-include="'app/layout/modal.html'"></div>
+		
+		<div class="bg-modal-down"></div>
+		<div class="bg-modal-right"></div>
+		<!-- /incluir modales -->
+
+		<!-- Botones de cerrar modal left y right -->
+		<i class="closeModal-left fa fa-times" aria-hidden="true"></i>
+		<i class="closeModal-right fa fa-times" aria-hidden="true"></i>
+
+		<div class="sideBar">
+			<div class="logoMenu" ng-include="'app/layout/logo/logo-product.html'"></div>
+			<ul class="row">
+				<div class="navMenu" ng-click="goTo('aboutButton', 0 )"><span class="col-md-2">_</span><a class="col-md-10">Nosotros</a></div>
+				<div class="navMenu" ng-click="goTo('developButton', 2 )"><span class="col-md-2">></span><a class="col-md-10">Desarrollo</a></div>
+				<div class="navMenu" ng-click="goTo('saasButton', 4 )"><span class="col-md-2">/</span><a class="col-md-10">Saas</a></div>
+				<div class="navMenu" ng-click="goTo('prodButton', 5 )"><span class="col-md-2">!</span><a class="col-md-10">Productos</a></div>
+				<div class="navMenu" ng-click="goTo('impButton', 3 )"><span class="col-md-2">"</span><a class="col-md-10">Impulsores</a></div>
+				<div class="navMenu" ng-click="goTo('clientButton', 1 )"><span class="col-md-2">$</span><a class="col-md-10">Clientes</a></div>
+				<div class="navMenu contactButton" ng-click="goTo('contactButton', 6 )" id="contactButton"><span class="col-md-2">@</span><a class="col-md-10">Contacto</a></div>
+			</ul>
+			<div class="row footerMenu">
+				<div class="hashtag col-md-4 col-sm-4">
+					<span>#</span>
+				</div>
+				<div class="socialIcons col-md-8 col-sm-8">
+					<a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href=""><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="sideBarBg" ng-click="closeMenu()"></div>
+		<div class="menuHover" ng-mouseenter="mouseenterMenu()" ng-mouseleave="mouseleaveMenu()" ng-click="openMenu()"></div>
+		<i class="fa fa-bars menuButton" aria-hidden="true" ng-mouseenter="mouseenterMenu()" ng-mouseleave="mouseleaveMenu()"  ng-click="openMenu()"></i>
+
+		<div class="nav-landing-mobile">
+			<div class="logo-landing-mobile" ng-include="'app/layout/logo/logo-landing-mobile.html'"></div>
+			<div class="oixxio-landing-mobile" ng-include="'app/layout/logo/logo-product.html'"></div>
+			<div class="handswipe" ng-include="'app/layout/hand-swipe.html'"></div>
+		</div>

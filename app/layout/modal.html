@@ -1,0 +1,38 @@
+<div id="cube" class="cube" align="center">
+    <div id="front" class="face front">
+        <div class="container">
+			<h1 ng-bind-html="tituloModal"></h1>
+			<div class="contenidoModal"  ng-bind-html="contenidoModal"></div>
+			<div ng-show="clientModal" class="row clientImages">
+				<img ng-repeat="imgModal in modalContentObj[1].imgClientes" src="{{imgModal}}">
+			</div>		
+		</div>
+    </div>
+    <div id="side" class="face izq">
+        <div class="container">
+			<h1 ng-bind-html="tituloModal"></h1>
+			<div class="contenidoModal"  ng-bind-html="contenidoModal"></div>
+			<div ng-show="clientModal" class="row clientImages">
+				<img ng-repeat="imgModal in modalContentObj[1].imgClientes" src="{{imgModal}}">
+			</div>		
+		</div>
+    </div>
+    <div id="side" class="face der">
+        <div class="container">
+			<h1 ng-bind-html="tituloModal"></h1>
+			<div class="contenidoModal"  ng-bind-html="contenidoModal"></div>
+			<div ng-show="clientModal" class="row clientImages">
+				<img ng-repeat="imgModal in modalContentObj[1].imgClientes" src="{{imgModal}}">
+			</div>		
+		</div>
+    </div>
+    <div id="side" class="face back">
+        <div class="container">
+			<h1 ng-bind-html="tituloModal"></h1>
+			<div class="contenidoModal"  ng-bind-html="contenidoModal"></div>
+			<div ng-show="clientModal" class="row clientImages">
+				<img ng-repeat="imgModal in modalContentObj[1].imgClientes" src="{{imgModal}}">
+			</div>		
+		</div>
+    </div>
+</div>

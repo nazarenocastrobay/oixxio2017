@@ -1,0 +1,41 @@
+$logo-letter: logo-letter;
+
+.logo-loader{
+	width: 100%;
+	position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 30;
+	background: rgb(237,237,237); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(255,255,255,1) 50%, rgba(237,237,237,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(237,237,237,1) 0%,rgba(255,255,255,1) 50%,rgba(237,237,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	animation: opacity-logo 3s 6s 1 forwards;
+
+	transition: left 2s ease-in-out;
+	.logo-loader-black{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		@for $i from 1 through 6{
+		  .#{$logo-letter}-#{$i}{
+		  		opacity: 0;
+		    	animation: example 5s linear -1s + $i *0.5 infinite reverse;
+			}
+		}
+		@keyframes example {
+		    0% {opacity: 0}
+		    50% {opacity: 1}
+		    100% {opacity: 0}
+		}
+	}
+	@keyframes opacity-logo {
+	    0% {opacity: 1}
+	    50% {opacity: 1}
+	    75% {opacity: 1}
+	    99% {top: 0%}
+	    100% {opacity: 0; top: -100%;}
+	}
+	
+}
+

@@ -1,0 +1,25 @@
+//Mixins
+//CrossBrowser Prefix
+@mixin crossBrowser($property, $css) {
+	-ms-#{$property} : $css;
+    -webkit-#{$property} : $css;
+    -moz-#{$property} : $css;
+    -o-#{$property} : $css;
+    #{$property} : $css;
+}
+
+//++++++++++++++Logo
+//Button
+@mixin logoButtonHover($position, $color){
+	&.#{$position}{
+		fill: $color;
+			&:hover{
+				@if $position == upper{
+						fill: lighten($color, 20%);
+					}@else{
+						fill: darken($color, 20%);
+					}
+				
+			}
+	}
+}
