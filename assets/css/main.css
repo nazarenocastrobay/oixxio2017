@@ -649,6 +649,9 @@ header {
   @media screen and (max-width: 600px) {
     .landing .modal-section-down .cube .front .container, .landing .modal-section-down .cube .der .container, .landing .modal-section-down .cube .izq .container, .landing .modal-section-down .cube .back .container {
       width: 100%; } }
+  @media screen and (max-width: 360px) {
+    .landing .modal-section-down .cube .front .container, .landing .modal-section-down .cube .der .container, .landing .modal-section-down .cube .izq .container, .landing .modal-section-down .cube .back .container {
+      padding-top: .5em; } }
   .landing .modal-section-down .cube .front .container h1, .landing .modal-section-down .cube .der .container h1, .landing .modal-section-down .cube .izq .container h1, .landing .modal-section-down .cube .back .container h1 {
     font-weight: 300;
     font-family: 'Josefin Sans', Helvetica, sans-serif;
@@ -657,13 +660,32 @@ header {
     .landing .modal-section-down .cube .front .container h1 .de-ideas, .landing .modal-section-down .cube .der .container h1 .de-ideas, .landing .modal-section-down .cube .izq .container h1 .de-ideas, .landing .modal-section-down .cube .back .container h1 .de-ideas {
       text-transform: lowercase;
       color: #4a99d5; }
+    @media screen and (max-width: 600px) {
+      .landing .modal-section-down .cube .front .container h1, .landing .modal-section-down .cube .der .container h1, .landing .modal-section-down .cube .izq .container h1, .landing .modal-section-down .cube .back .container h1 {
+        font-size: 1.7em;
+        padding-left: .5em;
+        border-left: solid .5em #6BBEB0; } }
+  .landing .modal-section-down .cube .front .container .clientImages img, .landing .modal-section-down .cube .der .container .clientImages img, .landing .modal-section-down .cube .izq .container .clientImages img, .landing .modal-section-down .cube .back .container .clientImages img {
+    margin-left: -.5sem; }
+    @media screen and (max-width: 400px) {
+      .landing .modal-section-down .cube .front .container .clientImages img, .landing .modal-section-down .cube .der .container .clientImages img, .landing .modal-section-down .cube .izq .container .clientImages img, .landing .modal-section-down .cube .back .container .clientImages img {
+        width: 43%;
+        margin-bottom: .4em; } }
   .landing .modal-section-down .cube .front .container .contenidoModal p, .landing .modal-section-down .cube .der .container .contenidoModal p, .landing .modal-section-down .cube .izq .container .contenidoModal p, .landing .modal-section-down .cube .back .container .contenidoModal p {
     font-family: sans-serif;
     font-size: 1.2em;
     color: #656565; }
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 360px) {
       .landing .modal-section-down .cube .front .container .contenidoModal p, .landing .modal-section-down .cube .der .container .contenidoModal p, .landing .modal-section-down .cube .izq .container .contenidoModal p, .landing .modal-section-down .cube .back .container .contenidoModal p {
         font-size: .9em; } }
+    @media screen and (max-width: 600px) {
+      .landing .modal-section-down .cube .front .container .contenidoModal p.importante, .landing .modal-section-down .cube .der .container .contenidoModal p.importante, .landing .modal-section-down .cube .izq .container .contenidoModal p.importante, .landing .modal-section-down .cube .back .container .contenidoModal p.importante {
+        font-size: 1.2em;
+        color: #8abee4; } }
+    @media screen and (max-width: 600px) {
+      .landing .modal-section-down .cube .front .container .contenidoModal p.importante, .landing .modal-section-down .cube .der .container .contenidoModal p.importante, .landing .modal-section-down .cube .izq .container .contenidoModal p.importante, .landing .modal-section-down .cube .back .container .contenidoModal p.importante {
+        font-size: 1.4em;
+        color: #8abee4; } }
   .landing .modal-section-down .cube .front .container .contenidoModal .creamos, .landing .modal-section-down .cube .der .container .contenidoModal .creamos, .landing .modal-section-down .cube .izq .container .contenidoModal .creamos, .landing .modal-section-down .cube .back .container .contenidoModal .creamos {
     font-size: 1.5em;
     text-transform: uppercase;
@@ -672,6 +694,9 @@ header {
     border-right: 3px solid #509cd5;
     padding-right: .3em;
     font-family: 'Josefin Sans'; }
+    @media screen and (max-width: 360px) {
+      .landing .modal-section-down .cube .front .container .contenidoModal .creamos, .landing .modal-section-down .cube .der .container .contenidoModal .creamos, .landing .modal-section-down .cube .izq .container .contenidoModal .creamos, .landing .modal-section-down .cube .back .container .contenidoModal .creamos {
+        font-size: 1.2em; } }
   .landing .modal-section-down .cube .front .container .contenidoModal .nosotros-img, .landing .modal-section-down .cube .der .container .contenidoModal .nosotros-img, .landing .modal-section-down .cube .izq .container .contenidoModal .nosotros-img, .landing .modal-section-down .cube .back .container .contenidoModal .nosotros-img {
     margin-top: 4em; }
     .landing .modal-section-down .cube .front .container .contenidoModal .nosotros-img img, .landing .modal-section-down .cube .der .container .contenidoModal .nosotros-img img, .landing .modal-section-down .cube .izq .container .contenidoModal .nosotros-img img, .landing .modal-section-down .cube .back .container .contenidoModal .nosotros-img img {
@@ -680,6 +705,9 @@ header {
       .landing .modal-section-down .cube .front .container .contenidoModal .nosotros-img img.izquierda, .landing .modal-section-down .cube .der .container .contenidoModal .nosotros-img img.izquierda, .landing .modal-section-down .cube .izq .container .contenidoModal .nosotros-img img.izquierda, .landing .modal-section-down .cube .back .container .contenidoModal .nosotros-img img.izquierda {
         margin-right: 1em;
         margin-top: .5em; }
+      @media screen and (max-width: 360px) {
+        .landing .modal-section-down .cube .front .container .contenidoModal .nosotros-img img, .landing .modal-section-down .cube .der .container .contenidoModal .nosotros-img img, .landing .modal-section-down .cube .izq .container .contenidoModal .nosotros-img img, .landing .modal-section-down .cube .back .container .contenidoModal .nosotros-img img {
+          max-width: 28%; } }
   .landing .modal-section-down .cube .front .container .contenidoModal .contacto, .landing .modal-section-down .cube .der .container .contenidoModal .contacto, .landing .modal-section-down .cube .izq .container .contenidoModal .contacto, .landing .modal-section-down .cube .back .container .contenidoModal .contacto {
     margin-top: 3em; }
     .landing .modal-section-down .cube .front .container .contenidoModal .contacto a .icono, .landing .modal-section-down .cube .der .container .contenidoModal .contacto a .icono, .landing .modal-section-down .cube .izq .container .contenidoModal .contacto a .icono, .landing .modal-section-down .cube .back .container .contenidoModal .contacto a .icono {
@@ -771,7 +799,8 @@ header {
       width: 100%;
       transition: .6s;
       background-color: white;
-      box-shadow: 0 -10px 5px -5px rgba(0, 0, 0, 0.09804); }
+      box-shadow: 0 -10px 5px -5px rgba(0, 0, 0, 0.09804);
+      border-bottom: .7em solid #6BBEB0; }
     .landing .modal-section-down .cube .front {
       transform: rotateY(-90deg) translateX(-50%) rotateY(0deg) translateX(50%) rotateY(90deg);
       transform-origin: center center; }
@@ -1243,27 +1272,41 @@ header {
     -ms-transition: .5s all ease-in-out;
     -o-transition: .5s all ease-in-out; }
     .landing .nav-landing-mobile .handswipe svg {
-      width: 41%;
+      width: 58%;
       position: absolute;
       top: 39%;
-      left: 50%; }
+      left: 22%; }
       .landing .nav-landing-mobile .handswipe svg .hand {
         transform: translate(0%, 25%) rotate(0deg);
         transform-origin: 50% 50%;
-        animation: mymove 3s infinite; }
+        animation: mymove 6s infinite;
+        -webkit-animation: mymove 6s infinite;
+        -moz-animation: mymove 6s infinite;
+        -ms-animation: mymove 6s infinite;
+        -o-animation: mymove 6s infinite; }
 @keyframes mymove {
   0% {
     transform: translate(0%, 25%) rotate(0deg); }
-  25% {
+  15% {
     transform: translate(0%, 0%) rotate(8deg); }
-  75% {
+  40% {
     transform: translate(-70%, 0%) rotate(-16deg); }
-  0% {
+  45% {
+    transform: translate(-70%, 0%) rotate(-16deg); }
+  55% {
+    transform: translate(0%, 0%) rotate(0deg); }
+  80% {
+    transform: translate(70%, 0%) rotate(16deg); }
+  100% {
     transform: translate(0%, 25%) rotate(0deg); } }
       .landing .nav-landing-mobile .handswipe svg .circle {
         transform: scale(0);
         transform-origin: 50% 50%;
-        animation: scaleCircle 3s infinite; }
+        animation: scaleCircle 6s infinite;
+        -webkit-animation: scaleCircle 6s infinite;
+        -moz-animation: scaleCircle 6s infinite;
+        -ms-animation: scaleCircle 6s infinite;
+        -o-animation: scaleCircle 6s infinite; }
 @keyframes scaleCircle {
   0% {
     transform: scale(0); }
@@ -1275,25 +1318,55 @@ header {
     transform: scale(0.8); }
   25% {
     transform: scale(1); }
+  30% {
+    transform: scale(1); }
+  35% {
+    transform: scale(1.1); }
+  40% {
+    transform: scale(0); }
+  50% {
+    transform: scale(0); }
+  53% {
+    transform: scale(1.2); }
+  60% {
+    transform: scale(0.8); }
+  65% {
+    transform: scale(1); }
   78% {
     transform: scale(1); }
   100% {
     transform: scale(0); } }
-      .landing .nav-landing-mobile .handswipe svg .flecha {
+      .landing .nav-landing-mobile .handswipe svg .flecha-izq {
         opacity: 0;
-        animation: opacityFlecha 3s infinite; }
-@keyframes opacityFlecha {
+        -webkit-animation: opacityFlechaizq 6s infinite;
+        -moz-animation: opacityFlechaizq 6s infinite;
+        -ms-animation: opacityFlechaizq 6s infinite;
+        -o-animation: opacityFlechaizq 6s infinite; }
+@keyframes opacityFlechaizq {
   0% {
     opacity: 0; }
   10% {
     opacity: 0; }
-  15% {
+  30% {
+    opacity: 1; }
+  50% {
     opacity: 0; }
-  20% {
+  100% {
+    opacity: 0; } }
+      .landing .nav-landing-mobile .handswipe svg .flecha-der {
+        opacity: 0;
+        -webkit-animation: opacityFlechader 6s infinite;
+        -moz-animation: opacityFlechader 6s infinite;
+        -ms-animation: opacityFlechader 6s infinite;
+        -o-animation: opacityFlechader 6s infinite; }
+@keyframes opacityFlechader {
+  0% {
     opacity: 0; }
-  25% {
+  10% {
     opacity: 0; }
-  65% {
+  50% {
+    opacity: 0; }
+  75% {
     opacity: 1; }
   100% {
     opacity: 0; } }

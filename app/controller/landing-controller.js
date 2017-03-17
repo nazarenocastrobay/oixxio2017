@@ -7,7 +7,7 @@
     $scope.modalContentObj = [
       {
         titulo: 'Nosotros',
-        contenido: '<p>No somos otra agencia digital. Somos apasionados de las tecnologias y de <b>crear</b> posibilidades ilimitadas con elas. </p><p> Resolver problemas y optimizar integrando hardware y software es nuestra hablidad más importante. </p><p> Conformamos un equipo de trabajo multidisciplinario y participamos de alianzas productivas con los principales centros de estudios para logar asi una respuesta de alta calidad. </p><p> Nos gusta soñar y llevarlos a cabo.</p><span class="creamos">Creamos</span><div class="nosotros-img"><img src="assets/img/nosotros/tech-cluster.png" class="derecha"><img src="assets/img/nosotros/exportadores.png" class="izquierda"></div>',
+        contenido: '<p>No somos otra agencia digital. Somos apasionados de las tecnologias y de <b>crear</b> posibilidades ilimitadas con elas. </p><p class="importante">" Resolver problemas y optimizar integrando hardware y software es nuestra hablidad más importante. "</p><p> Conformamos un equipo de trabajo multidisciplinario y participamos de alianzas productivas con los principales centros de estudios para logar asi una respuesta de alta calidad. </p><p> Nos gusta soñar y llevarlos a cabo.</p><span class="creamos">Creamos</span><div class="nosotros-img"><img src="assets/img/nosotros/tech-cluster.png" class="derecha"><img src="assets/img/nosotros/exportadores.png" class="izquierda"></div>',
         hover: '<span class="creamos-hover">CREAMOS</span> <span> INVESTIGAMOS NOS INVOLUCRAMOS</span>'
       },
       {
@@ -36,12 +36,12 @@
       },
       {
         titulo: 'Impulsores<span class="de-ideas"> de Ideas</span>',
-        contenido: '<p>Sabemos que grandes e innovadoras ideas a veces se deshacen en el aire por falta de la determinación necesaria para materializarlas.</p><p>Las ideas por si solas no llegarán a buen puerto sin la sinergía y los recursos necesarios para llevarlas adelante.</p><p>Desde nuestro lugar, brindamos la asitencia necesaria para concretar los proyectos ideados, tanto en el registro y patente, como en la interacción con especialistas.</p><p>Nuestro interés principal está en generar redes y conocimiento.</p><p>Es por eso que buscamos personas que desafíen a su destino, que tengas ideas innovadoras y revolucionarias, que cambien el mundo.</p><p>Juntos <strong>crearemos</strong> un equipo para materializarlas.</p>',
+        contenido: '<p>Sabemos que grandes e innovadoras ideas a veces se deshacen en el aire por falta de la determinación necesaria para materializarlas.</p><p>Las ideas por si solas no llegarán a buen puerto sin la sinergía y los recursos necesarios para llevarlas adelante.</p><p>Desde nuestro lugar, brindamos la asitencia necesaria para concretar los proyectos ideados, tanto en el registro y patente, como en la interacción con especialistas.</p><p class="importante">" Nuestro interés principal está en generar redes y conocimiento. "</p><p>Es por eso que buscamos personas que desafíen a su destino, que tengas ideas innovadoras y revolucionarias, que cambien el mundo.</p><p>Juntos <strong>crearemos</strong> un equipo para materializarlas.</p>',
         hover: '<span class="creamos-hover">CREAMOS</span> <span>LO QUE IMAGINAS</span>'
       },
       {
         titulo: 'Saas',
-        contenido: '<p><strong>Creamos</strong> un servicio de desarrollo de software. Con mas de 10 años de experiencia en el mercado, entendemos que una solución a la medida requiere de un conocimiento profundo de la actividad de nuestros clientes, es por ello que planteamos en nuestro servicio una relación estrecha hasta convertimos en un aliado tecnológico de la empresa.</p><p> El SAAS o software como servicio ademas brinda la ventaja del desembolso parcial del capital destinado a estas tecnologías, ya que se prorratea el valor total del desarrollo en el tiempo que dure el contrato de servicio.</p><p> Ademas, una vez implementado el sistema nuestro clientes cuentan con desarrolladores dedicados para resolver cualquier cambio o inconveniente que se les presente en el día a día.</p>',
+        contenido: '<p><strong>Creamos</strong> un servicio de desarrollo de software. Con mas de 10 años de experiencia en el mercado, entendemos que una solución a la medida requiere de un conocimiento profundo de la actividad de nuestros clientes, es por ello que planteamos en nuestro servicio una relación estrecha hasta convertimos en un aliado tecnológico de la empresa.</p><p class="importante">" El SAAS o software como servicio ademas brinda la ventaja del desembolso parcial del capital destinado a estas tecnologías, ya que se prorratea el valor total del desarrollo en el tiempo que dure el contrato de servicio. "</p><p> Ademas, una vez implementado el sistema nuestro clientes cuentan con desarrolladores dedicados para resolver cualquier cambio o inconveniente que se les presente en el día a día.</p>',
         hover: '<span class="creamos-hover">CREAMOS</span> <span>UN SERVICIO DE DESARROLLO</span>'
       },
       {
@@ -62,6 +62,7 @@
     //Variables relacion menu y modal
     $scope.menuIsOpen = false;
     $scope.modalIsOpen = false;
+    $scope.modalIsOpenUp = false;
 
     $scope.onHover = false;
     $scope.hoverText = "TECHNOLOGIES";
@@ -75,12 +76,12 @@
         var hammertime = new Hammer(document.body);
         hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
 
-        console.log('watch-modalIsOpen: ' + $scope.modalIsOpen + ', ' + 'watch-menuIsOpen: ' + $scope.menuIsOpen);
+        // console.log('watch-modalIsOpen: ' + $scope.modalIsOpen + ', ' + 'watch-menuIsOpen: ' + $scope.menuIsOpen);
         
           
           hammertime.on('swiperight', function(ev) {
             if(!$scope.menuIsOpen && !$scope.modalIsOpen){
-              console.log('enter');
+              // console.log('enter');
               $scope.openMenu();
               $scope.menuIsOpen = true; 
             }
@@ -91,24 +92,42 @@
               $scope.closeMenu();
               $scope.menuIsOpen = false;
             }     
-                  
+            if($scope.showInstruction){
+              var instructions = document.querySelector('.nav-landing-mobile .handswipe');
+              instructions.style.display = 'none';
+            }     
           });
 
         hammertime.on('swipedown', function(ev) {
+          if($scope.modalIsOpenUp){
+            console.log($scope.modalIsOpenUp);
+            console.log('adentro');
+            var closeModalRight = document.querySelector('.landing .closeModal-right');
+            var modalElement = document.querySelector('.modal-section-down');
+            var menuButton = document.querySelector('.landing .menuButton');
+            if(!$scope.menuIsOpen){
+              modalElement.style.bottom = '-20%';
+              closeModalRight.style.right = '5%';
+              menuButton.style.left = '5%';
+              $timeout(function () {$scope.modalIsOpenUp = false}, 1000);
+            }
+ 
+          } else{
+            console.log($scope.modalIsOpenUp);
+            console.log('afuera');
+            var menuButton = document.querySelector('.landing .menuButton');
+            menuButton.style.left = '5%';
               closeModalMobile();
               $scope.modalIsOpen = false;
-        });
-        hammertime.on('tap', function(ev) {
-          if($scope.showInstruction){
-            var instructions = document.querySelector('.nav-landing-mobile .handswipe');
-            instructions.style.display = 'none';
           }
-            
+
+          
         });
         
         if ($scope.modalIsOpen) {
             swipeLeft();
             swipeRight();
+            scrollUp();
          }
      
         if(!$scope.modalIsOpen){
@@ -117,7 +136,7 @@
             $scope.modalIsOpen = true; 
             $scope.$apply(function(){
               contenidoModal($scope.modalContentId);
-              // console.log($scope.modalContentId);
+              console.log($scope.modalContentId);
             });
           });
         }
@@ -131,7 +150,7 @@
 
         var navText = document.querySelector('.nav-' + index);
         navText.style.transform = 'scale(1.2)';
-        console.log(navText);
+        // console.log(navText);
         $scope.onHover = true;
 
         $timeout(function() {
@@ -261,7 +280,7 @@
 
               $scope.modalIsOpen = true;
               $scope.modalOpened = id;
-              console.log($scope.modalOpened);
+              // console.log($scope.modalOpened);
 
               //Click en el CloseBotton
                 closeModalRight.addEventListener('click', function(){
@@ -300,7 +319,7 @@
         var menu = document.querySelector('.sideBar');
         var sideBarBg = document.querySelector('.sideBarBg');
         var windowWidth = window.innerWidth;
-        console.log('modal abierto: ' + $scope.modalIsOpen);
+        // console.log('modal abierto: ' + $scope.modalIsOpen);
         if(windowWidth >= 600){
           menuButton.style.left = '36%';
         }else{
@@ -425,7 +444,7 @@
         if($scope.contenidoObj.imgClientes){
             $scope.clientModal = true;
         }
-        // console.log($scope.contenidoObj);
+        console.log($scope.contenidoObj);
       }
       function contenidoHover(index){
         $scope.contenidoObj = $scope.modalContentObj[index];
@@ -500,7 +519,7 @@
         cubeDer.style.transform = "rotateY(-90deg) translateX(-50%) rotateY("+ $scope.cubeDownInitDer + "deg) translateX(50%) rotateY(90deg)";
         cubeIzq.style.transform = "rotateY(-90deg) translateX(-50%) rotateY(" + $scope.cubeDownInitIzq+ "deg) translateX(50%) rotateY(90deg)";
         cubeBack.style.transform = "rotateY(-90deg) translateX(-50%) rotateY(" + $scope.cubeDownInitBack+ "deg) translateX(50%) rotateY(90deg)";
-        console.log('position front:' + $scope.cubeDownInitFront);
+        // console.log('position front:' + $scope.cubeDownInitFront);
       }
 
       function animateCubeSwipeRight(){
@@ -517,7 +536,7 @@
         cubeDer.style.transform = "rotateY(-90deg) translateX(-50%) rotateY("+ $scope.cubeDownInitDer + "deg) translateX(50%) rotateY(90deg)";
         cubeIzq.style.transform = "rotateY(-90deg) translateX(-50%) rotateY(" + $scope.cubeDownInitIzq+ "deg) translateX(50%) rotateY(90deg)";
         cubeBack.style.transform = "rotateY(-90deg) translateX(-50%) rotateY(" + $scope.cubeDownInitBack+ "deg) translateX(50%) rotateY(90deg)";
-        console.log('position front:' + $scope.cubeDownInitFront);
+        // console.log('position front:' + $scope.cubeDownInitFront);
       }
 
       $scope.cubeRightInitFront = 0;
@@ -576,7 +595,7 @@
             for (var i = 0; i < $scope.modalFaces.length; i++){$scope.modalFaces[i].style.background = "green"};
             $scope.modalIsOpen = true;
             $scope.modalOpened = id;
-            // console.log(document.getElementById($scope.modalOpened).className);
+            console.log(document.getElementById($scope.modalOpened).className);
 
           //Click en el CloseBotton
           closeModalRight.addEventListener('click', function(){
@@ -597,7 +616,7 @@
       var windowWidth = window.innerWidth;
       var menuHover = document.querySelector('.menuHover');
       var instructions = document.querySelector('.nav-landing-mobile .handswipe');
-      console.log(instructions);
+      // console.log(instructions);
       $scope.clientModal = false;
       $scope.modalOpenedTimes += 1;
       if($scope.modalOpenedTimes > 1){
@@ -628,13 +647,13 @@
       }
       $scope.modalIsOpen = true;
       contenidoModal(index);
-      console.log('modal abierto: ' + $scope.modalIsOpen);
+      // console.log('modal abierto: ' + $scope.modalIsOpen);
       //Click en el CloseBotton
       closeModalRight.addEventListener('click', function(){
         //Ocultar el modalDown
         $scope.modalIsOpen = false;
         closeModalMobile();
-        console.log('modal abierto: ' + $scope.modalIsOpen);
+        // console.log('modal abierto: ' + $scope.modalIsOpen);
       });
     }
     function closeModalMobile(){
@@ -648,7 +667,7 @@
       var windowHeight = window.innerHeight;
       var menuHover = document.querySelector('.menuHover');
       
-      console.log(windowWidth);
+      // console.log(windowWidth);
       menuHover.style.zIndex = '15';
       modalDown.style.bottom = '-110%';
       logoMobile.style.opacity = '1';
@@ -711,7 +730,7 @@
           $scope.clientModal = false;
           animateCubeDown();
           if(!$scope.menuIsOpen){
-            console.log('menu is open: ' + $scope.menuIsOpen);
+            // console.log('menu is open: ' + $scope.menuIsOpen);
             $timeout(function (){
             $scope.$apply(function(){
                 if($scope.modalContentId === 5){
@@ -734,7 +753,7 @@
           $scope.clientModal = false;
           animateCubeSwipeRight();
           if(!$scope.menuIsOpen){
-            console.log('menu is open: ' + $scope.menuIsOpen);
+            // console.log('menu is open: ' + $scope.menuIsOpen);
             $timeout(function (){
             $scope.$apply(function(){
                 if($scope.modalContentId === 0){
@@ -752,26 +771,23 @@
         });
       }
 
+      function scrollUp(){
+        var modal = new Hammer(document.querySelector('.modal-section-down'));
+        modal.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+        modal.on('swipeup', function(ev) {
+          var closeModalRight = document.querySelector('.landing .closeModal-right');
+          var modalElement = document.querySelector('.modal-section-down');
+          var menuButton = document.querySelector('.landing .menuButton');
+          if(!$scope.menuIsOpen){
+            modalElement.style.bottom = '0%';
+            closeModalRight.style.right = '-105%';
+            menuButton.style.left = '-10%';
+            $scope.modalIsOpenUp = true;
 
-
-      // function swipeLeft(){
-      //   animateCubeDown();
-      //   if(!$scope.menuIsOpen){
-      //     $timeout(function (){
-      //     $scope.$apply(function(){
-      //         if($scope.modalContentId === 5){
-      //           $scope.modalContentId = 0;
-      //           contenidoModal($scope.modalContentId);
-      //         } else {
-      //           contenidoModal($scope.modalContentId + 1);
-      //         }
-            
-      //       });
-
-      //     }, 75);
-      //   }
-      // }
-        
+          }
+                            
+        });
+      }  
       
   });
     

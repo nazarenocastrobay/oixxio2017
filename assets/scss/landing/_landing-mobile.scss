@@ -125,10 +125,10 @@
 			-ms-transition: .5s all ease-in-out;
 			-o-transition: .5s all ease-in-out;
 			svg{
-			    width: 41%;
+		        width: 58%;
 			    position: absolute;
 			    top: 39%;
-			    left: 50%;
+			    left: 22%;
 			    // animation: mymove 5s infinite;
 			 //    @keyframes mymove {
 				//     0%   {transform: 0px;}
@@ -140,38 +140,71 @@
 				.hand{
 				    transform: translate(0%,25%) rotate(0deg);
 					transform-origin: 50% 50%;
-					animation: mymove 3s infinite;
+					animation: mymove 6s infinite;
+					-webkit-animation: mymove 6s infinite;
+					-moz-animation: mymove 6s infinite;
+					-ms-animation: mymove 6s infinite;
+					-o-animation: mymove 6s infinite;
 				    @keyframes mymove {
 					    0%   {transform: translate(0%,25%) rotate(0deg);}
-					    25%  {transform: translate(0%, 0%) rotate(8deg);}
-					    75%  {transform: translate(-70%,0%) rotate(-16deg);}
-					    0%   {transform: translate(0%,25%) rotate(0deg);}
+					    15%  {transform: translate(0%, 0%) rotate(8deg);}
+					    40%  {transform: translate(-70%,0%) rotate(-16deg);}
+					    45%  {transform: translate(-70%,0%) rotate(-16deg);}
+					    55%  {transform: translate(0%,0%) rotate(0deg);}
+					    80%  {transform: translate(70%,0%) rotate(16deg);}
+					    100%   {transform: translate(0%,25%) rotate(0deg);}
 					}
 				}
 				.circle{
 					transform: scale(0);
 					transform-origin: 50% 50%;
-					animation: scaleCircle 3s infinite;
+					animation: scaleCircle 6s infinite;
+					-webkit-animation: scaleCircle 6s infinite;
+					-moz-animation: scaleCircle 6s infinite;
+					-ms-animation: scaleCircle 6s infinite;
+					-o-animation: scaleCircle 6s infinite;
 					@keyframes scaleCircle {
 					    0%   {transform: scale(0);}
 					    10%   {transform: scale(0);}
 					    15%  {transform: scale(1.2);}
 					    20%  {transform: scale(.8);}
 					    25%  {transform: scale(1);}
+					    30%  {transform: scale(1);}
+					    35%  {transform: scale(1.1);}
+					    40%  {transform: scale(0);}
+					    50%  {transform: scale(0);}
+					    53%  {transform: scale(1.2);}
+					    60%  {transform: scale(.8);}
+					    65%  {transform: scale(1);}
 					    78%   {transform: scale(1);}
 					    100%   {transform: scale(0);}
 					}
 				}
-				.flecha{
+				.flecha-izq{
 					opacity: 0;
-					animation: opacityFlecha 3s infinite;
-					@keyframes opacityFlecha {
+					-webkit-animation: opacityFlechaizq 6s infinite;
+					-moz-animation: opacityFlechaizq 6s infinite;
+					-ms-animation: opacityFlechaizq 6s infinite;
+					-o-animation: opacityFlechaizq 6s infinite;
+					@keyframes opacityFlechaizq {
 					    0%   {opacity: 0;}
-					    10%   {opacity: 0}
-					    15%  {opacity: 0}
-					    20%  {opacity: 0}
-					    25%  {opacity: 0}
-					    65%   {opacity: 1}
+					    10%  {opacity: 0}
+					    30%   {opacity: 1}
+					    50%   {opacity: 0}
+					    100%   {opacity: 0}
+					}					
+				}
+				.flecha-der{
+					opacity: 0;
+					-webkit-animation: opacityFlechader 6s infinite;
+					-moz-animation: opacityFlechader 6s infinite;
+					-ms-animation: opacityFlechader 6s infinite;
+					-o-animation: opacityFlechader 6s infinite;
+					@keyframes opacityFlechader {
+					    0%   {opacity: 0;}
+					    10%  {opacity: 0}
+					    50%   {opacity: 0}
+					    75%   {opacity: 1}
 					    100%   {opacity: 0}
 					}
 				}
