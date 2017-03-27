@@ -580,10 +580,11 @@ header {
       .landing .banner h1 span {
         border-right: 4px solid #6CBFB1;
         letter-spacing: .1em;
-        padding-right: .5em; }
+        padding-right: .5em;
+        font-size: .8em; }
         .landing .banner h1 span:nth-child(2) {
           border-right: none;
-          font-size: .4em; }
+          font-size: .8em; }
     @media screen and (max-width: 600px) {
       .landing .banner {
         display: none; } }
@@ -616,6 +617,146 @@ header {
     top: -100%;
     left: 0%;
     z-index: 0; }
+  .landing .contacto {
+    height: 100%;
+    width: 100%;
+    background: white;
+    position: absolute;
+    bottom: -110%;
+    left: 0;
+    display: block;
+    border-top: solid .5em white;
+    z-index: 4;
+    box-shadow: 0 -10px 5px -5px rgba(0, 0, 0, 0.09804);
+    -webkit-transition: 0.6s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+    -moz-transition: 0.6s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+    -o-transition: 0.6s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+    -ms-transition: 0.6s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+    transition: 0.6s all cubic-bezier(0.65, 0.26, 0.36, 1.06); }
+    @media screen and (max-width: 600px) {
+      .landing .contacto {
+        height: 100%;
+        width: 100%;
+        background: white;
+        position: absolute;
+        bottom: -110%;
+        left: 0;
+        display: none;
+        border-top: solid .5em white; } }
+    .landing .contacto .overlay {
+      position: absolute;
+      width: 70%;
+      top: 0;
+      z-index: 15;
+      height: 100%;
+      padding-left: 4em;
+      padding-top: 0em;
+      background: -moz-linear-gradient(left, #6cbfb1 0%, #6cbfb1 84%, rgba(108, 191, 177, 0) 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(left, #6cbfb1 0%, #6cbfb1 84%, rgba(108, 191, 177, 0) 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right, #6cbfb1 0%, #6cbfb1 84%, rgba(108, 191, 177, 0) 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6cbfb1', endColorstr='#006cbfb1',GradientType=1 ); }
+      @media screen and (max-width: 600px) {
+        .landing .contacto .overlay {
+          height: 70%;
+          width: 100%;
+          padding-left: 1em;
+          padding-top: 1em;
+          background: -moz-linear-gradient(top, #6cbfb1 0%, #6cbfb1 87%, rgba(108, 191, 177, 0) 100%);
+          /* FF3.6-15 */
+          background: -webkit-linear-gradient(top, #6cbfb1 0%, #6cbfb1 87%, rgba(108, 191, 177, 0) 100%);
+          /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom, #6cbfb1 0%, #6cbfb1 87%, rgba(108, 191, 177, 0) 100%);
+          /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6cbfb1', endColorstr='#006cbfb1',GradientType=0 ); } }
+      .landing .contacto .overlay h1 {
+        color: white;
+        margin-left: 1em;
+        padding-left: 0.5em;
+        border-left: solid .5em white;
+        font-size: 2.5em; }
+        @media screen and (max-width: 600px) {
+          .landing .contacto .overlay h1 {
+            font-size: 1em;
+            color: white;
+            margin-left: 1em;
+            padding-left: 0.5em;
+            border-left: solid .5em white; } }
+      .landing .contacto .overlay .link {
+        display: block;
+        padding-left: 4em;
+        color: white; }
+        @media screen and (max-width: 600px) {
+          .landing .contacto .overlay .link {
+            display: block;
+            padding-left: 4em;
+            color: white; } }
+        .landing .contacto .overlay .link .icono {
+          font-size: 2em;
+          padding-right: 0;
+          display: inline-block;
+          font-size: 2em;
+          padding-right: .6em; }
+          @media screen and (max-width: 600px) {
+            .landing .contacto .overlay .link .icono {
+              font-size: 2em;
+              padding-right: 0;
+              display: inline-block; } }
+        .landing .contacto .overlay .link .descripcion {
+          display: inline-block;
+          width: 70%;
+          font-size: 1.7em; }
+          @media screen and (max-width: 600px) {
+            .landing .contacto .overlay .link .descripcion {
+              font-size: 1.2em;
+              display: inline-block;
+              width: 70%; } }
+      .landing .contacto .overlay .footerMenu {
+        width: 78%;
+        position: absolute;
+        bottom: 34%;
+        height: 14%;
+        transform: translate(-50%, -50%);
+        left: 47%; }
+        .landing .contacto .overlay .footerMenu .hashtag {
+          font-size: 14em;
+          font-weight: bold;
+          width: 50%;
+          margin-right: 0;
+          bottom: -80%;
+          position: absolute;
+          z-index: 0; }
+          .landing .contacto .overlay .footerMenu .hashtag span {
+            color: #509CD5; }
+        .landing .contacto .overlay .footerMenu .socialIcons {
+          display: inline-block;
+          position: absolute;
+          bottom: 32%;
+          left: 25%;
+          transform: translate(-50%, -50%); }
+          .landing .contacto .overlay .footerMenu .socialIcons a .icono {
+            color: white;
+            font-size: 1.5em;
+            margin-right: .5em; }
+        @media screen and (max-width: 600px) {
+          .landing .contacto .overlay .footerMenu {
+            display: none; } }
+    .landing .contacto .map {
+      position: absolute;
+      right: 0;
+      width: 70%;
+      height: 100%; }
+      @media screen and (max-width: 600px) {
+        .landing .contacto .map {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 50%; } }
+    @media screen and (max-width: 650px) {
+      .landing .contacto {
+        display: block; } }
 
 .align-right {
   text-align: right; }
@@ -623,7 +764,7 @@ header {
 .align-left {
   text-align: left; }
 
-.landing .modal-section-down, .landing .modal-section-right {
+.landing .modal-section-down, .landing .modal-section-right, .landing .productosModal {
   -webkit-transition: 0.6s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
   -moz-transition: 0.6s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
   -o-transition: 0.6s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
@@ -656,7 +797,9 @@ header {
     font-weight: 300;
     font-family: 'Josefin Sans', Helvetica, sans-serif;
     font-size: 2.5em;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    padding-left: .5em;
+    border-left: solid .5em #6BBEB0; }
     .landing .modal-section-down .cube .front .container h1 .de-ideas, .landing .modal-section-down .cube .der .container h1 .de-ideas, .landing .modal-section-down .cube .izq .container h1 .de-ideas, .landing .modal-section-down .cube .back .container h1 .de-ideas {
       text-transform: lowercase;
       color: #4a99d5; }
@@ -678,14 +821,17 @@ header {
     @media screen and (max-width: 360px) {
       .landing .modal-section-down .cube .front .container .contenidoModal p, .landing .modal-section-down .cube .der .container .contenidoModal p, .landing .modal-section-down .cube .izq .container .contenidoModal p, .landing .modal-section-down .cube .back .container .contenidoModal p {
         font-size: .9em; } }
-    @media screen and (max-width: 600px) {
-      .landing .modal-section-down .cube .front .container .contenidoModal p.importante, .landing .modal-section-down .cube .der .container .contenidoModal p.importante, .landing .modal-section-down .cube .izq .container .contenidoModal p.importante, .landing .modal-section-down .cube .back .container .contenidoModal p.importante {
-        font-size: 1.2em;
-        color: #8abee4; } }
-    @media screen and (max-width: 600px) {
-      .landing .modal-section-down .cube .front .container .contenidoModal p.importante, .landing .modal-section-down .cube .der .container .contenidoModal p.importante, .landing .modal-section-down .cube .izq .container .contenidoModal p.importante, .landing .modal-section-down .cube .back .container .contenidoModal p.importante {
-        font-size: 1.4em;
-        color: #8abee4; } }
+    .landing .modal-section-down .cube .front .container .contenidoModal p.importante, .landing .modal-section-down .cube .der .container .contenidoModal p.importante, .landing .modal-section-down .cube .izq .container .contenidoModal p.importante, .landing .modal-section-down .cube .back .container .contenidoModal p.importante {
+      font-size: 1.6em;
+      color: #8abee4; }
+      @media screen and (max-width: 600px) {
+        .landing .modal-section-down .cube .front .container .contenidoModal p.importante, .landing .modal-section-down .cube .der .container .contenidoModal p.importante, .landing .modal-section-down .cube .izq .container .contenidoModal p.importante, .landing .modal-section-down .cube .back .container .contenidoModal p.importante {
+          font-size: 1.2em;
+          color: #8abee4; } }
+      @media screen and (max-width: 600px) {
+        .landing .modal-section-down .cube .front .container .contenidoModal p.importante, .landing .modal-section-down .cube .der .container .contenidoModal p.importante, .landing .modal-section-down .cube .izq .container .contenidoModal p.importante, .landing .modal-section-down .cube .back .container .contenidoModal p.importante {
+          font-size: 1.4em;
+          color: #8abee4; } }
   .landing .modal-section-down .cube .front .container .contenidoModal .creamos, .landing .modal-section-down .cube .der .container .contenidoModal .creamos, .landing .modal-section-down .cube .izq .container .contenidoModal .creamos, .landing .modal-section-down .cube .back .container .contenidoModal .creamos {
     font-size: 1.5em;
     text-transform: uppercase;
@@ -708,6 +854,100 @@ header {
       @media screen and (max-width: 360px) {
         .landing .modal-section-down .cube .front .container .contenidoModal .nosotros-img img, .landing .modal-section-down .cube .der .container .contenidoModal .nosotros-img img, .landing .modal-section-down .cube .izq .container .contenidoModal .nosotros-img img, .landing .modal-section-down .cube .back .container .contenidoModal .nosotros-img img {
           max-width: 28%; } }
+  .landing .modal-section-down .cube .front .container .contenidoModal .productos, .landing .modal-section-down .cube .der .container .contenidoModal .productos, .landing .modal-section-down .cube .izq .container .contenidoModal .productos, .landing .modal-section-down .cube .back .container .contenidoModal .productos {
+    width: 100%;
+    height: 100%; }
+    .landing .modal-section-down .cube .front .container .contenidoModal .productos ul, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul {
+      list-style-type: none;
+      width: 100%; }
+      .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li {
+        width: 30%;
+        margin-bottom: 1em;
+        padding-right: 0em;
+        margin-bottom: .2em;
+        position: relative; }
+        @media screen and (max-width: 600px) {
+          .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li {
+            width: 50%; } }
+        @media screen and (min-width: 400px) and (max-width: 600px) {
+          .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li {
+            margin-bottom: .2em;
+            position: relative;
+            width: 50%;
+            margin-bottom: 1em;
+            padding-right: 0em; } }
+        @media screen and (min-width: 360px) and (max-width: 400px) {
+          .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li {
+            position: relative;
+            width: 50%;
+            margin-bottom: .5em;
+            padding-right: 0em; } }
+        @media screen and (max-width: 360px) and (min-height: 500px) {
+          .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li {
+            width: 50%; } }
+        .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li img {
+          border: 0;
+          width: 100%;
+          display: block;
+          margin: 0 auto; }
+          @media screen and (max-width: 600px) {
+            .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li img {
+              width: 110%; } }
+          @media screen and (min-width: 400px) and (max-width: 600px) {
+            .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li img {
+              width: 110%; } }
+          @media screen and (min-width: 360px) and (max-width: 400px) {
+            .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li img {
+              width: 87%; } }
+          @media screen and (max-width: 360px) and (min-height: 500px) {
+            .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li img {
+              width: 110%; } }
+          @media screen and (min-width: 360px) and (max-width: 400px) and (min-height: 639px) {
+            .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li img {
+              width: 107%; } }
+        .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li .overlay {
+          color: #337ab7;
+          text-decoration: none;
+          position: absolute;
+          width: 94%;
+          height: 100%;
+          top: 0;
+          left: 14%;
+          background: -moz-linear-gradient(top, transparent 0%, black 100%);
+          /* FF3.6-15 */
+          background: -webkit-linear-gradient(top, transparent 0%, black 100%);
+          /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom, transparent 0%, black 100%);
+          /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); }
+          @media screen and (max-width: 600px) {
+            .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li .overlay {
+              width: 95%;
+              left: 12%; } }
+          @media screen and (min-width: 360px) and (max-width: 400px) {
+            .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li .overlay {
+              color: #337ab7;
+              text-decoration: none;
+              position: absolute;
+              width: 80%;
+              height: 100%;
+              top: 0;
+              left: 15%; } }
+          @media screen and (min-width: 360px) and (max-width: 400px) and (min-height: 639px) {
+            .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li .overlay {
+              width: 96%;
+              left: 10%; } }
+          @media screen and (max-width: 360px) and (min-height: 500px) {
+            .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li .overlay {
+              width: 97%;
+              left: 12%; } }
+          .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li .overlay h2, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li .overlay h2, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li .overlay h2, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li .overlay h2 {
+            position: absolute;
+            color: white;
+            left: 50%;
+            top: 34%;
+            transform: translate(-50%, -50%);
+            font-size: 1.3em; }
   .landing .modal-section-down .cube .front .container .contenidoModal .contacto, .landing .modal-section-down .cube .der .container .contenidoModal .contacto, .landing .modal-section-down .cube .izq .container .contenidoModal .contacto, .landing .modal-section-down .cube .back .container .contenidoModal .contacto {
     margin-top: 3em; }
     .landing .modal-section-down .cube .front .container .contenidoModal .contacto a .icono, .landing .modal-section-down .cube .der .container .contenidoModal .contacto a .icono, .landing .modal-section-down .cube .izq .container .contenidoModal .contacto a .icono, .landing .modal-section-down .cube .back .container .contenidoModal .contacto a .icono {
@@ -770,6 +1010,63 @@ header {
     @media screen and (max-width: 360px) {
       .landing .modal-section-right .cube .front .container .contenidoModal p, .landing .modal-section-right .cube .der .container .contenidoModal p, .landing .modal-section-right .cube .izq .container .contenidoModal p, .landing .modal-section-right .cube .back .container .contenidoModal p {
         font-size: .9em; } }
+  .landing .modal-section-right .cube .front .container .contenidoModal .productos, .landing .modal-section-right .cube .der .container .contenidoModal .productos, .landing .modal-section-right .cube .izq .container .contenidoModal .productos, .landing .modal-section-right .cube .back .container .contenidoModal .productos {
+    width: 86%;
+    height: 100%; }
+    .landing .modal-section-right .cube .front .container .contenidoModal .productos ul, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul {
+      list-style-type: none;
+      width: 88%; }
+      .landing .modal-section-right .cube .front .container .contenidoModal .productos ul li, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul li, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul li, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul li {
+        width: 30%;
+        margin-bottom: 1em;
+        padding-right: 0em;
+        margin-bottom: .2em;
+        position: relative; }
+        @media screen and (max-width: 360px) {
+          .landing .modal-section-right .cube .front .container .contenidoModal .productos ul li, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul li, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul li, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul li {
+            margin-bottom: .2em;
+            position: relative;
+            width: 50%;
+            margin-bottom: 1em;
+            padding-right: 0em; } }
+        .landing .modal-section-right .cube .front .container .contenidoModal .productos ul li img, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul li img, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul li img, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul li img {
+          border: 0;
+          width: 100%;
+          display: block;
+          margin: 0 auto; }
+          @media screen and (max-width: 360px) {
+            .landing .modal-section-right .cube .front .container .contenidoModal .productos ul li img, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul li img, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul li img, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul li img {
+              width: 110%; } }
+        .landing .modal-section-right .cube .front .container .contenidoModal .productos ul li .overlay, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul li .overlay, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul li .overlay, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul li .overlay {
+          color: #337ab7;
+          text-decoration: none;
+          position: absolute;
+          width: 82%;
+          height: 100%;
+          top: 0;
+          left: 5%;
+          background: -moz-linear-gradient(top, transparent 0%, black 100%);
+          /* FF3.6-15 */
+          background: -webkit-linear-gradient(top, transparent 0%, black 100%);
+          /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom, transparent 0%, black 100%);
+          /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); }
+          @media screen and (min-width: 600px) {
+            .landing .modal-section-right .cube .front .container .contenidoModal .productos ul li .overlay, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul li .overlay, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul li .overlay, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul li .overlay {
+              position: absolute;
+              display: block;
+              width: 93%;
+              height: 100%;
+              top: 0;
+              left: 8%; } }
+          .landing .modal-section-right .cube .front .container .contenidoModal .productos ul li .overlay h2, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul li .overlay h2, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul li .overlay h2, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul li .overlay h2 {
+            position: absolute;
+            color: white;
+            left: 50%;
+            top: 34%;
+            transform: translate(-50%, -50%);
+            font-size: 1.3em; }
   .landing .modal-section-right .cube .front .container .clientImages, .landing .modal-section-right .cube .der .container .clientImages, .landing .modal-section-right .cube .izq .container .clientImages, .landing .modal-section-right .cube .back .container .clientImages {
     margin-top: 4em;
     width: 70%; }
@@ -793,14 +1090,33 @@ header {
     -ms-transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d; }
+    .landing .modal-section-down .cube div:nth-child(1) div .face {
+      border-bottom: .7em solid #6BBEB0; }
+    .landing .modal-section-down .cube div:nth-child(1) .container h1 {
+      padding-left: .5em;
+      border-left: solid .5em #6BBEB0; }
+    .landing .modal-section-down .cube div:nth-child(3) div .face {
+      border-bottom: .7em solid #509cd5; }
+    .landing .modal-section-down .cube div:nth-child(3) .container h1 {
+      padding-left: .5em;
+      border-left: solid .5em #509cd5; }
+    .landing .modal-section-down .cube div:nth-child(2) div .face {
+      border-bottom: .7em solid #509cd5; }
+    .landing .modal-section-down .cube div:nth-child(2) .container h1 {
+      padding-left: .5em;
+      border-left: solid .5em #509cd5; }
+    .landing .modal-section-down .cube div:nth-child(4) div .face {
+      border-bottom: .7em solid #6BBEB0; }
+    .landing .modal-section-down .cube div:nth-child(4) .container h1 {
+      padding-left: .5em;
+      border-left: solid .5em #6BBEB0; }
     .landing .modal-section-down .cube .face {
       position: absolute;
       height: 100%;
       width: 100%;
       transition: .6s;
       background-color: white;
-      box-shadow: 0 -10px 5px -5px rgba(0, 0, 0, 0.09804);
-      border-bottom: .7em solid #6BBEB0; }
+      box-shadow: 0 -10px 5px -5px rgba(0, 0, 0, 0.09804); }
     .landing .modal-section-down .cube .front {
       transform: rotateY(-90deg) translateX(-50%) rotateY(0deg) translateX(50%) rotateY(90deg);
       transform-origin: center center; }
@@ -824,6 +1140,18 @@ header {
     height: 100%;
     width: 100%;
     transform-style: preserve-3d; }
+    .landing .modal-section-right .cube div:nth-child(1) .container h1 {
+      padding-left: .5em;
+      border-left: solid .5em #6BBEB0; }
+    .landing .modal-section-right .cube div:nth-child(3) .container h1 {
+      padding-left: .5em;
+      border-left: solid .5em #509cd5; }
+    .landing .modal-section-right .cube div:nth-child(2) .container h1 {
+      padding-left: .5em;
+      border-left: solid .5em #509cd5; }
+    .landing .modal-section-right .cube div:nth-child(4) .container h1 {
+      padding-left: .5em;
+      border-left: solid .5em #6BBEB0; }
     .landing .modal-section-right .cube .face {
       position: absolute;
       height: 100%;
@@ -901,6 +1229,99 @@ header {
     .landing .product-section .logoProduct svg {
       max-width: 95%; }
 
+.landing .modal-section-down, .landing .modal-section-right, .landing .productosModal {
+  -webkit-transition: 0.6s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+  -moz-transition: 0.6s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+  -o-transition: 0.6s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+  -ms-transition: 0.6s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+  transition: 0.6s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+  -webkit-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  -o-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%); }
+
+.landing .closeModal-left, .landing .closeModal-right {
+  transition: .4s all ease-in-out;
+  -webkit-transition: .4s all ease-in-out;
+  -moz-transition: .4s all ease-in-out;
+  -o-transition: .4s all ease-in-out;
+  -ms-transition: .4s all ease-in-out; }
+
+.landing .productosModal .productCube .front .container, .landing .productosModal .productCube .der .container, .landing .productosModal .productCube .izq .container, .landing .productosModal .productCube .back .container {
+  width: 970px;
+  padding-top: 2em;
+  text-align: left; }
+  @media screen and (max-width: 600px) {
+    .landing .productosModal .productCube .front .container, .landing .productosModal .productCube .der .container, .landing .productosModal .productCube .izq .container, .landing .productosModal .productCube .back .container {
+      width: 100%; } }
+  @media screen and (max-width: 360px) {
+    .landing .productosModal .productCube .front .container, .landing .productosModal .productCube .der .container, .landing .productosModal .productCube .izq .container, .landing .productosModal .productCube .back .container {
+      padding-top: .5em; } }
+  .landing .productosModal .productCube .front .container h1, .landing .productosModal .productCube .der .container h1, .landing .productosModal .productCube .izq .container h1, .landing .productosModal .productCube .back .container h1 {
+    font-weight: 300;
+    font-family: 'Josefin Sans', Helvetica, sans-serif;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    padding-left: .5em;
+    border-left: solid .5em #6BBEB0; }
+    @media screen and (max-width: 600px) {
+      .landing .productosModal .productCube .front .container h1, .landing .productosModal .productCube .der .container h1, .landing .productosModal .productCube .izq .container h1, .landing .productosModal .productCube .back .container h1 {
+        font-size: 1.7em;
+        padding-left: .5em;
+        border-left: solid .5em #6BBEB0; } }
+  .landing .productosModal .productCube .front .container p, .landing .productosModal .productCube .der .container p, .landing .productosModal .productCube .izq .container p, .landing .productosModal .productCube .back .container p {
+    font-family: sans-serif;
+    font-size: 1.2em;
+    color: #656565; }
+    @media screen and (max-width: 360px) {
+      .landing .productosModal .productCube .front .container p, .landing .productosModal .productCube .der .container p, .landing .productosModal .productCube .izq .container p, .landing .productosModal .productCube .back .container p {
+        font-size: .9em; } }
+  .landing .productosModal .productCube .front .container img, .landing .productosModal .productCube .der .container img, .landing .productosModal .productCube .izq .container img, .landing .productosModal .productCube .back .container img {
+    width: 100%; }
+  .landing .productosModal .productCube .front .container a, .landing .productosModal .productCube .der .container a, .landing .productosModal .productCube .izq .container a, .landing .productosModal .productCube .back .container a {
+    background: #3F4F9B;
+    color: white;
+    padding: .5em 1em;
+    -webkit-box-shadow: -3px 0px 6px 0px rgba(50, 50, 50, 0.45);
+    -moz-box-shadow: -3px 0px 6px 0px rgba(50, 50, 50, 0.45);
+    box-shadow: -3px 0px 6px 0px rgba(50, 50, 50, 0.45);
+    float: right; }
+
+.landing .productosModal {
+  perspective: 2000px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: white;
+  bottom: 0%;
+  left: 50%;
+  z-index: 8; }
+  .landing .productosModal .productCube {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d; }
+    .landing .productosModal .productCube .face {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      transition: .6s;
+      background-color: white;
+      box-shadow: 0 -10px 5px -5px rgba(0, 0, 0, 0.09804); }
+    .landing .productosModal .productCube .front {
+      transform: rotateY(-90deg) translateX(-50%) rotateY(0deg) translateX(50%) rotateY(90deg);
+      transform-origin: center center; }
+    .landing .productosModal .productCube .der {
+      transform: rotateY(-90deg) translateX(-50%) rotateY(90deg) translateX(50%) rotateY(90deg); }
+    .landing .productosModal .productCube .izq {
+      transform: rotateY(-90deg) translateX(-50%) rotateY(-90deg) translateX(50%) rotateY(90deg); }
+    .landing .productosModal .productCube .back {
+      transform: rotateY(-90deg) translateX(-50%) rotateY(-180deg) translateX(50%) rotateY(90deg); }
+
 .landing .sideBar {
   box-shadow: rgba(0, 0, 0, 0.09804) 0px 5px 5px 10px;
   height: 100%;
@@ -918,9 +1339,10 @@ header {
     .landing .sideBar {
       width: 70%; } }
   .landing .sideBar .logoMenu svg {
-    width: 60%;
+    width: 50%;
     height: 100%;
-    margin-top: 5em; }
+    margin-top: 5em;
+    margin-left: 4em; }
     @media screen and (max-width: 360px) {
       .landing .sideBar .logoMenu svg {
         width: 70%;
@@ -964,7 +1386,7 @@ header {
       .landing .sideBar ul .navMenu {
         padding-left: 3em; } }
     .landing .sideBar ul .navMenu a {
-      font-size: 2em;
+      font-size: 2.3em;
       color: white;
       padding-right: 0;
       padding-left: .5em;
@@ -983,7 +1405,7 @@ header {
         .landing .sideBar ul .navMenu a {
           font-size: 1.7em; } }
     .landing .sideBar ul .navMenu span {
-      font-size: 2em;
+      font-size: 2.3em;
       text-align: right;
       padding: 0;
       transition: 0.2s all cubic-bezier(0.49, 0.11, 0.35, 1.08);
@@ -1022,12 +1444,13 @@ header {
       color: #509CD5;
       font-weight: bold;
       margin: 0;
-      left: -1%;
       -webkit-transform: translate(-50%, -50%);
       -moz-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       -o-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%); }
+      transform: translate(-50%, -50%);
+      bottom: 24%;
+      left: 26%; }
       @media screen and (max-width: 360px) {
         .landing .sideBar .footerMenu .hashtag span {
           font-size: 9em;
@@ -1061,7 +1484,9 @@ header {
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    bottom: -131%;
+    left: 59%; }
     @media screen and (max-width: 360px) {
       .landing .sideBar .footerMenu .socialIcons {
         font-size: 1.3em;
@@ -1099,9 +1524,15 @@ header {
       -o-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%); }
       .landing .sideBar .footerMenu .socialIcons a:nth-child(2) {
-        left: 28%; }
+        left: 14%; }
+        @media screen and (max-width: 600px) {
+          .landing .sideBar .footerMenu .socialIcons a:nth-child(2) {
+            left: 28%; } }
       .landing .sideBar .footerMenu .socialIcons a:nth-child(3) {
-        left: 50%; }
+        left: 25%; }
+        @media screen and (max-width: 600px) {
+          .landing .sideBar .footerMenu .socialIcons a:nth-child(3) {
+            left: 28%; } }
       .landing .sideBar .footerMenu .socialIcons a i {
         color: white;
         padding-right: 1em;

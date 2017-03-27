@@ -1,0 +1,136 @@
+//+++++++++++++++++Extends++++++++++++++++++++++++++
+%modalTransitionTransform {
+	-webkit-transition: .6s all cubic-bezier(.65,.26,.36,1.06);
+    -moz-transition: .6s all cubic-bezier(.65,.26,.36,1.06);
+    -o-transition: .6s all cubic-bezier(.65,.26,.36,1.06);
+    -ms-transition: .6s all cubic-bezier(.65,.26,.36,1.06);
+    transition: .6s all cubic-bezier(.65,.26,.36,1.06);
+    -webkit-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    -o-transform: translate(-50%, 0%);
+    -moz-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+}
+%closeModalTransition {
+	transition: .4s all ease-in-out;
+	-webkit-transition: .4s all ease-in-out;
+	-moz-transition: .4s all ease-in-out;
+	-o-transition: .4s all ease-in-out;
+	-ms-transition: .4s all ease-in-out;
+}
+%backgroundModalRight{
+	background-image: linear-gradient(to right, #ddd 0%, #fff 54%);
+	background-image: -moz-linear-gradient(right, #ddd 0%, #fff 54%);
+	background-image: -webkit-linear-gradient(right, #ddd 0%, #fff 54%);
+	background-image: -ms-linear-gradient(right, #ddd 0%, #fff 54%);
+	background-image: -o-linear-gradient(right, #ddd 0%, #fff 54%);
+}
+%backgroundModalDown{
+	background-image: -webkit-radial-gradient(center, #fff 10%, #f6f6f6 52%);
+	background-image: -moz-radial-gradient(center, #fff 10%, #f6f6f6 52%);
+	background-image: -webkit-radial-gradient(center, #fff 10%, #f6f6f6 52%);
+	background-image: -ms-radial-gradient(center, #fff 10%, #f6f6f6 52%);
+	background-image: -o-radial-gradient(center, #fff 10%, #f6f6f6 52%);
+}
+%productContent {
+	.container{
+    	width: 970px;
+    	padding-top: 2em;
+    	text-align: left;
+    	@media screen and (max-width: $breakSmallLarge) {
+			width: 100%;
+
+		}
+		@media screen and (max-width: $breakSmall) {
+			padding-top: .5em;
+		}
+    	h1 {
+    		font-weight: 300;
+    		font-family: 'Josefin Sans', Helvetica, sans-serif;
+    		font-size: 2.5em;
+    		text-transform: uppercase;
+    		padding-left: .5em;
+			border-left: solid .5em #6BBEB0;
+    		@media screen and (max-width: $breakSmallLarge) {
+				font-size: 1.7em;
+				padding-left: .5em;
+				border-left: solid .5em #6BBEB0;
+
+			}
+	    }
+	    
+    	p{
+    		font-family: sans-serif;
+    		font-size: 1.2em;
+			color: #656565;
+			@media screen and (max-width: $breakSmall) {
+				font-size: .9em;
+			}
+
+    	}
+
+    	img{
+    		width: 100%;
+    	}
+    	a{
+    		background: #3F4F9B;
+    		color: white;
+    		padding: .5em 1em;
+    		-webkit-box-shadow: -3px 0px 6px 0px rgba(50, 50, 50, 0.45);
+			-moz-box-shadow:    -3px 0px 6px 0px rgba(50, 50, 50, 0.45);
+			box-shadow:         -3px 0px 6px 0px rgba(50, 50, 50, 0.45);
+			float: right;
+    	}
+	}
+}
+
+
+//++++++++++++++++++++Modal Style+++++++++++++++++++++++++++++
+.landing{
+	.productosModal{
+		perspective: 2000px;
+	    height: 100%; 
+	    width: 100%; 
+	    position: absolute;
+	    background:white;
+	    bottom: 0%;
+	    left: 50%;
+	    z-index: 8;
+		@extend %modalTransitionTransform;
+		.productCube{
+			position: relative;
+		    height: 100%; 
+		    width: 100%; 
+		    transform-style: preserve-3d;
+		    -ms-transform-style: preserve-3d;
+		    -webkit-transform-style: preserve-3d;
+		    -moz-transform-style: preserve-3d;
+		    .face{
+		    	position: absolute;
+			    height: 100%; 
+			    width: 100%; 
+			    transition: .6s;
+			    background-color: white;
+			    box-shadow: 0 -10px 5px -5px rgba(0, 0, 0, 0.0980392);
+		    }
+		    .front{
+		    	transform:  rotateY(-90deg) translateX(-50%) rotateY(0deg) translateX(50%) rotateY(90deg);
+			    transform-origin: center center;
+			    @extend %productContent;
+			    
+		    }
+		    .der{
+		    	transform:  rotateY(-90deg) translateX(-50%) rotateY(90deg) translateX(50%) rotateY(90deg); 
+				@extend %productContent;
+		    }
+		    .izq{
+		    	transform:  rotateY(-90deg) translateX(-50%) rotateY(-90deg) translateX(50%) rotateY(90deg); 
+				@extend %productContent;
+			}
+			.back{
+		    	transform:  rotateY(-90deg) translateX(-50%) rotateY(-180deg) translateX(50%) rotateY(90deg); 
+				@extend %productContent;
+			}
+		}
+	}
+}
