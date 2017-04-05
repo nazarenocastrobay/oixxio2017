@@ -1,38 +1,57 @@
 <div id="cube" class="cube" align="center">
     <div id="front" class="face front">
-        <div class="container">
+        <div class="container" ng-hide="productSpinner">
 			<h1 ng-bind-html="tituloModal"></h1>
-			<div class="contenidoModal"  ng-bind-html="contenidoModal"></div>
+			<div class="contenidoModal"  compile="contenidoModal"></div>
 			<div ng-show="clientModal" class="row clientImages">
 				<img ng-repeat="imgModal in modalContentObj[1].imgClientes" src="{{imgModal}}">
-			</div>		
+			</div>
+						
+		</div>
+		<div class="spinner" ng-show="productSpinner">
+		  <div class="double-bounce1"></div>
+		  <div class="double-bounce2"></div>
 		</div>
     </div>
     <div id="side" class="face izq">
-        <div class="container">
+        <div class="container" ng-hide="productSpinner">
 			<h1 ng-bind-html="tituloModal"></h1>
-			<div class="contenidoModal"  ng-bind-html="contenidoModal"></div>
+			<div class="contenidoModal"  compile="contenidoModal"></div>
 			<div ng-show="clientModal" class="row clientImages">
 				<img ng-repeat="imgModal in modalContentObj[1].imgClientes" src="{{imgModal}}">
-			</div>		
+			</div>	
 		</div>
+		<div class="spinner" ng-show="productSpinner">
+		  <div class="double-bounce1"></div>
+		  <div class="double-bounce2"></div>
+		</div>	
+		
     </div>
     <div id="side" class="face der">
-        <div class="container">
+        <div class="container" ng-hide="productSpinner">
 			<h1 ng-bind-html="tituloModal"></h1>
-			<div class="contenidoModal"  ng-bind-html="contenidoModal"></div>
+			<div class="contenidoModal"  compile="contenidoModal"></div>
 			<div ng-show="clientModal" class="row clientImages">
 				<img ng-repeat="imgModal in modalContentObj[1].imgClientes" src="{{imgModal}}">
-			</div>		
+			</div>
 		</div>
+		<div class="spinner" ng-show="productSpinner">
+		  <div class="double-bounce1"></div>
+		  <div class="double-bounce2"></div>
+		</div>			
     </div>
     <div id="side" class="face back">
-        <div class="container">
+        <div class="container" ng-hide="productSpinner">
 			<h1 ng-bind-html="tituloModal"></h1>
-			<div class="contenidoModal"  ng-bind-html="contenidoModal"></div>
+			<div class="contenidoModal"  compile="contenidoModal"></div>
 			<div ng-show="clientModal" class="row clientImages">
 				<img ng-repeat="imgModal in modalContentObj[1].imgClientes" src="{{imgModal}}">
-			</div>		
+			</div>	
+		</div>
+		<div class="spinner" ng-show="productSpinner">
+			  <div class="double-bounce1"></div>
+			  <div class="double-bounce2"></div>		
 		</div>
     </div>
 </div>
+

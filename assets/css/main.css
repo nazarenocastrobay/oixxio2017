@@ -417,7 +417,7 @@ header {
 .logo-loader {
   width: 100%;
   position: absolute;
-  top: 0;
+  top: 0%;
   left: 0;
   z-index: 30;
   background: #ededed;
@@ -430,9 +430,15 @@ header {
   transition: left 2s ease-in-out; }
   .logo-loader .logo-loader-black {
     position: absolute;
-    top: 50%;
+    top: 47%;
     left: 50%;
     transform: translate(-50%, -50%); }
+    @media screen and (max-width: 750px) {
+      .logo-loader .logo-loader-black {
+        left: 39%; } }
+    @media screen and (max-width: 750px) {
+      .logo-loader .logo-loader-black .logo-loader-svg {
+        width: 128%; } }
     .logo-loader .logo-loader-black .logo-letter-1 {
       opacity: 0;
       animation: example 5s linear -0.5s infinite reverse; }
@@ -533,12 +539,34 @@ header {
     top: 47.5%;
     left: 50%;
     z-index: 1; }
+    @media screen and (min-width: 750px) and (max-width: 1050px) {
+      .landing .navContainer {
+        width: 86%; } }
     .landing .navContainer .logo {
       display: block;
       margin: auto;
       position: relative;
       top: 50%;
       left: 50%; }
+      @media screen and (min-width: 750px) and (max-width: 1050px) {
+        .landing .navContainer .logo svg {
+          width: 106%; } }
+      .landing .navContainer .logo svg .overlay {
+        transition: all 0.4s cubic-bezier(0.65, 0.26, 0.36, 1.06);
+        -moz-transition: all 0.4s cubic-bezier(0.65, 0.26, 0.36, 1.06);
+        -webkit-transition: all 0.4s cubic-bezier(0.65, 0.26, 0.36, 1.06);
+        -ms-transition: all 0.4s cubic-bezier(0.65, 0.26, 0.36, 1.06);
+        -o-transition: all 0.4s cubic-bezier(0.65, 0.26, 0.36, 1.06); }
+      .landing .navContainer .logo svg text {
+        font-family: 'Helvetica Neue', Helvetica, sans-serif;
+        font-size: 2em;
+        transition: all 0.4s cubic-bezier(0.65, 0.26, 0.36, 1.06);
+        -moz-transition: all 0.4s cubic-bezier(0.65, 0.26, 0.36, 1.06);
+        -webkit-transition: all 0.4s cubic-bezier(0.65, 0.26, 0.36, 1.06);
+        -ms-transition: all 0.4s cubic-bezier(0.65, 0.26, 0.36, 1.06);
+        -o-transition: all 0.4s cubic-bezier(0.65, 0.26, 0.36, 1.06); }
+      .landing .navContainer .logo svg rect:hover {
+        cursor: pointer; }
       .landing .navContainer .logo .button:hover {
         cursor: pointer; }
       .landing .navContainer .logo .button.upper {
@@ -557,7 +585,7 @@ header {
       transition: .3s transform ease-in-out; }
       .landing .navContainer .nav h2:hover {
         cursor: pointer; }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 750px) {
       .landing .navContainer {
         display: none; } }
   .landing .banner {
@@ -577,15 +605,24 @@ header {
       /* margin: 0; */
       margin: .5em auto .5em auto;
       transition: all .3s ease-in-out; }
+      @media screen and (min-width: 750px) and (max-width: 1050px) {
+        .landing .banner h1 {
+          font-size: 3.5em; } }
       .landing .banner h1 span {
         border-right: 4px solid #6CBFB1;
         letter-spacing: .1em;
         padding-right: .5em;
-        font-size: .8em; }
+        font-size: .6em; }
+        @media screen and (min-width: 750px) and (max-width: 1050px) {
+          .landing .banner h1 span {
+            font-size: .5em; } }
         .landing .banner h1 span:nth-child(2) {
           border-right: none;
-          font-size: .8em; }
-    @media screen and (max-width: 600px) {
+          font-size: .6em; }
+          @media screen and (min-width: 750px) and (max-width: 1050px) {
+            .landing .banner h1 span:nth-child(2) {
+              font-size: .5em; } }
+    @media screen and (max-width: 750px) {
       .landing .banner {
         display: none; } }
   .landing .nav {
@@ -633,7 +670,7 @@ header {
     -o-transition: 0.6s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
     -ms-transition: 0.6s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
     transition: 0.6s all cubic-bezier(0.65, 0.26, 0.36, 1.06); }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 750px) {
       .landing .contacto {
         height: 100%;
         width: 100%;
@@ -658,7 +695,7 @@ header {
       background: linear-gradient(to right, #6cbfb1 0%, #6cbfb1 84%, rgba(108, 191, 177, 0) 100%);
       /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6cbfb1', endColorstr='#006cbfb1',GradientType=1 ); }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 750px) {
         .landing .contacto .overlay {
           height: 70%;
           width: 100%;
@@ -677,7 +714,7 @@ header {
         padding-left: 0.5em;
         border-left: solid .5em white;
         font-size: 2.5em; }
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 750px) {
           .landing .contacto .overlay h1 {
             font-size: 1em;
             color: white;
@@ -688,7 +725,7 @@ header {
         display: block;
         padding-left: 4em;
         color: white; }
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 750px) {
           .landing .contacto .overlay .link {
             display: block;
             padding-left: 4em;
@@ -699,7 +736,7 @@ header {
           display: inline-block;
           font-size: 2em;
           padding-right: .6em; }
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 750px) {
             .landing .contacto .overlay .link .icono {
               font-size: 2em;
               padding-right: 0;
@@ -708,7 +745,7 @@ header {
           display: inline-block;
           width: 70%;
           font-size: 1.7em; }
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 750px) {
             .landing .contacto .overlay .link .descripcion {
               font-size: 1.2em;
               display: inline-block;
@@ -725,9 +762,19 @@ header {
           font-weight: bold;
           width: 50%;
           margin-right: 0;
-          bottom: -80%;
+          bottom: -104%;
           position: absolute;
           z-index: 0; }
+          @media screen and (min-width: 750px) and (max-width: 1050px) {
+            .landing .contacto .overlay .footerMenu .hashtag {
+              font-size: 15em;
+              font-weight: bold;
+              width: 50%;
+              margin-right: 0;
+              bottom: 202%;
+              position: absolute;
+              z-index: 0;
+              height: 0%; } }
           .landing .contacto .overlay .footerMenu .hashtag span {
             color: #509CD5; }
         .landing .contacto .overlay .footerMenu .socialIcons {
@@ -740,7 +787,10 @@ header {
             color: white;
             font-size: 1.5em;
             margin-right: .5em; }
-        @media screen and (max-width: 600px) {
+          @media screen and (min-width: 750px) and (max-width: 1050px) {
+            .landing .contacto .overlay .footerMenu .socialIcons {
+              left: 35%; } }
+        @media screen and (max-width: 750px) {
           .landing .contacto .overlay .footerMenu {
             display: none; } }
     .landing .contacto .map {
@@ -748,7 +798,7 @@ header {
       right: 0;
       width: 70%;
       height: 100%; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 750px) {
         .landing .contacto .map {
           position: absolute;
           bottom: 0;
@@ -787,33 +837,37 @@ header {
   width: 970px;
   padding-top: 2em;
   text-align: left; }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 750px) {
+    .landing .modal-section-down .cube .front .container, .landing .modal-section-down .cube .der .container, .landing .modal-section-down .cube .izq .container, .landing .modal-section-down .cube .back .container {
+      width: 100%; } }
+  @media screen and (min-width: 750px) and (max-width: 1050px) {
     .landing .modal-section-down .cube .front .container, .landing .modal-section-down .cube .der .container, .landing .modal-section-down .cube .izq .container, .landing .modal-section-down .cube .back .container {
       width: 100%; } }
   @media screen and (max-width: 360px) {
     .landing .modal-section-down .cube .front .container, .landing .modal-section-down .cube .der .container, .landing .modal-section-down .cube .izq .container, .landing .modal-section-down .cube .back .container {
       padding-top: .5em; } }
+  @media screen and (min-width: 750px) and (max-width: 1050px) {
+    .landing .modal-section-down .cube .front .container, .landing .modal-section-down .cube .der .container, .landing .modal-section-down .cube .izq .container, .landing .modal-section-down .cube .back .container {
+      padding-right: 5em;
+      padding-left: 5em; } }
   .landing .modal-section-down .cube .front .container h1, .landing .modal-section-down .cube .der .container h1, .landing .modal-section-down .cube .izq .container h1, .landing .modal-section-down .cube .back .container h1 {
     font-weight: 300;
     font-family: 'Josefin Sans', Helvetica, sans-serif;
-    font-size: 2.5em;
+    font-size: 2em;
     text-transform: uppercase;
     padding-left: .5em;
     border-left: solid .5em #6BBEB0; }
+    @media screen and (min-width: 750px) and (max-width: 1050px) {
+      .landing .modal-section-down .cube .front .container h1, .landing .modal-section-down .cube .der .container h1, .landing .modal-section-down .cube .izq .container h1, .landing .modal-section-down .cube .back .container h1 {
+        font-size: 1.9em; } }
     .landing .modal-section-down .cube .front .container h1 .de-ideas, .landing .modal-section-down .cube .der .container h1 .de-ideas, .landing .modal-section-down .cube .izq .container h1 .de-ideas, .landing .modal-section-down .cube .back .container h1 .de-ideas {
       text-transform: lowercase;
       color: #4a99d5; }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 750px) {
       .landing .modal-section-down .cube .front .container h1, .landing .modal-section-down .cube .der .container h1, .landing .modal-section-down .cube .izq .container h1, .landing .modal-section-down .cube .back .container h1 {
         font-size: 1.7em;
         padding-left: .5em;
         border-left: solid .5em #6BBEB0; } }
-  .landing .modal-section-down .cube .front .container .clientImages img, .landing .modal-section-down .cube .der .container .clientImages img, .landing .modal-section-down .cube .izq .container .clientImages img, .landing .modal-section-down .cube .back .container .clientImages img {
-    margin-left: -.5sem; }
-    @media screen and (max-width: 400px) {
-      .landing .modal-section-down .cube .front .container .clientImages img, .landing .modal-section-down .cube .der .container .clientImages img, .landing .modal-section-down .cube .izq .container .clientImages img, .landing .modal-section-down .cube .back .container .clientImages img {
-        width: 43%;
-        margin-bottom: .4em; } }
   .landing .modal-section-down .cube .front .container .contenidoModal p, .landing .modal-section-down .cube .der .container .contenidoModal p, .landing .modal-section-down .cube .izq .container .contenidoModal p, .landing .modal-section-down .cube .back .container .contenidoModal p {
     font-family: sans-serif;
     font-size: 1.2em;
@@ -821,16 +875,19 @@ header {
     @media screen and (max-width: 360px) {
       .landing .modal-section-down .cube .front .container .contenidoModal p, .landing .modal-section-down .cube .der .container .contenidoModal p, .landing .modal-section-down .cube .izq .container .contenidoModal p, .landing .modal-section-down .cube .back .container .contenidoModal p {
         font-size: .9em; } }
+    @media screen and (min-width: 360px) and (max-width: 400px) {
+      .landing .modal-section-down .cube .front .container .contenidoModal p, .landing .modal-section-down .cube .der .container .contenidoModal p, .landing .modal-section-down .cube .izq .container .contenidoModal p, .landing .modal-section-down .cube .back .container .contenidoModal p {
+        font-size: 1em; } }
     .landing .modal-section-down .cube .front .container .contenidoModal p.importante, .landing .modal-section-down .cube .der .container .contenidoModal p.importante, .landing .modal-section-down .cube .izq .container .contenidoModal p.importante, .landing .modal-section-down .cube .back .container .contenidoModal p.importante {
-      font-size: 1.6em;
+      font-size: 1.3sem;
       color: #8abee4; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 750px) {
         .landing .modal-section-down .cube .front .container .contenidoModal p.importante, .landing .modal-section-down .cube .der .container .contenidoModal p.importante, .landing .modal-section-down .cube .izq .container .contenidoModal p.importante, .landing .modal-section-down .cube .back .container .contenidoModal p.importante {
-          font-size: 1.2em;
+          font-size: 1.1em;
           color: #8abee4; } }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 750px) {
         .landing .modal-section-down .cube .front .container .contenidoModal p.importante, .landing .modal-section-down .cube .der .container .contenidoModal p.importante, .landing .modal-section-down .cube .izq .container .contenidoModal p.importante, .landing .modal-section-down .cube .back .container .contenidoModal p.importante {
-          font-size: 1.4em;
+          font-size: 1.1em;
           color: #8abee4; } }
   .landing .modal-section-down .cube .front .container .contenidoModal .creamos, .landing .modal-section-down .cube .der .container .contenidoModal .creamos, .landing .modal-section-down .cube .izq .container .contenidoModal .creamos, .landing .modal-section-down .cube .back .container .contenidoModal .creamos {
     font-size: 1.5em;
@@ -854,6 +911,9 @@ header {
       @media screen and (max-width: 360px) {
         .landing .modal-section-down .cube .front .container .contenidoModal .nosotros-img img, .landing .modal-section-down .cube .der .container .contenidoModal .nosotros-img img, .landing .modal-section-down .cube .izq .container .contenidoModal .nosotros-img img, .landing .modal-section-down .cube .back .container .contenidoModal .nosotros-img img {
           max-width: 28%; } }
+      @media screen and (min-width: 360px) and (max-width: 400px) {
+        .landing .modal-section-down .cube .front .container .contenidoModal .nosotros-img img, .landing .modal-section-down .cube .der .container .contenidoModal .nosotros-img img, .landing .modal-section-down .cube .izq .container .contenidoModal .nosotros-img img, .landing .modal-section-down .cube .back .container .contenidoModal .nosotros-img img {
+          max-width: 19%; } }
   .landing .modal-section-down .cube .front .container .contenidoModal .productos, .landing .modal-section-down .cube .der .container .contenidoModal .productos, .landing .modal-section-down .cube .izq .container .contenidoModal .productos, .landing .modal-section-down .cube .back .container .contenidoModal .productos {
     width: 100%;
     height: 100%; }
@@ -866,10 +926,10 @@ header {
         padding-right: 0em;
         margin-bottom: .2em;
         position: relative; }
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 750px) {
           .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li {
             width: 50%; } }
-        @media screen and (min-width: 400px) and (max-width: 600px) {
+        @media screen and (min-width: 400px) and (max-width: 750px) {
           .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li {
             margin-bottom: .2em;
             position: relative;
@@ -890,10 +950,10 @@ header {
           width: 100%;
           display: block;
           margin: 0 auto; }
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 750px) {
             .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li img {
               width: 110%; } }
-          @media screen and (min-width: 400px) and (max-width: 600px) {
+          @media screen and (min-width: 400px) and (max-width: 750px) {
             .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li img {
               width: 110%; } }
           @media screen and (min-width: 360px) and (max-width: 400px) {
@@ -905,6 +965,9 @@ header {
           @media screen and (min-width: 360px) and (max-width: 400px) and (min-height: 639px) {
             .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li img {
               width: 107%; } }
+          @media screen and (min-width: 400px) and (max-width: 750px) {
+            .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li img, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li img {
+              width: 105%; } }
         .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li .overlay {
           color: #337ab7;
           text-decoration: none;
@@ -920,10 +983,13 @@ header {
           background: linear-gradient(to bottom, transparent 0%, black 100%);
           /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); }
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 750px) {
             .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li .overlay {
               width: 95%;
               left: 12%; } }
+          @media screen and (min-width: 400px) and (max-width: 750px) {
+            .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li .overlay {
+              left: 9%; } }
           @media screen and (min-width: 360px) and (max-width: 400px) {
             .landing .modal-section-down .cube .front .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .der .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .izq .container .contenidoModal .productos ul li .overlay, .landing .modal-section-down .cube .back .container .contenidoModal .productos ul li .overlay {
               color: #337ab7;
@@ -987,13 +1053,28 @@ header {
         left: 12%; }
       .landing .modal-section-down .cube .front .container .contenidoModal .contacto .footerMenu .socialIcons a:nth-child(3), .landing .modal-section-down .cube .der .container .contenidoModal .contacto .footerMenu .socialIcons a:nth-child(3), .landing .modal-section-down .cube .izq .container .contenidoModal .contacto .footerMenu .socialIcons a:nth-child(3), .landing .modal-section-down .cube .back .container .contenidoModal .contacto .footerMenu .socialIcons a:nth-child(3) {
         left: 21%; }
+  .landing .modal-section-down .cube .front .container .clientImages img, .landing .modal-section-down .cube .der .container .clientImages img, .landing .modal-section-down .cube .izq .container .clientImages img, .landing .modal-section-down .cube .back .container .clientImages img {
+    margin-left: -.5em; }
+    @media screen and (max-width: 360px) {
+      .landing .modal-section-down .cube .front .container .clientImages img, .landing .modal-section-down .cube .der .container .clientImages img, .landing .modal-section-down .cube .izq .container .clientImages img, .landing .modal-section-down .cube .back .container .clientImages img {
+        width: 39%;
+        margin-bottom: .4em;
+        margin-left: 1em; } }
+    @media screen and (min-width: 360px) and (max-width: 400px) {
+      .landing .modal-section-down .cube .front .container .clientImages img, .landing .modal-section-down .cube .der .container .clientImages img, .landing .modal-section-down .cube .izq .container .clientImages img, .landing .modal-section-down .cube .back .container .clientImages img {
+        margin-left: 1.4em;
+        width: 35%;
+        margin-bottom: .4em; } }
 
 .landing .modal-section-right .cube .front .container, .landing .modal-section-right .cube .der .container, .landing .modal-section-right .cube .izq .container, .landing .modal-section-right .cube .back .container {
-  width: 970px;
+  width: 100%;
   padding-top: 2em;
   padding-left: 2em;
   text-align: left; }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 750px) {
+    .landing .modal-section-right .cube .front .container, .landing .modal-section-right .cube .der .container, .landing .modal-section-right .cube .izq .container, .landing .modal-section-right .cube .back .container {
+      width: 100%; } }
+  @media screen and (min-width: 750px) and (max-width: 1050px) {
     .landing .modal-section-right .cube .front .container, .landing .modal-section-right .cube .der .container, .landing .modal-section-right .cube .izq .container, .landing .modal-section-right .cube .back .container {
       width: 100%; } }
   .landing .modal-section-right .cube .front .container h1, .landing .modal-section-right .cube .der .container h1, .landing .modal-section-right .cube .izq .container h1, .landing .modal-section-right .cube .back .container h1 {
@@ -1002,7 +1083,7 @@ header {
     font-size: 2.5em;
     text-transform: uppercase; }
   .landing .modal-section-right .cube .front .container .contenidoModal p, .landing .modal-section-right .cube .der .container .contenidoModal p, .landing .modal-section-right .cube .izq .container .contenidoModal p, .landing .modal-section-right .cube .back .container .contenidoModal p {
-    font-size: 1.3em;
+    font-size: 1.2em;
     width: 75%;
     margin-bottom: .1em;
     font-family: sans-serif;
@@ -1010,18 +1091,34 @@ header {
     @media screen and (max-width: 360px) {
       .landing .modal-section-right .cube .front .container .contenidoModal p, .landing .modal-section-right .cube .der .container .contenidoModal p, .landing .modal-section-right .cube .izq .container .contenidoModal p, .landing .modal-section-right .cube .back .container .contenidoModal p {
         font-size: .9em; } }
+    @media screen and (min-width: 750px) and (max-width: 1050px) {
+      .landing .modal-section-right .cube .front .container .contenidoModal p, .landing .modal-section-right .cube .der .container .contenidoModal p, .landing .modal-section-right .cube .izq .container .contenidoModal p, .landing .modal-section-right .cube .back .container .contenidoModal p {
+        width: 92%; } }
   .landing .modal-section-right .cube .front .container .contenidoModal .productos, .landing .modal-section-right .cube .der .container .contenidoModal .productos, .landing .modal-section-right .cube .izq .container .contenidoModal .productos, .landing .modal-section-right .cube .back .container .contenidoModal .productos {
     width: 86%;
     height: 100%; }
     .landing .modal-section-right .cube .front .container .contenidoModal .productos ul, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul {
       list-style-type: none;
-      width: 88%; }
+      width: 88%;
+      margin-left: 1em; }
+      @media screen and (min-width: 750px) and (max-width: 1050px) {
+        .landing .modal-section-right .cube .front .container .contenidoModal .productos ul, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul {
+          width: 81%; } }
       .landing .modal-section-right .cube .front .container .contenidoModal .productos ul li, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul li, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul li, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul li {
         width: 30%;
         margin-bottom: 1em;
         padding-right: 0em;
         margin-bottom: .2em;
-        position: relative; }
+        position: relative;
+        overflow: hidden;
+        margin: 1em 0.6em; }
+        .landing .modal-section-right .cube .front .container .contenidoModal .productos ul li:hover, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul li:hover, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul li:hover, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul li:hover {
+          cursor: pointer; }
+          .landing .modal-section-right .cube .front .container .contenidoModal .productos ul li:hover .overlay, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul li:hover .overlay, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul li:hover .overlay, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul li:hover .overlay {
+            top: 0%; }
+        @media screen and (min-width: 750px) and (max-width: 1050px) {
+          .landing .modal-section-right .cube .front .container .contenidoModal .productos ul li, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul li, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul li, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul li {
+            width: 50%; } }
         @media screen and (max-width: 360px) {
           .landing .modal-section-right .cube .front .container .contenidoModal .productos ul li, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul li, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul li, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul li {
             margin-bottom: .2em;
@@ -1043,7 +1140,7 @@ header {
           position: absolute;
           width: 82%;
           height: 100%;
-          top: 0;
+          top: 117%;
           left: 5%;
           background: -moz-linear-gradient(top, transparent 0%, black 100%);
           /* FF3.6-15 */
@@ -1052,14 +1149,32 @@ header {
           background: linear-gradient(to bottom, transparent 0%, black 100%);
           /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); }
-          @media screen and (min-width: 600px) {
+          @media screen and (min-width: 750px) {
             .landing .modal-section-right .cube .front .container .contenidoModal .productos ul li .overlay, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul li .overlay, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul li .overlay, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul li .overlay {
               position: absolute;
               display: block;
               width: 93%;
               height: 100%;
-              top: 0;
-              left: 8%; } }
+              top: 0%;
+              left: 8%;
+              -webkit-transition: 0.4s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+              -moz-transition: 0.4s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+              -o-transition: 0.4s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+              -ms-transition: 0.4s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+              transition: 0.4s all cubic-bezier(0.65, 0.26, 0.36, 1.06); } }
+          @media screen and (min-width: 1050px) {
+            .landing .modal-section-right .cube .front .container .contenidoModal .productos ul li .overlay, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul li .overlay, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul li .overlay, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul li .overlay {
+              position: absolute;
+              display: block;
+              width: 93%;
+              height: 100%;
+              top: 100%;
+              left: 8%;
+              -webkit-transition: 0.4s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+              -moz-transition: 0.4s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+              -o-transition: 0.4s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+              -ms-transition: 0.4s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+              transition: 0.4s all cubic-bezier(0.65, 0.26, 0.36, 1.06); } }
           .landing .modal-section-right .cube .front .container .contenidoModal .productos ul li .overlay h2, .landing .modal-section-right .cube .der .container .contenidoModal .productos ul li .overlay h2, .landing .modal-section-right .cube .izq .container .contenidoModal .productos ul li .overlay h2, .landing .modal-section-right .cube .back .container .contenidoModal .productos ul li .overlay h2 {
             position: absolute;
             color: white;
@@ -1071,7 +1186,11 @@ header {
     margin-top: 4em;
     width: 70%; }
     .landing .modal-section-right .cube .front .container .clientImages img, .landing .modal-section-right .cube .der .container .clientImages img, .landing .modal-section-right .cube .izq .container .clientImages img, .landing .modal-section-right .cube .back .container .clientImages img {
-      width: 33%; }
+      width: 27%;
+      margin: 1em; }
+    @media screen and (min-width: 750px) and (max-width: 1050px) {
+      .landing .modal-section-right .cube .front .container .clientImages, .landing .modal-section-right .cube .der .container .clientImages, .landing .modal-section-right .cube .izq .container .clientImages, .landing .modal-section-right .cube .back .container .clientImages {
+        width: 96%; } }
 
 .landing .modal-section-down {
   perspective: 2000px;
@@ -1168,7 +1287,7 @@ header {
       transform: rotateY(-90deg) translateX(-50%) rotateY(-90deg) translateX(50%) rotateY(90deg); }
     .landing .modal-section-right .cube .back {
       transform: rotateY(-90deg) translateX(-50%) rotateY(-180deg) translateX(50%) rotateY(90deg); }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 750px) {
     .landing .modal-section-right {
       display: none; } }
 .landing .closeModal-left {
@@ -1185,12 +1304,54 @@ header {
   color: white;
   right: -105%;
   position: absolute;
-  top: 5%;
+  top: 7%;
   z-index: 10; }
   .landing .closeModal-right:hover {
     cursor: pointer;
     color: #EF4836; }
+  @media screen and (max-width: 750px) {
+    .landing .closeModal-right {
+      font-size: 2em;
+      top: 3%; } }
 
+.spinner {
+  width: 40px;
+  height: 40px;
+  top: 30%;
+  position: relative;
+  margin: 100px auto; }
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out; }
+
+.double-bounce1 {
+  background-color: #6CBFB1; }
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+  background-color: #509CD5; }
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% {
+    -webkit-transform: scale(0); }
+  50% {
+    -webkit-transform: scale(1); } }
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0);
+    -webkit-transform: scale(0); }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1); } }
 .landing .product-section {
   width: 100%;
   height: 100%;
@@ -1248,11 +1409,18 @@ header {
   -o-transition: .4s all ease-in-out;
   -ms-transition: .4s all ease-in-out; }
 
+.landing .closeModal-product {
+  transition: .4s all ease-in-out;
+  -webkit-transition: .4s all ease-in-out;
+  -moz-transition: .4s all ease-in-out;
+  -o-transition: .4s all ease-in-out;
+  -ms-transition: .4s all ease-in-out; }
+
 .landing .productosModal .productCube .front .container, .landing .productosModal .productCube .der .container, .landing .productosModal .productCube .izq .container, .landing .productosModal .productCube .back .container {
-  width: 970px;
+  width: 91%;
   padding-top: 2em;
   text-align: left; }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 750px) {
     .landing .productosModal .productCube .front .container, .landing .productosModal .productCube .der .container, .landing .productosModal .productCube .izq .container, .landing .productosModal .productCube .back .container {
       width: 100%; } }
   @media screen and (max-width: 360px) {
@@ -1265,20 +1433,36 @@ header {
     text-transform: uppercase;
     padding-left: .5em;
     border-left: solid .5em #6BBEB0; }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 750px) {
       .landing .productosModal .productCube .front .container h1, .landing .productosModal .productCube .der .container h1, .landing .productosModal .productCube .izq .container h1, .landing .productosModal .productCube .back .container h1 {
-        font-size: 1.7em;
+        font-size: 1.4em;
         padding-left: .5em;
-        border-left: solid .5em #6BBEB0; } }
+        border-left: solid .5em #6BBEB0;
+        margin-top: 0; } }
+    @media screen and (min-width: 400px) and (max-width: 750px) {
+      .landing .productosModal .productCube .front .container h1, .landing .productosModal .productCube .der .container h1, .landing .productosModal .productCube .izq .container h1, .landing .productosModal .productCube .back .container h1 {
+        font-size: 2em; } }
   .landing .productosModal .productCube .front .container p, .landing .productosModal .productCube .der .container p, .landing .productosModal .productCube .izq .container p, .landing .productosModal .productCube .back .container p {
     font-family: sans-serif;
-    font-size: 1.2em;
+    font-size: 1em;
     color: #656565; }
     @media screen and (max-width: 360px) {
       .landing .productosModal .productCube .front .container p, .landing .productosModal .productCube .der .container p, .landing .productosModal .productCube .izq .container p, .landing .productosModal .productCube .back .container p {
         font-size: .9em; } }
+    @media screen and (min-width: 360px) and (max-width: 400px) and (max-height: 500px) {
+      .landing .productosModal .productCube .front .container p, .landing .productosModal .productCube .der .container p, .landing .productosModal .productCube .izq .container p, .landing .productosModal .productCube .back .container p {
+        font-size: .9em; } }
+    @media screen and (min-width: 360px) and (max-width: 400px) and (min-height: 639px) {
+      .landing .productosModal .productCube .front .container p, .landing .productosModal .productCube .der .container p, .landing .productosModal .productCube .izq .container p, .landing .productosModal .productCube .back .container p {
+        font-size: 1.2em; } }
+    @media screen and (min-width: 400px) and (max-width: 750px) {
+      .landing .productosModal .productCube .front .container p, .landing .productosModal .productCube .der .container p, .landing .productosModal .productCube .izq .container p, .landing .productosModal .productCube .back .container p {
+        font-size: 1.4em; } }
   .landing .productosModal .productCube .front .container img, .landing .productosModal .productCube .der .container img, .landing .productosModal .productCube .izq .container img, .landing .productosModal .productCube .back .container img {
-    width: 100%; }
+    width: 79%;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 1em; }
   .landing .productosModal .productCube .front .container a, .landing .productosModal .productCube .der .container a, .landing .productosModal .productCube .izq .container a, .landing .productosModal .productCube .back .container a {
     background: #3F4F9B;
     color: white;
@@ -1291,12 +1475,17 @@ header {
 .landing .productosModal {
   perspective: 2000px;
   height: 100%;
-  width: 100%;
+  width: 53%;
   position: absolute;
   background: white;
-  bottom: 0%;
-  left: 50%;
-  z-index: 8; }
+  right: -100%;
+  z-index: 8;
+  bottom: 0%; }
+  @media screen and (max-width: 600px) {
+    .landing .productosModal {
+      bottom: -110%;
+      width: 100%;
+      left: 50%; } }
   .landing .productosModal .productCube {
     position: relative;
     height: 100%;
@@ -1321,7 +1510,512 @@ header {
       transform: rotateY(-90deg) translateX(-50%) rotateY(-90deg) translateX(50%) rotateY(90deg); }
     .landing .productosModal .productCube .back {
       transform: rotateY(-90deg) translateX(-50%) rotateY(-180deg) translateX(50%) rotateY(90deg); }
+  .landing .productosModal .fullscreen {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    display: none; }
+    @media screen and (min-width: 750px) {
+      .landing .productosModal .fullscreen {
+        width: 107%; } }
+    .landing .productosModal .fullscreen .image-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 50%;
+      background: white;
+      box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.4);
+      width: 0%;
+      transition: .4s all ease-in-out;
+      -webkit-transition: .4s all ease-in-out;
+      -moz-transition: .4s all ease-in-out;
+      -o-transition: .4s all ease-in-out;
+      -ms-transition: .4s all ease-in-out; }
+    .landing .productosModal .fullscreen .cerrar-video {
+      position: absolute;
+      top: 3%;
+      right: 3%;
+      font-size: 2em;
+      color: white; }
+      .landing .productosModal .fullscreen .cerrar-video:hover {
+        cursor: pointer; }
+      @media screen and (min-width: 750px) {
+        .landing .productosModal .fullscreen .cerrar-video {
+          top: 7%;
+          right: 3%;
+          font-size: 3em;
+          color: white; } }
+.landing .closeModal-product {
+  font-size: 3em;
+  position: absolute;
+  right: -100%;
+  top: 8%;
+  color: black;
+  z-index: 20;
+  position: absolute; }
+  .landing .closeModal-product:hover {
+    cursor: pointer;
+    color: #3F4F9B; }
+  @media screen and (max-width: 750px) {
+    .landing .closeModal-product {
+      top: 3%;
+      font-size: 1.7em; } }
+.landing .abrir-video {
+  color: #ffffff;
+  position: absolute;
+  top: 45%;
+  left: 49%;
+  font-size: 2.5em;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.56);
+  background-color: #6bbeb0;
+  padding: .3em .5em .3em .7em;
+  border-radius: .1em;
+  opacity: 0;
+  -webkit-transition: 0.4s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+  -moz-transition: 0.4s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+  -o-transition: 0.4s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+  -ms-transition: 0.4s all cubic-bezier(0.65, 0.26, 0.36, 1.06);
+  transition: 0.4s all cubic-bezier(0.65, 0.26, 0.36, 1.06); }
+  .landing .abrir-video:hover {
+    cursor: pointer;
+    background-color: #15463e; }
+  @media screen and (max-width: 750px) {
+    .landing .abrir-video {
+      top: 25%; } }
+  @media screen and (min-width: 750px) and (max-width: 1050px) {
+    .landing .abrir-video {
+      top: 36%; } }
+  @media screen and (max-width: 360px) and (max-height: 500px) {
+    .landing .abrir-video {
+      top: 22%; } }
+  @media screen and (min-width: 360px) and (max-width: 400px) and (max-height: 500px) {
+    .landing .abrir-video {
+      top: 33%; } }
 
+.hamburglar {
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 60px;
+  height: 30px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.path-burger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 68px;
+  width: 68px;
+  -webkit-mask: url(#mask);
+  mask: url(#mask);
+  -webkit-mask-box-image: url(https://raygun.io/upload/mask.svg); }
+
+.animate-path {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 68px;
+  height: 68px; }
+
+@-webkit-keyframes rotate-out {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  40% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes rotate-out {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  40% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@-webkit-keyframes rotate-in {
+  0% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); }
+  40% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); } }
+@keyframes rotate-in {
+  0% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); }
+  40% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); } }
+.hamburglar.is-open .path {
+  -webkit-animation: dash-in 0.6s linear normal;
+  animation: dash-in 0.6s linear normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.hamburglar.is-open .animate-path {
+  -webkit-animation: rotate-in 0.6s linear normal;
+  animation: rotate-in 0.6s linear normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.hamburglar.is-closed .path {
+  -webkit-animation: dash-out 0.6s linear normal;
+  animation: dash-out 0.6s linear normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.hamburglar.is-closed .animate-path {
+  -webkit-animation: rotate-out 0.6s linear normal;
+  animation: rotate-out 0.6s linear normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.path {
+  stroke-dasharray: 240;
+  stroke-dashoffset: 240;
+  stroke-linejoin: round; }
+
+@-webkit-keyframes dash-in {
+  0% {
+    stroke-dashoffset: 240; }
+  40% {
+    stroke-dashoffset: 240; }
+  100% {
+    stroke-dashoffset: 0; } }
+@keyframes dash-in {
+  0% {
+    stroke-dashoffset: 240; }
+  40% {
+    stroke-dashoffset: 240; }
+  100% {
+    stroke-dashoffset: 0; } }
+@-webkit-keyframes dash-out {
+  0% {
+    stroke-dashoffset: 0; }
+  40% {
+    stroke-dashoffset: 240; }
+  100% {
+    stroke-dashoffset: 240; } }
+@keyframes dash-out {
+  0% {
+    stroke-dashoffset: 0; }
+  40% {
+    stroke-dashoffset: 240; }
+  100% {
+    stroke-dashoffset: 240; } }
+.burger-icon {
+  position: absolute;
+  padding: 20px 16px;
+  height: 68px;
+  width: 68px; }
+
+.burger-container {
+  position: relative;
+  height: 28px;
+  width: 36px; }
+
+.burger-bun-top,
+.burger-bun-bot,
+.burger-filling {
+  position: absolute;
+  display: block;
+  height: 4px;
+  width: 36px;
+  border-radius: 2px;
+  background: white; }
+
+.burger-bun-top {
+  top: 0;
+  -webkit-transform-origin: 34px 2px;
+  transform-origin: 34px 2px; }
+
+.burger-bun-bot {
+  bottom: 0;
+  -webkit-transform-origin: 34px 2px;
+  transform-origin: 34px 2px; }
+
+.burger-filling {
+  top: 12px; }
+
+.burger-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 68px;
+  height: 68px; }
+
+.svg-ring {
+  width: 68px;
+  height: 68px; }
+
+.hamburglar.is-open .burger-bun-top {
+  -webkit-animation: bun-top-out 0.6s linear normal;
+  animation: bun-top-out 0.6s linear normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.hamburglar.is-open .burger-bun-bot {
+  -webkit-animation: bun-bot-out 0.6s linear normal;
+  animation: bun-bot-out 0.6s linear normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.hamburglar.is-closed .burger-bun-top {
+  -webkit-animation: bun-top-in 0.6s linear normal;
+  animation: bun-top-in 0.6s linear normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.hamburglar.is-closed .burger-bun-bot {
+  -webkit-animation: bun-bot-in 0.6s linear normal;
+  animation: bun-bot-in 0.6s linear normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+@-webkit-keyframes bun-top-out {
+  0% {
+    left: 0;
+    top: 0;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  20% {
+    left: 0;
+    top: 0;
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg); }
+  80% {
+    left: -5px;
+    top: 0;
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg); }
+  100% {
+    left: -5px;
+    top: 1px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); } }
+@keyframes bun-top-out {
+  0% {
+    left: 0;
+    top: 0;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  20% {
+    left: 0;
+    top: 0;
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg); }
+  80% {
+    left: -5px;
+    top: 0;
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg); }
+  100% {
+    left: -5px;
+    top: 1px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); } }
+@-webkit-keyframes bun-bot-out {
+  0% {
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  20% {
+    left: 0;
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg); }
+  80% {
+    left: -5px;
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg); }
+  100% {
+    left: -5px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); } }
+@keyframes bun-bot-out {
+  0% {
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  20% {
+    left: 0;
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg); }
+  80% {
+    left: -5px;
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg); }
+  100% {
+    left: -5px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); } }
+@-webkit-keyframes bun-top-in {
+  0% {
+    left: -5px;
+    bot: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+  20% {
+    left: -5px;
+    bot: 0;
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg); }
+  80% {
+    left: 0;
+    bot: 0;
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg); }
+  100% {
+    left: 0;
+    bot: 1px;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); } }
+@keyframes bun-top-in {
+  0% {
+    left: -5px;
+    bot: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+  20% {
+    left: -5px;
+    bot: 0;
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg); }
+  80% {
+    left: 0;
+    bot: 0;
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg); }
+  100% {
+    left: 0;
+    bot: 1px;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); } }
+@-webkit-keyframes bun-bot-in {
+  0% {
+    left: -5px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  20% {
+    left: -5px;
+    bot: 0;
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg); }
+  80% {
+    left: 0;
+    bot: 0;
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg); }
+  100% {
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); } }
+@keyframes bun-bot-in {
+  0% {
+    left: -5px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  20% {
+    left: -5px;
+    bot: 0;
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg); }
+  80% {
+    left: 0;
+    bot: 0;
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg); }
+  100% {
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); } }
+.hamburglar.is-open .burger-filling {
+  -webkit-animation: burger-fill-out 0.6s linear normal;
+  animation: burger-fill-out 0.6s linear normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.hamburglar.is-closed .burger-filling {
+  -webkit-animation: burger-fill-in 0.6s linear normal;
+  animation: burger-fill-in 0.6s linear normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+@-webkit-keyframes burger-fill-in {
+  0% {
+    width: 0;
+    left: 36px; }
+  40% {
+    width: 0;
+    left: 40px; }
+  80% {
+    width: 36px;
+    left: -6px; }
+  100% {
+    width: 36px;
+    left: 0px; } }
+@keyframes burger-fill-in {
+  0% {
+    width: 0;
+    left: 36px; }
+  40% {
+    width: 0;
+    left: 40px; }
+  80% {
+    width: 36px;
+    left: -6px; }
+  100% {
+    width: 36px;
+    left: 0px; } }
+@-webkit-keyframes burger-fill-out {
+  0% {
+    width: 36px;
+    left: 0px; }
+  20% {
+    width: 42px;
+    left: -6px; }
+  40% {
+    width: 0;
+    left: 40px; }
+  100% {
+    width: 0;
+    left: 36px; } }
+@keyframes burger-fill-out {
+  0% {
+    width: 36px;
+    left: 0px; }
+  20% {
+    width: 42px;
+    left: -6px; }
+  40% {
+    width: 0;
+    left: 40px; }
+  100% {
+    width: 0;
+    left: 36px; } }
 .landing .sideBar {
   box-shadow: rgba(0, 0, 0, 0.09804) 0px 5px 5px 10px;
   height: 100%;
@@ -1335,7 +2029,7 @@ header {
   -moz-transition: 0.5s all cubic-bezier(0.49, 0.11, 0.35, 1.08);
   -o-transition: 0.5s all cubic-bezier(0.49, 0.11, 0.35, 1.08);
   -ms-transition: 0.5s all cubic-bezier(0.49, 0.11, 0.35, 1.08); }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 750px) {
     .landing .sideBar {
       width: 70%; } }
   .landing .sideBar .logoMenu svg {
@@ -1353,7 +2047,7 @@ header {
       .landing .sideBar .logoMenu svg {
         width: 70%;
         margin-left: 1.5em; } }
-    @media screen and (min-width: 400px) and (max-width: 600px) {
+    @media screen and (min-width: 400px) and (max-width: 750px) {
       .landing .sideBar .logoMenu svg {
         width: 65%;
         height: 100%;
@@ -1371,7 +2065,10 @@ header {
     padding: 0;
     margin-top: 2.5em;
     margin-bottom: 3em; }
-    @media screen and (max-width: 600px) {
+    @media screen and (min-width: 750px) and (max-width: 1050px) {
+      .landing .sideBar ul {
+        padding-left: 1em; } }
+    @media screen and (max-width: 750px) {
       .landing .sideBar ul {
         padding: 0;
         margin-top: 1.5em;
@@ -1382,7 +2079,7 @@ header {
     @media screen and (min-width: 360px) and (max-width: 400px) and (max-height: 639px) {
       .landing .sideBar ul .navMenu {
         padding-right: 1.5em; } }
-    @media screen and (min-width: 400px) and (max-width: 600px) {
+    @media screen and (min-width: 400px) and (max-width: 750px) {
       .landing .sideBar ul .navMenu {
         padding-left: 3em; } }
     .landing .sideBar ul .navMenu a {
@@ -1404,6 +2101,9 @@ header {
       @media screen and (min-width: 360px) and (max-width: 400px) and (max-height: 639px) {
         .landing .sideBar ul .navMenu a {
           font-size: 1.7em; } }
+      @media screen and (min-width: 750px) and (max-width: 1050px) {
+        .landing .sideBar ul .navMenu a {
+          font-size: 2.1em; } }
     .landing .sideBar ul .navMenu span {
       font-size: 2.3em;
       text-align: right;
@@ -1422,6 +2122,9 @@ header {
       @media screen and (min-width: 360px) and (max-width: 400px) and (max-height: 639px) {
         .landing .sideBar ul .navMenu span {
           font-size: 1.7em; } }
+      @media screen and (min-width: 750px) and (max-width: 1050px) {
+        .landing .sideBar ul .navMenu span {
+          font-size: 2.1em; } }
     .landing .sideBar ul .navMenu:nth-child(odd) span {
       color: #509CD5; }
     .landing .sideBar ul .navMenu:nth-child(even) span {
@@ -1471,11 +2174,16 @@ header {
           font-size: 11em;
           left: 17%;
           bottom: 43%; } }
-      @media screen and (min-width: 400px) and (max-width: 600px) {
+      @media screen and (min-width: 400px) and (max-width: 750px) {
         .landing .sideBar .footerMenu .hashtag span {
           font-size: 15em;
           bottom: 31%;
           left: 18%; } }
+      @media screen and (min-width: 750px) and (max-width: 1050px) {
+        .landing .sideBar .footerMenu .hashtag span {
+          font-size: 13em;
+          bottom: 47%;
+          left: 35%; } }
   .landing .sideBar .footerMenu .socialIcons {
     padding-top: 11%;
     font-size: 1.8em;
@@ -1510,12 +2218,16 @@ header {
         left: 70%;
         bottom: -150%;
         width: 70%; } }
-    @media screen and (min-width: 400px) and (max-width: 600px) {
+    @media screen and (min-width: 400px) and (max-width: 750px) {
       .landing .sideBar .footerMenu .socialIcons {
         font-size: 1.5em;
         bottom: -152%;
         left: 72%;
         width: 70%; } }
+    @media screen and (min-width: 750px) and (max-width: 1050px) {
+      .landing .sideBar .footerMenu .socialIcons {
+        bottom: -131%;
+        left: 59%; } }
     .landing .sideBar .footerMenu .socialIcons a {
       position: absolute;
       -webkit-transform: translate(-50%, -50%);
@@ -1525,14 +2237,23 @@ header {
       transform: translate(-50%, -50%); }
       .landing .sideBar .footerMenu .socialIcons a:nth-child(2) {
         left: 14%; }
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 750px) {
           .landing .sideBar .footerMenu .socialIcons a:nth-child(2) {
             left: 28%; } }
+        @media screen and (min-width: 750px) and (max-width: 1050px) {
+          .landing .sideBar .footerMenu .socialIcons a:nth-child(2) {
+            left: 21%; } }
       .landing .sideBar .footerMenu .socialIcons a:nth-child(3) {
         left: 25%; }
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 750px) {
           .landing .sideBar .footerMenu .socialIcons a:nth-child(3) {
             left: 28%; } }
+        @media screen and (min-width: 360px) and (max-width: 400px) and (max-height: 639px) {
+          .landing .sideBar .footerMenu .socialIcons a:nth-child(3) {
+            left: 45%; } }
+        @media screen and (min-width: 750px) and (max-width: 1050px) {
+          .landing .sideBar .footerMenu .socialIcons a:nth-child(3) {
+            left: 37%; } }
       .landing .sideBar .footerMenu .socialIcons a i {
         color: white;
         padding-right: 1em;
@@ -1568,6 +2289,9 @@ header {
   transition: .4s all ease-in;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
   opacity: 0; }
+  @media screen and (max-width: 1050px) {
+    .landing .menuHover {
+      display: none; } }
 .landing .menuButton {
   z-index: 21;
   top: 5%;
@@ -1581,11 +2305,40 @@ header {
   -o-transition: 0.5s all cubic-bezier(0.49, 0.11, 0.35, 1.08);
   -ms-transition: 0.5s all cubic-bezier(0.49, 0.11, 0.35, 1.08);
   opacity: 1; }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 750px) {
     .landing .menuButton {
       font-size: 2em;
       top: 3%; } }
 
+.landing .touch-buttons {
+  position: absolute;
+  width: 90%;
+  height: 83%;
+  background: transparent;
+  top: 3%;
+  left: 10%;
+  display: none; }
+  .landing .touch-buttons .nosotros {
+    width: 100%;
+    height: 16%; }
+  .landing .touch-buttons .desarrollo {
+    width: 100%;
+    height: 16%; }
+  .landing .touch-buttons .saas {
+    width: 100%;
+    height: 16%; }
+  .landing .touch-buttons .productos {
+    width: 100%;
+    height: 16%; }
+  .landing .touch-buttons .impulsores {
+    width: 100%;
+    height: 16%; }
+  .landing .touch-buttons .clientes {
+    width: 100%;
+    height: 16%; }
+  @media screen and (max-width: 750px) {
+    .landing .touch-buttons {
+      display: block; } }
 .landing .nav-landing-mobile {
   transition: .5s all ease-in-out; }
   .landing .nav-landing-mobile .logo-landing-mobile {
@@ -1593,35 +2346,39 @@ header {
     -webkit-transition: .5s all ease-in-out;
     -moz-transition: .5s all ease-in-out;
     -ms-transition: .5s all ease-in-out;
-    -o-transition: .5s all ease-in-out; }
+    -o-transition: .5s all ease-in-out;
+    position: relative; }
     .landing .nav-landing-mobile .logo-landing-mobile svg {
-      width: 108%;
+      width: 74%;
       position: absolute;
-      transform: translate(25%, -7%);
+      transform: translate(20%, 0%);
       transition: .5s all ease-in-out;
       -webkit-transition: .5s all ease-in-out;
       -moz-transition: .5s all ease-in-out;
       -ms-transition: .5s all ease-in-out;
       -o-transition: .5s all ease-in-out; }
+      .landing .nav-landing-mobile .logo-landing-mobile svg text {
+        font-family: 'Helvetica Neue' !important; }
       @media screen and (max-width: 360px) {
         .landing .nav-landing-mobile .logo-landing-mobile svg {
-          transform: translate(21%, -16%); } }
+          transform: translate(15%, -11%);
+          width: 75%; } }
       @media screen and (min-width: 360px) and (max-width: 400px) {
         .landing .nav-landing-mobile .logo-landing-mobile svg {
-          transform: translate(29%, -17%);
-          width: 98%; } }
+          transform: translate(33%, -18%);
+          width: 60%; } }
       @media screen and (max-width: 360px) and (max-height: 500px) {
         .landing .nav-landing-mobile .logo-landing-mobile svg {
-          transform: translate(28%, -20%);
-          width: 100%; } }
+          transform: translate(22%, -20%);
+          width: 69%; } }
       @media screen and (min-width: 360px) and (max-width: 400px) and (min-height: 639px) {
         .landing .nav-landing-mobile .logo-landing-mobile svg {
-          transform: translate(24%, -10%);
-          width: 110%; } }
-    @media screen and (max-width: 600px) {
+          transform: translate(19%, -4%);
+          width: 74%; } }
+    @media screen and (max-width: 750px) {
       .landing .nav-landing-mobile .logo-landing-mobile {
         display: block; } }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 750px) {
       .landing .nav-landing-mobile .logo-landing-mobile {
         display: block; } }
   .landing .nav-landing-mobile .oixxio-landing-mobile {
@@ -1654,7 +2411,7 @@ header {
       @media screen and (min-width: 360px) and (max-width: 400px) and (min-height: 639px) {
         .landing .nav-landing-mobile .oixxio-landing-mobile svg {
           width: 75%; } }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 750px) {
       .landing .nav-landing-mobile .oixxio-landing-mobile {
         display: block;
         left: 66%; } }

@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="1004.234px" height="352px" viewBox="3341.806 -415.371 1004.234 352"
 	 enable-background="new 3341.806 -415.371 1004.234 352" xml:space="preserve">
@@ -59,66 +62,36 @@
 				C3385.304-257.354,3387.208-266.625,3390.937-274.562z"/>
 		</g>
 	</g>
-	<g id="nosotros" class="upper">
-		<path fill="#4F9CD5" d="M3524.204-279.156c-4.221-10.13-10.055-19.024-17.502-26.471c-7.459-7.458-16.241-13.38-26.382-17.677
+	<path fill="#4F9CD5" d="M3524.204-279.156c-4.221-10.13-10.055-19.024-17.502-26.471c-7.459-7.458-16.241-13.38-26.382-17.677
 		c-10.132-4.41-21.13-6.514-32.784-6.514c-11.669,0-22.565,2.104-32.695,6.514c-10.229,4.297-19.024,10.219-26.471,17.677
 		c-7.37,7.447-13.192,16.341-17.502,26.471c-0.088,0.202-0.088,0.289-0.174,0.491c-4.122,9.928-6.137,20.538-6.137,31.827
-		c0,0.201,0,0.416,0.012,0.616h166.008c0.015-0.2,0.015-0.416,0.015-0.616C3530.592-258.327,3528.5-269.114,3524.204-279.156z" class="overlay"/>
-		<text transform="matrix(1 0 0 1 3370.5969 -364.0833)" fill="#FFFFFF" font-family="'ArialMT'" font-size="35.9081">Nosotros</text>
-		<rect id="nosotrosButton" x="3341.806" y="-415.371" opacity="0" fill="#FFFFFF" width="206.628" height="169.546" ng-click="openModal('nosotrosButton', 0)" class="button upper" ng-mouseover="navHover('nosotros', 0)" ng-mouseleave="navNotHover('nosotros')"/>
-	</g>
-	<g id="clientes" class ="down">
-		<path fill="#6BBEB0" d="M4322.255-242.263c0-0.202,0-0.416-0.013-0.618h-166.011c-0.012,0.202-0.012,0.416-0.012,0.618
+		c0,0.201,0,0.416,0.012,0.616h166.008c0.015-0.2,0.015-0.416,0.015-0.616C3530.592-258.327,3528.5-269.114,3524.204-279.156z"/>
+	<path fill="#6BBEB0" d="M4322.255-242.263c0-0.202,0-0.416-0.013-0.618h-166.011c-0.012,0.202-0.012,0.416-0.012,0.618
 		c0,11.289,2.016,21.897,6.137,31.826c0.086,0.202,0.086,0.289,0.176,0.491c4.309,10.13,10.131,19.025,17.5,26.472
 		c7.447,7.458,16.242,13.379,26.471,17.676c10.132,4.41,21.028,6.514,32.697,6.514c11.654,0,22.652-2.104,32.783-6.514
 		c10.143-4.297,18.926-10.217,26.382-17.676c7.446-7.447,13.28-16.342,17.501-26.472
-		C4320.163-219.989,4322.255-230.773,4322.255-242.263z" class="overlay"/>
-		<text transform="matrix(1 0 0 1 4177.9805 -93.011)" fill="#FFFFFF" font-family="'ArialMT'" font-size="35.9081">Clientes</text>
-		<rect id="clientButton" x="4146.899" y="-244.552" opacity="0" fill="#FFFFFF" width="190.582" height="171.88" ng-click="openModal('clientButton', 1)" class="button down" ng-mouseover="navHover('clientes', 1)" ng-mouseleave="navNotHover('clientes')"/>
-	</g>
-	<g id="desarrollo" class ="down"> 
-		<polygon fill="#6BBEB0" points="3587.96,-245.825 3587.96,-182.31 3568.471,-182.31 3568.471,-167.358 3627.388,-167.358 
-		3627.388,-182.31 3608.781,-182.31 3608.781,-245.825 	" class="overlay"/>
-		<text transform="matrix(1 0 0 1 3515.4729 -93.011)" fill="#FFFFFF" font-family="'ArialMT'" font-size="35.9081">Desarrollo</text>
-		<rect id="desarrolloButton" x="3496.777" y="-247.993" opacity="0" fill="#FFFFFF" width="202.191" height="181.622"  ng-click="openModal('desarrolloButton', 2)" class="button down" ng-mouseover="navHover('desarrollo', 2)" ng-mouseleave="navNotHover('desarrollo')"/>
-	</g>
-	<g id="saas" class="upper">
-		<polygon fill="#4F9CD5" points="3761.429,-246.22 3760.661,-247.937 3802.476,-311.342 3818.274,-311.342 3818.274,-326.307 
+		C4320.163-219.989,4322.255-230.773,4322.255-242.263z"/>
+	<polygon fill="#6BBEB0" points="3587.96,-245.825 3587.96,-182.31 3568.471,-182.31 3568.471,-167.358 3627.388,-167.358 
+		3627.388,-182.31 3608.781,-182.31 3608.781,-245.825 	"/>
+	<polygon fill="#4F9CD5" points="4081.916,-247.993 4081.916,-311.508 4062.427,-311.508 4062.427,-326.461 4121.343,-326.461 
+		4121.343,-311.508 4102.734,-311.508 4102.734,-247.993 	"/>
+	<polygon fill="#4F9CD5" points="3761.429,-246.22 3760.661,-247.937 3802.476,-311.342 3818.274,-311.342 3818.274,-326.307 
 		3760.878,-326.307 3760.878,-311.342 3779.278,-311.342 3750.156,-265.115 3749.704,-265.115 3721.029,-311.342 3739.189,-311.342 
-		3739.189,-326.307 3680.273,-326.307 3680.273,-311.342 3697.793,-311.342 3737.897,-246.615 3737.897,-246.168 	" class="overlay"/>
-		<text transform="matrix(1 0 0 1 3707.4495 -364.0833)" fill="#FFFFFF" font-family="'ArialMT'" font-size="35.9081">Saas</text>
-		<rect id="saasButton" x="3659.308" y="-415.371" opacity="0" fill="#FFFFFF" width="178.91" height="167.378" ng-click="openModal('saasButton', 4 )" class="button upper" ng-mouseover="navHover('saas', 3)" ng-mouseleave="navNotHover('saas')"/>
-	</g>
-	<g id="impulsores" class="upper">
-		<polygon fill="#4F9CD5" points="4081.916,-247.993 4081.916,-311.508 4062.427,-311.508 4062.427,-326.461 4121.343,-326.461 
-		4121.343,-311.508 4102.734,-311.508 4102.734,-247.993 	" class="overlay"/>		
-		<text transform="matrix(1 0 0 1 4005.3977 -364.0833)" fill="#FFFFFF" font-family="'ArialMT'" font-size="35.9081">Impulsores</text>
-		<rect id="impulsoresButton" x="3996.968" y="-415.371" opacity="0" fill="#FFFFFF" width="191.51" height="172.49" ng-click="openModal('impulsoresButton', 3)" class="button upper" ng-mouseover="navHover('impulsores', 4)" ng-mouseleave="navNotHover('impulsores')"/>
-	</g>
-	<g id="productos" class ="down">
-		<polygon fill="#6BBEB0" points="3925.683,-246.168 3925.683,-246.168 3885.816,-182.31 3868.08,-182.31 3868.08,-167.358 
+		3739.189,-326.307 3680.273,-326.307 3680.273,-311.342 3697.793,-311.342 3737.897,-246.615 3737.897,-246.168 	"/>
+	<polygon fill="#6BBEB0" points="3925.683,-246.168 3925.683,-246.168 3885.816,-182.31 3868.08,-182.31 3868.08,-167.358 
 		3926.978,-167.358 3926.978,-182.31 3907.062,-182.31 3936.419,-228.783 3936.85,-228.783 3964.888,-182.31 3948.689,-182.31 
-		3948.689,-167.358 4005.398,-167.358 4005.398,-182.31 3987.66,-182.31 3949.245,-246.22 3949.245,-246.22 	" class="overlay"/>
-		<text transform="matrix(1 0 0 1 3858.6233 -93.011)" fill="#FFFFFF" font-family="'ArialMT'" font-size="35.9081">Productos</text>
-		<rect id="productosButton" x="3838.218" y="-247.993" opacity="0" fill="#FFFFFF" width="196.548" height="175.322" ng-click="openModal('productosButton', 5 )" class="button down" ng-mouseover="navHover('productos', 5)" ng-mouseleave="navNotHover('productos')"/>
-	</g>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		3948.689,-167.358 4005.398,-167.358 4005.398,-182.31 3987.66,-182.31 3949.245,-246.22 3949.245,-246.22 	"/>
+	<text transform="matrix(1 0 0 1 4177.9805 -93.011)" fill="#FFFFFF" font-family="'ArialMT'" font-size="35.9081">Clientes</text>
+	<text transform="matrix(1 0 0 1 4005.3977 -364.0833)" fill="#FFFFFF" font-family="'ArialMT'" font-size="35.9081">Impulsores</text>
+	<text transform="matrix(1 0 0 1 3858.6233 -93.011)" fill="#FFFFFF" font-family="'ArialMT'" font-size="35.9081">Productos</text>
+	<text transform="matrix(1 0 0 1 3707.4495 -364.0833)" fill="#FFFFFF" font-family="'ArialMT'" font-size="35.9081">Saas</text>
+	<text transform="matrix(1 0 0 1 3515.4729 -93.011)" fill="#FFFFFF" font-family="'ArialMT'" font-size="35.9081">Desarrollo</text>
+	<text transform="matrix(1 0 0 1 3370.5969 -364.0833)" fill="#FFFFFF" font-family="'ArialMT'" font-size="35.9081">Nosotros</text>
+	<rect id="clientes" x="4146.899" y="-244.552" opacity="0" fill="#FFFFFF" width="190.582" height="171.88"/>
+	<rect id="impulsores" x="3996.968" y="-415.371" opacity="0" fill="#FFFFFF" width="191.51" height="172.49"/>
+	<rect id="productos" x="3838.218" y="-247.993" opacity="0" fill="#FFFFFF" width="196.548" height="175.322"/>
+	<rect id="saas" x="3659.308" y="-415.371" opacity="0" fill="#FFFFFF" width="178.91" height="167.378"/>
+	<rect id="desarrollo" x="3496.777" y="-247.993" opacity="0" fill="#FFFFFF" width="202.191" height="181.622"/>
+	<rect id="nosotros" x="3341.806" y="-415.371" opacity="0" fill="#FFFFFF" width="206.628" height="169.546"/>
 </g>
 </svg>

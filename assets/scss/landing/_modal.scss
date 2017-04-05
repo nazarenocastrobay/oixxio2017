@@ -39,19 +39,27 @@
     	text-align: left;
     	@media screen and (max-width: $breakSmallLarge) {
 			width: 100%;
-
 		}
+		@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+	    	width: 100%;
+	   	}
 		@media screen and (max-width: $breakSmall) {
 			padding-top: .5em;
+		}
+		@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+	    	padding-right: 5em;
+	    	padding-left: 5em;
 		}
     	h1 {
     		font-weight: 300;
     		font-family: 'Josefin Sans', Helvetica, sans-serif;
-    		font-size: 2.5em;
+    		font-size: 2em;
     		text-transform: uppercase;
     		padding-left: .5em;
 			border-left: solid .5em #6BBEB0;
-
+			@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+	    		font-size: 1.9em;
+	   		}
     		.de-ideas{
     			text-transform: lowercase;
 				color: #4a99d5;
@@ -63,15 +71,7 @@
 
 			}
 	    }
-	    .clientImages{
-	    	img{
-	    		margin-left: -.5sem;
-				@media screen and (max-width: $breakSmallMedium) {
-					width: 43%;
-					margin-bottom: .4em;
-				}
-	    	}
-	    }
+
     	.contenidoModal{
 	    	p{
 	    		font-family: sans-serif;
@@ -80,15 +80,18 @@
     			@media screen and (max-width: $breakSmall) {
 					font-size: .9em;
 				}
+				@media screen and (min-width: $breakSmall) and (max-width: $breakSmallMedium) {
+					font-size: 1em;
+				}
 				&.importante{
-					font-size: 1.6em;
+					font-size: 1.3sem;
 					color: #8abee4;
 					@media screen and (max-width: $breakSmallLarge) {
-						font-size: 1.2em;
+						font-size: 1.1em;
 						color: #8abee4;
 					}
 					@media screen and (max-width: $breakSmallLarge) {
-						font-size: 1.4em;
+						font-size: 1.1em;
 						color: #8abee4;
 					}
 				}
@@ -118,6 +121,9 @@
 	    			@media screen and (max-width: $breakSmall) {
 						max-width: 28%;
 					}
+					@media screen and (min-width: $breakSmall) and (max-width: $breakSmallMedium) {
+						max-width: 19%;
+					}
 	    		}
 	    	}
 	    	.productos{
@@ -126,6 +132,7 @@
 	    		ul{
 					list-style-type: none;
 					width: 100%;
+					
 					li{
 						width: 30%;
 					    margin-bottom: 1em;
@@ -171,6 +178,9 @@
 							@media screen and (min-width: $breakSmall) and (max-width: $breakSmallMedium) and (min-height: $breakHeightSmallLarge){
 							    width: 107%;
 							}
+							@media screen and (min-width: $breakSmallMedium) and (max-width: $breakSmallLarge){
+								width: 105%;
+							}
 							
 						}
 						.overlay{
@@ -188,6 +198,9 @@
 							@media screen and (max-width: $breakSmallLarge) {
 								width: 95%;
 								left: 12%;
+							}
+							@media screen and (min-width: $breakSmallMedium) and (max-width: $breakSmallLarge){
+								left: 9%;
 							}
 							@media screen and (min-width: $breakSmall) and (max-width: $breakSmallMedium) {
 								    color: #337ab7;
@@ -218,6 +231,7 @@
 					}	    			
 	    		}
 	    	}
+	    	
 	    	.contacto{
 	    		margin-top: 3em;
 	    		a{
@@ -273,11 +287,30 @@
 				
 			}
 		}
+		.clientImages{
+			img{
+	    		margin-left: -.5em;    		    
+				// @media screen and (max-width: $breakSmall) {
+				// 	width: 43%;
+				// 	margin-bottom: .4em;
+				// }
+				@media screen and (max-width: $breakSmall){
+			    	width: 39%;
+					margin-bottom: .4em;
+					margin-left: 1em;
+			    }
+				@media screen and (min-width: $breakSmall) and (max-width: $breakSmallMedium){
+			    	margin-left: 1.4em;
+				    width: 35%;
+				    margin-bottom: .4em;
+			    }
+	    	}
+	    }
 	}
 }
 %modalContentRight {
 	.container{
-    	width: 970px;
+    	width: 100%;
     	padding-top: 2em;
     	padding-left: 2em;
     	text-align: left;
@@ -285,6 +318,9 @@
 			width: 100%;
 
 		}
+		@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+	    	width: 100%;
+	   	}
     	h1 {
 	    		font-weight: 300;
 	    		font-family: 'Josefin Sans', Helvetica, sans-serif;
@@ -293,7 +329,7 @@
 	    	}
     	.contenidoModal{
 	    	p{
-	    		font-size: 1.3em;
+	    		font-size: 1.2em;
 			    width: 75%;
 			    margin-bottom: .1em;
 			   	font-family: sans-serif;
@@ -302,6 +338,9 @@
 					font-size: .9em;
 
 				}
+				@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+	    			width: 92%;
+	   			}
 	    	}
 	    	.productos{
     		    width: 86%;
@@ -309,12 +348,28 @@
 	    		ul{
 					list-style-type: none;
 					width: 88%;
+					margin-left: 1em;
+					@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+					   width: 81%;
+					}
 					li{
 						width: 30%;
 					    margin-bottom: 1em;
 					    padding-right: 0em;
 						margin-bottom: .2em;
 						position: relative;
+						overflow: hidden;
+						margin: 1em 0.6em;
+						&:hover{
+							cursor: pointer;
+							.overlay{
+								top: 0%;
+							}
+							
+						}
+						@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+	    					width: 50%;
+	   					}
 						@media screen and (max-width: $breakSmall) {
 							margin-bottom: .2em;
 							position: relative;
@@ -338,19 +393,38 @@
 						    position: absolute;
 						    width: 82%;
 						    height: 100%;
-						    top: 0;
+						    top: 117%;
 						    left: 5%;
 						    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
 							background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
 							background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 							filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+							
 						    @media screen and (min-width: $breakSmallLarge) {
 							    position: absolute;
 							    display: block;
 							    width: 93%;
 							    height: 100%;
-							    top: 0;
+							    top: 0%;
 							    left: 8%;
+							    -webkit-transition: .4s all cubic-bezier(.65,.26,.36,1.06);
+							    -moz-transition: .4s all cubic-bezier(.65,.26,.36,1.06);
+							    -o-transition: .4s all cubic-bezier(.65,.26,.36,1.06);
+							    -ms-transition: .4s all cubic-bezier(.65,.26,.36,1.06);
+							    transition: .4s all cubic-bezier(.65,.26,.36,1.06);
+							}
+							@media screen and (min-width: $breakTabletLarge) {
+							    position: absolute;
+							    display: block;
+							    width: 93%;
+							    height: 100%;
+							    top: 100%;
+							    left: 8%;
+							    -webkit-transition: .4s all cubic-bezier(.65,.26,.36,1.06);
+							    -moz-transition: .4s all cubic-bezier(.65,.26,.36,1.06);
+							    -o-transition: .4s all cubic-bezier(.65,.26,.36,1.06);
+							    -ms-transition: .4s all cubic-bezier(.65,.26,.36,1.06);
+							    transition: .4s all cubic-bezier(.65,.26,.36,1.06);
 							}
 						    h2{
 					    	    position: absolute;
@@ -370,8 +444,12 @@
     		margin-top: 4em;
     		width: 70%;
     		img{
-    			width: 33%;
+    			width: 27%;
+    			margin: 1em;
     		}
+    		@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+	    		width: 96%;
+	   		}
     	}
     }
 }
@@ -552,12 +630,61 @@
 		    color: white;
 		    right: -105%;
 		    position: absolute;
-		    top: 5%;
+		    top: 7%;
 		    z-index: 10;
 		    @extend %closeModalTransition;
 		    &:hover{
 		    	cursor: pointer;
 		    	color: #EF4836;
 		    }
+		    @media screen and (max-width: $breakSmallLarge){
+				font-size: 2em;
+				top: 3%;
+		    }
 		}
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  top: 30%;
+  position: relative;
+  margin: 100px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce1{
+	background-color: #6CBFB1;
+}
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+  background-color: #509CD5;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
 }

@@ -77,6 +77,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#509cd5', end
 	    top: 47.5%;
 	    left: 50%;
 	    z-index: 1;
+	    @media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+	    	width: 86%;
+	    }
 	    @extend %navContainerTrans;
 	    @extend %translateHalf;
 		.logo {
@@ -86,6 +89,34 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#509cd5', end
 			top: 50%;
 			left: 50%;
 			@extend %translateHalf;
+			svg{
+				@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+	    			width: 106%;
+	   		 	}
+	   		 	.overlay{
+	   		 		transition: all .4s cubic-bezier(.65,.26,.36,1.06);
+					-moz-transition: all .4s cubic-bezier(.65,.26,.36,1.06);
+					-webkit-transition: all .4s cubic-bezier(.65,.26,.36,1.06); 
+					-ms-transition: all .4s cubic-bezier(.65,.26,.36,1.06); 
+					-o-transition: all .4s cubic-bezier(.65,.26,.36,1.06);
+	   		 	}
+	   		 	text{
+	   		 		font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	   		 		font-size: 2em;
+	   		 		transition: all .4s cubic-bezier(.65,.26,.36,1.06);
+					-moz-transition: all .4s cubic-bezier(.65,.26,.36,1.06);
+					-webkit-transition: all .4s cubic-bezier(.65,.26,.36,1.06); 
+					-ms-transition: all .4s cubic-bezier(.65,.26,.36,1.06); 
+					-o-transition: all .4s cubic-bezier(.65,.26,.36,1.06);
+	   		 	}
+	   		 	rect{
+
+	   		 		&:hover{
+	   		 			cursor: pointer;
+	   		 		}
+	   		 	}
+			}
+			
 			.button{
 				@extend %buttonTransition;
 				&:hover{
@@ -133,14 +164,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#509cd5', end
 		    // -o-transition: all .3s ease-in-out;
 		    // -ms-transition: all .3s ease-in-out;
 		    // transition: all .3s ease-in-out;
+		    @media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+	    		font-size: 3.5em;
+	   		}
 		    span{
 		    	border-right: 4px solid #6CBFB1;
 		    	letter-spacing: .1em;
 		    	padding-right: .5em;
-		    	font-size: .8em;
+		    	font-size: .6em;
+		    	@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+	    			font-size: .5em;
+	   			}
 		    	&:nth-child(2){
 		    		border-right: none;
-		    		font-size: .8em;
+		    		font-size: .6em;
+		    		@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+	    				font-size: .5em;
+	   				}
 		    	}
 		    }
 		}
@@ -185,6 +225,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#509cd5', end
 		left: 0%;
 		z-index: 0;
 	}
+	
 	.contacto{
 		height: 100%;
 	    width: 100%;
@@ -291,9 +332,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#509cd5', end
 				    font-weight: bold;
 				    width: 50%;
 				    margin-right: 0;
-				    bottom: -80%;
+				    bottom: -104%;
 				    position: absolute;
 				    z-index: 0;
+				    @media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+			    	    font-size: 15em;
+					    font-weight: bold;
+					    width: 50%;
+					    margin-right: 0;
+					    bottom: 202%;
+					    position: absolute;
+					    z-index: 0;
+					    height: 0%;
+				  	}
 					span{
 						color: #509CD5;
 					}
@@ -311,6 +362,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#509cd5', end
 					   		margin-right: .5em;
 				   		}
 				   	}
+				   	@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+			    	    left: 35%;
+				  	}
 	    		}
 	    		@media screen and (max-width: $breakSmallLarge) {
 		    		display: none;

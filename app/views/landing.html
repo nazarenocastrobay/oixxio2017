@@ -1,17 +1,17 @@
 		<div class="navContainer">
-			<div class="nav row">
-				<h2 class="col-md-4 align-left nav-0" ng-click="openModal('aboutButton', 0 )" ng-mouseenter="textOnHover(0)" ng-mouseleave="textNotOnHover(0)">Nosotros</h2>
-				<h2 class="col-md-4 align-left nav-4" ng-click="openModal('saasButton', 4 )" ng-mouseenter="textOnHover(4)" ng-mouseleave="textNotOnHover(4)">Saas</h2>
-				<h2 class="col-md-4 align-left nav-3" ng-click="openModal('impButton', 3 )" ng-mouseenter="textOnHover(3)" ng-mouseleave="textNotOnHover(3)">Impulsores</h2>
-			</div>
+			<!-- <div class="nav row">
+				<h2 class="col-md-4 col-sm-4 align-left nav-0" ng-click="openModal('aboutButton', 0 )" ng-mouseenter="textOnHover(0)" ng-mouseleave="textNotOnHover(0)">Nosotros</h2>
+				<h2 class="col-md-4  col-sm-4 align-left nav-4" ng-click="openModal('saasButton', 4 )" ng-mouseenter="textOnHover(4)" ng-mouseleave="textNotOnHover(4)">Saas</h2>
+				<h2 class="col-md-4 col-sm-4 align-left nav-3" ng-click="openModal('impButton', 3 )" ng-mouseenter="textOnHover(3)" ng-mouseleave="textNotOnHover(3)">Impulsores</h2>
+			</div> -->
 			<div class="logo" ng-include="'app/layout/logo/logo-landing.html'">
 				
 			</div>
-			<div class="nav row">
-				<h2 class="col-md-4 align-right nav-2" ng-click="openModal('developButton', 2 )" ng-mouseenter="textOnHover(2)" ng-mouseleave="textNotOnHover(2)">Desarrollo</h2>
-				<h2 class="col-md-4 align-right nav-5" ng-click="openModal('prodButton', 5 )" ng-mouseenter="textOnHover(5)" ng-mouseleave="textNotOnHover(5)">Productos</h2>
-				<h2 class="col-md-4 align-right nav-1" ng-click="openModal('clientButton', 1 )" ng-mouseenter="textOnHover(1)" ng-mouseleave="textNotOnHover(1)">Clientes</h2>
-			</div>
+			<!-- <div class="nav row">
+				<h2 class="col-md-4 col-sm-4 align-right nav-2" ng-click="openModal('developButton', 2 )" ng-mouseenter="textOnHover(2)" ng-mouseleave="textNotOnHover(2)">Desarrollo</h2>
+				<h2 class="col-md-4 col-sm-4 align-right nav-5" ng-click="openModal('prodButton', 5 )" ng-mouseenter="textOnHover(5)" ng-mouseleave="textNotOnHover(5)">Productos</h2>
+				<h2 class="col-md-4 col-sm-4 align-right nav-1" ng-click="openModal('clientButton', 1 )" ng-mouseenter="textOnHover(1)" ng-mouseleave="textNotOnHover(1)">Clientes</h2>
+			</div> -->
 		</div>
 		<div class="banner">
 			<h1 ng-bind-html="hoverText"></h1>
@@ -27,18 +27,19 @@
 		<!-- /incluir modales -->
 
 		<!-- Botones de cerrar modal left y right -->
+		<i class="closeModal-right zmdi zmdi-close"></i>
 		<i class="closeModal-left fa fa-times" aria-hidden="true"></i>
-		<i class="closeModal-right fa fa-times" aria-hidden="true"></i>
+		<i class="closeModal-product zmdi zmdi-close" ng-click="closeProduct()"></i>
 
 		<div class="sideBar">
 			<div class="logoMenu" ng-include="'app/layout/logo/logo-product.html'"></div>
 			<ul class="row">
-				<div class="navMenu" ng-click="goTo('aboutButton', 0 )"><span class="col-md-2">_</span><a class="col-md-10">Nosotros</a></div>
-				<div class="navMenu" ng-click="goTo('developButton', 2 )"><span class="col-md-2">></span><a class="col-md-10">Desarrollo</a></div>
-				<div class="navMenu" ng-click="goTo('saasButton', 4 )"><span class="col-md-2">/</span><a class="col-md-10">Saas</a></div>
-				<div class="navMenu" ng-click="goTo('prodButton', 5 )"><span class="col-md-2">!</span><a class="col-md-10">Productos</a></div>
-				<div class="navMenu" ng-click="goTo('impButton', 3 )"><span class="col-md-2">"</span><a class="col-md-10">Impulsores</a></div>
-				<div class="navMenu" ng-click="goTo('clientButton', 1 )"><span class="col-md-2">$</span><a class="col-md-10">Clientes</a></div>
+				<div class="navMenu" ng-click="goTo('nosotrosButton', 0, 'nosotrosButtonMobile' )"><span class="col-md-2">_</span><a class="col-md-10">Nosotros</a></div>
+				<div class="navMenu" ng-click="goTo('desarrolloButton', 2, 'desarrolloButtonMobile' )"><span class="col-md-2">></span><a class="col-md-10">Desarrollo</a></div>
+				<div class="navMenu" ng-click="goTo('saasButton', 4, 'saasButtonMobile')"><span class="col-md-2">/</span><a class="col-md-10">Saas</a></div>
+				<div class="navMenu" ng-click="goTo('productosButton', 5, 'productosButtonMobile' )"><span class="col-md-2">!</span><a class="col-md-10">Productos</a></div>
+				<div class="navMenu" ng-click="goTo('impulsoresButton', 3, 'impulsoresButtonMobile')"><span class="col-md-2">"</span><a class="col-md-10">Impulsores</a></div>
+				<div class="navMenu" ng-click="goTo('clientButton', 1, 'clientButtonMobile' )"><span class="col-md-2">$</span><a class="col-md-10">Clientes</a></div>
 				<div class="navMenu contactButton" ng-click="goTo('contactButton', 6 )" id="contactButton"><span class="col-md-2">@</span><a class="col-md-10">Contacto</a></div>
 			</ul>
 			<div class="row footerMenu">
@@ -46,38 +47,64 @@
 					<span>#</span>
 				</div>
 				<div class="socialIcons col-md-8 col-sm-8">
-					<a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-					<a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
-					<a href=""><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+					<a href="https://twitter.com/OixxioTech" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a href="https://www.facebook.com/oixxiotech/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="https://www.youtube.com/channel/UC4RS7eCpU54nOkia7i3Blcw" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
 				</div>
 			</div>
 		</div>
 
 		<div class="sideBarBg" ng-click="closeMenu()"></div>
 		<div class="menuHover" ng-mouseenter="mouseenterMenu()" ng-mouseleave="mouseleaveMenu()" ng-click="openMenu()"></div>
-		<i class="fa fa-bars menuButton" aria-hidden="true" ng-mouseenter="mouseenterMenu()" ng-mouseleave="mouseleaveMenu()"  ng-click="openMenu()"></i>
+		<div id="hamburger" class="hamburglar is-closed menuButton" ng-mouseenter="mouseenterMenu()" ng-mouseleave="mouseleaveMenu()"  ng-click="menuButton()">
+			<div class="burger-icon">
+				<div class="burger-container">
+					<span class="burger-bun-top"></span>
+					<span class="burger-filling"></span>
+					<span class="burger-bun-bot"></span>
+				</div>
+			</div>
+			<svg width="0" height="0">
+				 <mask id="mask">
+			<path fill="none" stroke="none" stroke-miterlimit="10" stroke-width="4" d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4" />
+				 </mask>
+			 </svg>
+			<div class="path-burger">
+				<div class="animate-path">
+					<div class="path-rotation"></div>
+				</div>
+			</div>
+		</div>
+
 
 		<div class="nav-landing-mobile">
 			<div class="logo-landing-mobile" ng-include="'app/layout/logo/logo-landing-mobile.html'"></div>
 			<div class="oixxio-landing-mobile" ng-include="'app/layout/logo/logo-product.html'"></div>
 			<div class="handswipe" ng-include="'app/layout/hand-swipe.html'"></div>
 		</div>
-
+		<!-- <div class="touch-buttons">
+			<div class="nosotros" ng-click="openModalMobile(0)"></div>
+			<div class="desarrollo" ng-click="openModalMobile(2)"></div>
+			<div class="saas" ng-click="openModalMobile(4)"></div>
+			<div class="productos" ng-click="openModalMobile(5)"></div>
+			<div class="impulsores" ng-click="openModalMobile(3)"></div>
+			<div class="clientes" ng-click="openModalMobile(1)"></div>
+		</div> -->
 
 		<div class="contacto">
 			<div class="overlay">
 				<h1>Contacto</h1>
 
-				<a href="http://maps.google.com/?q= Oixxio Technologies" class="row col-md-12 link">
+				<a href="http://maps.google.com/?q= Oixxio Technologies" class="row col-md-12 link" target="_blank">
 					<i class="fa fa-map-marker icono" aria-hidden="true"></i>
 					<p class="descripcion">Ricardo Rojas 6739 of. 1 
 					Cordoba-Argentina</p>
 				</a>
-				<a href="mailto:info@oixxio.net" class="row col-md-12 link">
+				<a href="mailto:info@oixxio.net" class="row col-md-12 link" target="_blank">
 					<i class="fa fa-envelope icono" aria-hidden="true"></i>
 					<p class="descripcion">info@oixxio.net</p>
 				</a>
-				<a href="tel:+54-351-639-9189" class="row col-md-12 link">
+				<a href="tel:+54-351-639-9189" class="row col-md-12 link" target="_blank">
 					<i class="fa fa-phone icono" aria-hidden="true"></i>
 					<p class="descripcion">0054 351 6399189</p>
 				</a>
@@ -89,27 +116,23 @@
 					</div>       
 
 					<div class="socialIcons row">
-						<a href="https://twitter.com/OixxioTech"><i class="fa fa-twitter icono" aria-hidden="true"></i></a>
-						<a href="https://www.facebook.com/oixxiotech/"><i class="fa fa-facebook icono" aria-hidden="true"></i></a>
-						<a href="https://www.youtube.com/channel/UC4RS7eCpU54nOkia7i3Blcw"><i class="fa fa-youtube-play icono" aria-hidden="true"></i></a>
+						<a href="https://twitter.com/OixxioTech" target="_blank"><i class="fa fa-twitter icono" aria-hidden="true"></i></a>
+						<a href="https://www.facebook.com/oixxiotech/" target="_blank"><i class="fa fa-facebook icono" aria-hidden="true"></i></a>
+						<a href="https://www.youtube.com/channel/UC4RS7eCpU54nOkia7i3Blcw" target="_blank"><i class="fa fa-youtube-play icono" aria-hidden="true"></i></a>
 					</div>
 				</div>
 			</div>
-			<div class="map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3407.6193958408885!2d-64.2567600848538!3d-31.34188268142906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329c1d53921a51%3A0xd329cd05ca81aeb6!2sRicardo+Rojas+6739%2C+C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1483536368166" width="500" height="250" frameborder="0" style="border:0; width: 100%; height: 100%" allowfullscreen class="mapa"></iframe>
+			<div class="map" id="map">
 			</div>
 		</div>
 
 		
 		<!-- <div class="productos row"><ul class="col-xs-12"><li class="col-xs-6"><img src="assets/img/productos/product-0.jpg"><a class="overlay"><h2>TSM</h2></a></li><li class="col-xs-6"><img src="assets/img/productos/product-1.jpg"><a class="overlay"><h2>GPS Economias</h2></a></li><li class="col-xs-6"><img src="assets/img/productos/product-2.jpg"><a class="overlay"><h2>Simuladores de Capacitación</h2></a></li><li class="col-xs-6"><img src="assets/img/productos/product-3.jpg"><a class="overlay"><h2>SIAT</h2></a></li><li class="col-xs-6"><img src="assets/img/productos/product-0.jpg"><a class="overlay"><h2>Titulo</h2></a></li><li class="col-xs-6"><img src="assets/img/productos/product-5.jpg"><a class="overlay"><h2>Advergames</h2></a></li><li class="col-xs-6"><img src="assets/img/productos/product-0.jpg"><a class="overlay"><h2>Titulo</h2></a></li><li class="col-xs-6"><img src="assets/img/productos/product-0.jpg"><a class="overlay"><h2>Titulo</h2></a></li></ul></div> -->
 
-		<!-- <h1>TSM</h1>
-		<div style="width:100%">
-			<iframe width="100%" height="100%" src="https://www.youtube.com/embed/TvJRFNKYLMM" frameborder="0" allowfullscreen></iframe>
-		</div>
+		<!-- <h1>ERP y Sistemas de Gestión</h1>
+		<img src="assets/img/productos/product-2.jpg" class="imagen" ng-click="">
 			
-		<p>"The Store Manager" es una plataforma de e-learning (LMS y LCMS) con el foco puesto en los sectores de retail, industria y gestión.
-		Esta aplicación no solo permite la capacitación de sus usuarios, sino tambien el seguimiento y evolución de los mismos.
-		En un entorno virtual, TSM permite la educación continua, el desarrollo profesional y la simulación de eventos específicos .
-		La plataforma consta de tres fases adaptables a la necesidad especifica de nuestros clientes: inducción, evaluación y métricas de desempeño</p>
-		<a ng-click="">Ver</a> -->
+		<p>Sistemas de planificación de recursos empresariales para manejar la producción, logística, distribución, inventario, envíos, facturas y contabilidad de la empresa.
+Como asi tambien las ventas, entregas, stock, pagos y administración de recursos humanos</p> -->
+
+

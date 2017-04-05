@@ -1,14 +1,26 @@
 (function () {
     'use strict';
-    angular.module('app.oixxio')
-  .controller('landingCtrl', function($scope, $timeout, $sce) {
+    angular.module('app.oixxio').directive('compile', ['$compile', function ($compile) {
+      return function(scope, element, attrs) {
+        scope.$watch(
+          function(scope) {
+            return scope.$eval(attrs.compile);
+
+          },
+          function(value) {
+            element.html(value);
+            $compile(element.contents())(scope);
+          }
+       )};
+      }])
+  .controller('landingCtrl', function($scope, $timeout, $sce, $compile) {
     var self = this;
-$scope.indexAux = 3;
+    $scope.indexAux = 3;
     $scope.modalContentObj = [
       {
         titulo: 'Nosotros',
-        contenido: '<p>No somos otra agencia digital. Somos apasionados de las tecnologias y de <b>crear</b> posibilidades ilimitadas con elas. </p><p class="importante">" Resolver problemas y optimizar integrando hardware y software es nuestra hablidad más importante. "</p><p> Conformamos un equipo de trabajo multidisciplinario y participamos de alianzas productivas con los principales centros de estudios para logar asi una respuesta de alta calidad. </p><p> Nos gusta soñar y llevarlos a cabo.</p><span class="creamos">Creamos</span><div class="nosotros-img"><img src="assets/img/nosotros/tech-cluster.png" class="derecha"><img src="assets/img/nosotros/exportadores.png" class="izquierda"></div>',
-        hover: '<span class="creamos-hover">CREAMOS</span> <span> INVESTIGAMOS NOS INVOLUCRAMOS</span>'
+        contenido: '<p>Somos una empresa de 10 años de experiencia en el desarrollo de plataforma tecnológica.Desarrollamos software a la medida, según los requerimientos de nuestros clientes. Damos solución integral utilizando y combinando múltiples tecnologías.</p><p>Nos enfocamos en el feedback del cliente para mantenernos efectivos y eficaces.Nuestra misión primordial es el desarrollo de una gama de tecnologías con una formación integral de calidad, que incorpore además de los conocimientos técnico-científicos innovadores, las competencias necesarias para el ejercicio profesional, así como los valores derivados de la experiencia cooperativa.</p><span class="creamos">Creamos</span><div class="nosotros-img"><img src="assets/img/nosotros/tech-cluster.png" class="derecha"><img src="assets/img/nosotros/exportadores.png" class="izquierda"></div>',
+        hover: '<span class="creamos-hover">CREAMOS</span><span> INVESTIGAMOS NOS INVOLUCRAMOS</span>'
       },
       {
         titulo: 'Clientes',
@@ -27,27 +39,27 @@ $scope.indexAux = 3;
           'assets/img/clients/11.png',
           'assets/img/clients/12.png',
         ],
-        hover: '<span class="creamos-hover">CREAMOS</span> <span>SOLUCIONES A GRAN ESCALA</span>'
+        hover: '<span class="creamos-hover">CREAMOS</span><span> SOLUCIONES A GRAN ESCALA</span>'
       },
       {
         titulo: 'Desarrollo',
-        contenido: '<p>Asesoramos en el uso de las tecnologías de la información, implantamos, instalamos y administramos diferentes soluciones tecnológicas.Asistimos a las empresas sobre cómo optimizar las plataformas tecnológicas y el uso que se hace de ellas, alineándolas con los objetivos estratégicos de negocio de las organizaciones. Sugerimos una visión de consultoría tecnológica y de modelo de negocio más efectivo, colaborando y apoyando a nuestros clientes en la búsqueda de la mejor solución en materia tecnológica a sus objetivos de negocio. Somos un grupo multidisciplinario de especialista y consultores, hacemos foco en una calidad de servicio orientados a conseguir los objetivos que nos propongamos mediante TIC en conjunto con el cliente.</p>',
-        hover: '<span class="creamos-hover">CREAMOS</span> <span>EXPERIENCIAS DIGITALES A LA MEDIDA</span>'
+        contenido: '<p>Asesoramos en el uso de las tecnologías de la información, instalamos y administramos diferentes soluciones tecnológicas.</p><p> Mantenemos un fuerte vínculo entre la investigación y el desarrollo estableciendo una cooperación con empresas e instituciones educativas, con el fin de mantener la investigación de forma continua y lograr así productos superados.</p><p>Somos un grupo multidisciplinario de especialistas y consultores, preparados para que en conjunto con el cliente, logremos alcanzar los objetivos planificados. </p>',
+        hover: '<span class="creamos-hover">CREAMOS</span><span> EXPERIENCIAS DIGITALES A LA MEDIDA</span>'
       },
       {
-        titulo: 'Impulsores<span class="de-ideas"> de Ideas</span>',
-        contenido: '<p>Sabemos que grandes e innovadoras ideas a veces se deshacen en el aire por falta de la determinación necesaria para materializarlas.</p><p>Las ideas por si solas no llegarán a buen puerto sin la sinergía y los recursos necesarios para llevarlas adelante.</p><p>Desde nuestro lugar, brindamos la asitencia necesaria para concretar los proyectos ideados, tanto en el registro y patente, como en la interacción con especialistas.</p><p class="importante">" Nuestro interés principal está en generar redes y conocimiento. "</p><p>Es por eso que buscamos personas que desafíen a su destino, que tengas ideas innovadoras y revolucionarias, que cambien el mundo.</p><p>Juntos <strong>crearemos</strong> un equipo para materializarlas.</p>',
-        hover: '<span class="creamos-hover">CREAMOS</span> <span>LO QUE IMAGINAS</span>'
+         titulo: 'Impulsores<span class="de-ideas"> de Ideas</span>',
+        contenido: '<p>Sabemos que grandes e innovadoras ideas a veces se deshacen en el aire por falta de la determinación necesaria para materializarlas.</p><p>Las ideas por si solas no llegarán a buen puerto sin la sinergia y los recursos necesarios para llevarlas adelante.</p><p>Desde nuestro lugar, brindamos la asitencia necesaria para concretar los proyectos ideados, tanto en el registro y patente, como en la interacción con especialistas.</p><p class="importante">" Nuestro interés principal está en generar redes y conocimiento. "</p><p>Es por eso que buscamos personas que desafíen a su destino, que tengan ideas innovadoras y revolucionarias, que cambien el mundo.</p><p>Juntos <strong>crearemos</strong> un equipo para materializarlas.</p>',
+        hover: '<span class="creamos-hover">CREAMOS</span><span> LO QUE IMAGINAS</span>'
       },
       {
         titulo: 'Saas',
-        contenido: '<p><strong>Creamos</strong> un servicio de desarrollo de software. Con mas de 10 años de experiencia en el mercado, entendemos que una solución a la medida requiere de un conocimiento profundo de la actividad de nuestros clientes, es por ello que planteamos en nuestro servicio una relación estrecha hasta convertimos en un aliado tecnológico de la empresa.</p><p class="importante">" El SAAS o software como servicio ademas brinda la ventaja del desembolso parcial del capital destinado a estas tecnologías, ya que se prorratea el valor total del desarrollo en el tiempo que dure el contrato de servicio. "</p><p> Ademas, una vez implementado el sistema nuestro clientes cuentan con desarrolladores dedicados para resolver cualquier cambio o inconveniente que se les presente en el día a día.</p>',
-        hover: '<span class="creamos-hover">CREAMOS</span> <span>UN SERVICIO DE DESARROLLO</span>'
+        contenido: '<p><strong>Creamos</strong> un servicio de desarrollo de software. Con mas de 10 años de experiencia en el mercado, entendemos que una solución a la medida requiere de un conocimiento profundo de la actividad de nuestros clientes, es por ello que planteamos en nuestro servicio una relación estrecha hasta convertirnos en un aliado tecnológico de la empresa.</p><p class="importante">" El SAAS o software como servicio además brinda la ventaja del desembolso parcial del capital destinado a estas tecnologías, ya que se prorratea el valor total del desarrollo en el tiempo que dure el contrato de servicio. "</p><p> Además, una vez implementado el sistema nuestro clientes cuentan con desarrolladores dedicados para resolver cualquier cambio o inconveniente que se les presente en el día a día.</p>',
+        hover: '<span class="creamos-hover">CREAMOS</span><span> UN SERVICIO DE DESARROLLO</span>'
       },
       {
         titulo: 'Productos',
-        contenido: '<div class="productos row"><ul class="col-xs-12"><li class="col-xs-6"><img src="assets/img/productos/product-0.jpg"><a class="overlay"><h2>TSM</h2></a></li><li class="col-xs-6"><img src="assets/img/productos/product-1.jpg"><a class="overlay"><h2>GPS Economias</h2></a></li><li class="col-xs-6"><img src="assets/img/productos/product-2.jpg"><a class="overlay"><h2>Simuladores de Capacitación</h2></a></li><li class="col-xs-6"><img src="assets/img/productos/product-3.jpg"><a class="overlay"><h2>SIAT</h2></a></li><li class="col-xs-6"><img src="assets/img/productos/product-0.jpg"><a class="overlay"><h2>Titulo</h2></a></li><li class="col-xs-6"><img src="assets/img/productos/product-5.jpg"><a class="overlay"><h2>Advergames</h2></a></li><li class="col-xs-6"><img src="assets/img/productos/product-0.jpg"><a class="overlay"><h2>Titulo</h2></a></li><li class="col-xs-6"><img src="assets/img/productos/product-0.jpg"><a class="overlay"><h2>Titulo</h2></a></li></ul></div>',
-        hover: '<span class="creamos-hover">CREAMOS</span> <span> RECURSOS SOCIALES</span>'
+        contenido: '<div class="productos row"><ul class="col-xs-12"><li class="col-xs-6" ng-click="openProduct(0)"><img src="assets/img/productos/product-0.jpg"><a class="overlay"><h2>TSM</h2></a></li><li class="col-xs-6" ng-click="openProduct(1)"><img src="assets/img/productos/product-1.jpg" ><a class="overlay"><h2>GPS Economias</h2></a></li><li class="col-xs-6" ng-click="openProduct(2)"><img src="assets/img/productos/product-2.jpg"><a class="overlay"><h2>Simuladores de Capacitación</h2></a></li><li class="col-xs-6" ng-click="openProduct(3)"><img src="assets/img/productos/product-3.jpg"><a class="overlay"><h2>SIAT</h2></a></li><li class="col-xs-6" ng-click="openProduct(4)"><img src="assets/img/productos/product-4.jpg"><a class="overlay"><h2>Software a Medida</h2></a></li><li class="col-xs-6" ng-click="openProduct(5)"><img src="assets/img/productos/product-5.jpg"><a class="overlay"><h2>Advergames</h2></a></li><li class="col-xs-6" ng-click="openProduct(6)"><img src="assets/img/productos/product-6.jpg"><a class="overlay"><h2>ERP</h2></a></li><li class="col-xs-6" ng-click="openProduct(7)"><img src="assets/img/productos/product-7.jpg"><a class="overlay"><h2>Realidad Virtual</h2></a></li></ul></div>',
+        hover: '<span class="creamos-hover">CREAMOS</span><span> RECURSOS SOCIALES</span>'
       },
       {
         titulo: '',
@@ -59,52 +71,49 @@ $scope.indexAux = 3;
         titulo: 'TSM',
         parrafo: '"The Store Manager" es una plataforma de e-learning (LMS y LCMS) con el foco puesto en los sectores de retail, industria y gestión.Esta aplicación no solo permite la capacitación de sus usuarios, sino tambien el seguimiento y evolución de los mismos.En un entorno virtual, TSM permite la educación continua, el desarrollo profesional y la simulación de eventos específicos .La plataforma consta de tres fases adaptables a la necesidad especifica de nuestros clientes: inducción, evaluación y métricas de desempeño.',
         video: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/TvJRFNKYLMM" frameborder="0" allowfullscreen></iframe>',
-        contenido: '<h1>TSM</h1><div style="width:100%"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/TvJRFNKYLMM" frameborder="0" allowfullscreen></iframe></div><p>"The Store Manager" es una plataforma de e-learning (LMS y LCMS) con el foco puesto en los sectores de retail, industria y gestión.Esta aplicación no solo permite la capacitación de sus usuarios, sino tambien el seguimiento y evolución de los mismos.En un entorno virtual, TSM permite la educación continua, el desarrollo profesional y la simulación de eventos específicos .La plataforma consta de tres fases adaptables a la necesidad especifica de nuestros clientes: inducción, evaluación y métricas de desempeño</p>'
+        contenido: '<h1>TSM</h1><img src="assets/img/productos/product-0.jpg" class="imagen" ng-click="openProductVideo(productos[0].video)"><p>"The Store Manager" es una plataforma de e-learning (LMS y LCMS) con el foco puesto en los sectores de retail, industria y gestión.Esta aplicación no solo permite la capacitación de sus usuarios, sino tambien el seguimiento y evolución de los mismos.En un entorno virtual, TSM permite la educación continua, el desarrollo profesional y la simulación de eventos específicos .La plataforma consta de tres fases adaptables a la necesidad especifica de nuestros clientes: inducción, evaluación y métricas de desempeño</p>'
       },
       {
         titulo: 'GIS - Gps de las economías regionales',
         parrafo: 'Sistema de información georefenciada que permite la organización, almacenamiento y análisis de grandes cantidades de datos,vinculados a una referencia espacial. Facilita la incorporación de aspectos sociales-culturales, económicos y ambientales que conducen a la toma de decisiones de una manera más eficaz.',
         imagen: 'assets/img/productos/product-1.jpg',
-        contenido: '<h1>TSM1</h1><p>"The Store Manager" es una plataforma de e-learning (LMS y LCMS) con el foco puesto en los sectores de retail, industria y gestión.Esta aplicación no solo permite la capacitación de sus usuarios, sino tambien el seguimiento y evolución de los mismos.En un entorno virtual, TSM permite la educación continua, el desarrollo profesional y la simulación de eventos específicos .La plataforma consta de tres fases adaptables a la necesidad especifica de nuestros clientes: inducción, evaluación y métricas de desempeño</p>',
+        contenido: '<h1>GIS - Gps de las economías regionales</h1><img src="assets/img/productos/product-1.jpg" class="imagen"><p>Sistema de información georefenciada que permite la organización, almacenamiento y análisis de grandes cantidades de datos,vinculados a una referencia espacial. Facilita la incorporación de aspectos sociales-culturales, económicos y ambientales que conducen a la toma de decisiones de una manera más eficaz.</p>',
       },
       {
         titulo: 'Simuladores de Capacitación',
         parrafo: 'Simulador inmerso en entorno virtual 3D para capacitación en seguridad e higiene.El cual consta de plataforma donde usuario se enfrenta a diferentes simulaciones de eventos, debiendo resolverlos de forma practica en el entorno virtual.',
         imagen: 'assets/img/productos/product-2.jpg',
-        contenido: '<h1>TSM2</h1><p>"The Store Manager" es una plataforma de e-learning (LMS y LCMS) con el foco puesto en los sectores de retail, industria y gestión.Esta aplicación no solo permite la capacitación de sus usuarios, sino tambien el seguimiento y evolución de los mismos.En un entorno virtual, TSM permite la educación continua, el desarrollo profesional y la simulación de eventos específicos .La plataforma consta de tres fases adaptables a la necesidad especifica de nuestros clientes: inducción, evaluación y métricas de desempeño</p>'
+        contenido: '<h1>Simuladores de Capacitación</h1><img src="assets/img/productos/product-2.jpg" class="imagen"><p>Simulador inmerso en entorno virtual 3D para capacitación en seguridad e higiene.El cual consta de plataforma donde usuario se enfrenta a diferentes simulaciones de eventos, debiendo resolverlos de forma practica en el entorno virtual.</p>'
       },
       {
         titulo: 'SIAT - Sistema Integral de Adherencia Terapéutica',
         parrafo: 'Siat es un ecosistema de tecnologías vinculadas con el objetivo de mejorar el grado de adherencia terapéutica de los pacientes con patologías crónicas.Mediante aplicaciones móviles, webs y call center se proporciona el acompañamiento a los pacientes en sus tratamientos y se facilita la documentación de reintegro y trazabilidad de los medicamentos.Ademas el sistema posibilita una mayor interacción medico - paciente en tiempo real, sin la necesidad de esperar a la próxima visita en el consultorio.',
         video: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/NiPMMHzdEUg" frameborder="0" allowfullscreen></iframe>',
-        contenido: '<h1>TSM3</h1><p>"The Store Manager" es una plataforma de e-learning (LMS y LCMS) con el foco puesto en los sectores de retail, industria y gestión.Esta aplicación no solo permite la capacitación de sus usuarios, sino tambien el seguimiento y evolución de los mismos.En un entorno virtual, TSM permite la educación continua, el desarrollo profesional y la simulación de eventos específicos .La plataforma consta de tres fases adaptables a la necesidad especifica de nuestros clientes: inducción, evaluación y métricas de desempeño</p>'
+        contenido: '<h1>SIAT</h1><img src="assets/img/productos/product-3.jpg" class="imagen"><p>Siat es un ecosistema de tecnologías vinculadas con el objetivo de mejorar el grado de adherencia terapéutica de los pacientes con patologías crónicas.Mediante aplicaciones móviles, webs y call center se proporciona el acompañamiento a los pacientes en sus tratamientos y se facilita la documentación de reintegro y trazabilidad de los medicamentos.Ademas el sistema posibilita una mayor interacción medico - paciente en tiempo real, sin la necesidad de esperar a la próxima visita en el consultorio.</p>'
       },
       {
-        titulo: 'TSM1',
+        titulo: 'Software a la medida',
         parrafo: '"The Store Manager" es una plataforma de e-learning (LMS y LCMS) con el foco puesto en los sectores de retail, industria y gestión.Esta aplicación no solo permite la capacitación de sus usuarios, sino tambien el seguimiento y evolución de los mismos.En un entorno virtual, TSM permite la educación continua, el desarrollo profesional y la simulación de eventos específicos .La plataforma consta de tres fases adaptables a la necesidad especifica de nuestros clientes: inducción, evaluación y métricas de desempeño.',
-        video: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/TvJRFNKYLMM" frameborder="0" allowfullscreen></iframe>',
-        contenido: '<h1>TSM4</h1><p>"The Store Manager" es una plataforma de e-learning (LMS y LCMS) con el foco puesto en los sectores de retail, industria y gestión.Esta aplicación no solo permite la capacitación de sus usuarios, sino tambien el seguimiento y evolución de los mismos.En un entorno virtual, TSM permite la educación continua, el desarrollo profesional y la simulación de eventos específicos .La plataforma consta de tres fases adaptables a la necesidad especifica de nuestros clientes: inducción, evaluación y métricas de desempeño</p>'
+        contenido: '<h1>Software a la medida</h1><img src="assets/img/productos/product-4.jpg" class="imagen"><p>Desarrollamos diversas soluciones a la medida, centrando nuestro trabajo en las necesidades del cliente y, ademas, en el valor agregado que podemos suministrar a sus ideas.Utilizamos diversas tecnologías como: Apps móviles, Aplicaciones Web, realidad virtual, realidad aumentada, Video juegos.</p>'
       },
       {
-        titulo: 'GIS - Gps de las economías regionales2',
+        titulo: 'Advergames',
         parrafo: 'Sistema de información georefenciada que permite la organización, almacenamiento y análisis de grandes cantidades de datos,vinculados a una referencia espacial. Facilita la incorporación de aspectos sociales-culturales, económicos y ambientales que conducen a la toma de decisiones de una manera más eficaz.',
         imagen: 'assets/img/productos/product-1.jpg',
-        contenido: '<h1>TSM5</h1><p>"The Store Manager" es una plataforma de e-learning (LMS y LCMS) con el foco puesto en los sectores de retail, industria y gestión.Esta aplicación no solo permite la capacitación de sus usuarios, sino tambien el seguimiento y evolución de los mismos.En un entorno virtual, TSM permite la educación continua, el desarrollo profesional y la simulación de eventos específicos .La plataforma consta de tres fases adaptables a la necesidad especifica de nuestros clientes: inducción, evaluación y métricas de desempeño</p>'
+        contenido: '<h1>Advergames</h1><img src="assets/img/productos/product-5.jpg" class="imagen"><p>Creación de videojuegos publicitarios para reforzar una marca o producto buscando fidelizar clientes o ampliar sus experiencias.</p>'
       },
       {
-        titulo: 'Simuladores de Capacitación3',
+        titulo: 'ERP y Sistemas de Gestión',
         parrafo: 'Simulador inmerso en entorno virtual 3D para capacitación en seguridad e higiene.El cual consta de plataforma donde usuario se enfrenta a diferentes simulaciones de eventos, debiendo resolverlos de forma practica en el entorno virtual.',
         imagen: 'assets/img/productos/product-2.jpg',
-        contenido: '<h1>TSM6</h1><p>"The Store Manager" es una plataforma de e-learning (LMS y LCMS) con el foco puesto en los sectores de retail, industria y gestión.Esta aplicación no solo permite la capacitación de sus usuarios, sino tambien el seguimiento y evolución de los mismos.En un entorno virtual, TSM permite la educación continua, el desarrollo profesional y la simulación de eventos específicos .La plataforma consta de tres fases adaptables a la necesidad especifica de nuestros clientes: inducción, evaluación y métricas de desempeño</p>'
+        contenido: '<h1>ERP y Sistemas de Gestión</h1><img src="assets/img/productos/product-6.jpg" class="imagen" ng-click=""><p>Sistemas de planificación de recursos empresariales para manejar la producción, logística, distribución, inventario, envíos, facturas y contabilidad de la empresa.Como asi tambien las ventas, entregas, stock, pagos y administración de recursos humanos</p>'
       },
       {
-        titulo: 'SIAT - Sistema Integral de Adherencia Terapéutica4',
+        titulo: 'Realidad Virtual',
         parrafo: 'Siat es un ecosistema de tecnologías vinculadas con el objetivo de mejorar el grado de adherencia terapéutica de los pacientes con patologías crónicas.Mediante aplicaciones móviles, webs y call center se proporciona el acompañamiento a los pacientes en sus tratamientos y se facilita la documentación de reintegro y trazabilidad de los medicamentos.Ademas el sistema posibilita una mayor interacción medico - paciente en tiempo real, sin la necesidad de esperar a la próxima visita en el consultorio.',
-        video: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/NiPMMHzdEUg" frameborder="0" allowfullscreen></iframe>',
-        contenido: '<h1>TSM7</h1><p>"The Store Manager" es una plataforma de e-learning (LMS y LCMS) con el foco puesto en los sectores de retail, industria y gestión.Esta aplicación no solo permite la capacitación de sus usuarios, sino tambien el seguimiento y evolución de los mismos.En un entorno virtual, TSM permite la educación continua, el desarrollo profesional y la simulación de eventos específicos .La plataforma consta de tres fases adaptables a la necesidad especifica de nuestros clientes: inducción, evaluación y métricas de desempeño</p>'
+        contenido: '<h1>Realidad Virtual</h1><img src="assets/img/productos/product-7.jpg" class="imagen" ng-click=""><p>Utilizando la simulación de un entorno físico es posible recrear diferentes situaciones o procesos.Ademas, la realidad virtual permite eliminar barreras físicas de espacio y tiempo del mundo real pudiendo, por ejemplo, extender una feria fisica a todo el mundo.</p>'
       }
     ];
-      
     $scope.frontFaceProduct = 0;
     $scope.izqFaceProduct = 270;
     $scope.derFaceProduct = 90;
@@ -115,177 +124,315 @@ $scope.indexAux = 3;
     $scope.swipeleft = 0;
     $scope.currentFace = 'front';
     $scope.numero = 0;
+    $scope.productIsOpen = false;
+    $scope.pepe = 0;
 
-    $scope.animarProductCubeLeft = function () {
-      $scope.frontFaceProduct = $scope.frontFaceProduct - 90;
-      $scope.izqFaceProduct = $scope.izqFaceProduct - 90;
-      $scope.derFaceProduct = $scope.derFaceProduct - 90;
-      $scope.backFaceProduct = $scope.backFaceProduct -90;
-
-      var faces = [
-        {
-          face: 'front',
-          position:  $scope.frontFaceProduct
-        },
-        {
-          face: 'izq',
-          position:  $scope.izqFaceProduct
-        },
-        {
-          face: 'der',
-          position:  $scope.derFaceProduct
-        },
-        {
-          face: 'back',
-          position:  $scope.backFaceProduct
-        }
-      ];
-      for(var i = 0; i < faces.length; i++){
-        if((faces[i].position/180)%2 == 0){
-          $scope.currentFace = faces[i].face;
-          console.log('Current Face: ' + $scope.currentFace);
-        }
+    $scope.productSpinner = false;
+    function initMap() {
+      var image = 'assets/img/maps/marker-oixxio-09.svg';
+      var map;
+      var windowWidth = window.innerWidth;
+      if(windowWidth > 750){
+        map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -31.3445668, lng: -64.2585711},
+        zoom: 16
+      });
+      } else {
+        map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -31.3393994, lng: -64.2552902},
+        zoom: 14
+      });
       }
       
-      if($scope.limit){
-        console.log('adentrolimiteAdelante');
-        $scope.numero = 0;
-        $scope.limit = false;
-      } else {
-        $scope.numero++;
-      }
-      console.log($scope.numero);
-      $scope.contenidoProducto();
-
+      var marker = new google.maps.Marker({
+        position: {lat: -31.3419377, lng: -64.2545929},
+        map: map,
+        title: 'Oixxio Technologies',
+        draggable: true,
+        icon: image
+      });
+      
     }
-
-    $scope.animarProductCubeRight = function () {
-      var index = $scope.indexAux;
-      $scope.frontFaceProduct = $scope.frontFaceProduct + 90;
-      $scope.izqFaceProduct = $scope.izqFaceProduct + 90;
-      $scope.derFaceProduct = $scope.derFaceProduct + 90;
-      $scope.backFaceProduct = $scope.backFaceProduct + 90;
-
-      var faces = [
-        {
-          face: 'front',
-          position:  $scope.frontFaceProduct
-        },
-        {
-          face: 'izq',
-          position:  $scope.izqFaceProduct
-        },
-        {
-          face: 'der',
-          position:  $scope.derFaceProduct
-        },
-        {
-          face: 'back',
-          position:  $scope.backFaceProduct
-        }
-      ];
-      if($scope.limit){
-        console.log('adentrolimiteAtras');
-        $scope.numero = 7;
-        $scope.limit = false;
-      } else {
-        $scope.numero--;
-      }
-      console.log($scope.numero);
-      $scope.contenidoProducto();
-      for(var i = 0; i < faces.length; i++){
-        if((faces[i].position/180)%2 == 0){
-          $scope.currentFace = faces[i].face;
-           console.log('Current Face: ' + $scope.currentFace);
-        }
-
-      }
- 
-    }
-
+    initMap();
     
-     $scope.contenidoProducto =  function(index){
-        $scope.productIndex = index;
-        var cuboProductos = document.querySelector('#productosModal');
-         if($scope.currentFace == 'front'){
-            var frontFace = cuboProductos.querySelector('#front');
-            var previous = frontFace.previousElementSibling;
-            var next = frontFace.nextElementSibling;
-            frontFace.querySelector('.container').innerHTML = $scope.productos[$scope.numero].contenido;
-            if($scope.numero == 7){
-              next.querySelector('.container').innerHTML = $scope.productos[0].contenido;
-              $scope.limit = true;
-            } else {
-              next.querySelector('.container').innerHTML = $scope.productos[$scope.numero + 1].contenido;
-            }
-            
-
-            if($scope.numero == 0){
-              previous.querySelector('.container').innerHTML = $scope.productos[$scope.productos.length - 1].contenido;
-              $scope.limit = true;
-            } else {
-              previous.querySelector('.container').innerHTML = $scope.productos[$scope.numero - 1].contenido;
-            }     
-         }
-
-         if($scope.currentFace == 'der'){
-            var derFace = cuboProductos.querySelector('#der');
-            var previous = derFace.previousElementSibling;
-            var next = derFace.nextElementSibling;
-            derFace.querySelector('.container').innerHTML = $scope.productos[$scope.numero].contenido;
-            if($scope.numero == 7){
-              next.querySelector('.container').innerHTML = $scope.productos[0].contenido;
-              $scope.limit = true;
-            } else {
-              next.querySelector('.container').innerHTML = $scope.productos[$scope.numero + 1].contenido;
-            }
-            
-            previous.querySelector('.container').innerHTML = $scope.productos[$scope.numero - 1].contenido;   
-            if($scope.numero == 0){
-              previous.querySelector('.container').innerHTML = $scope.productos[$scope.productos.length - 1].contenido;
-              $scope.limit = true;
-            } else {
-              previous.querySelector('.container').innerHTML = $scope.productos[$scope.numero - 1].contenido;
-
-            }   
-         }
-         if($scope.currentFace == 'back'){
-            var backFace = cuboProductos.querySelector('#back');
-            var previous = backFace.previousElementSibling;
-            var next = cuboProductos.querySelector('#izq');
-            backFace.querySelector('.container').innerHTML = $scope.productos[$scope.numero].contenido
-            if($scope.numero == 7){
-              next.querySelector('.container').innerHTML = $scope.productos[0].contenido;
-              $scope.limit = true;
-            } else {
-              next.querySelector('.container').innerHTML = $scope.productos[$scope.numero + 1].contenido;
-            }   
-            if($scope.numero == 0){
-              previous.querySelector('.container').innerHTML = $scope.productos[$scope.productos.length - 1].contenido;
-              $scope.limit = true;
-            } else {
-              previous.querySelector('.container').innerHTML = $scope.productos[$scope.numero - 1].contenido;
-            }    
-         }
-         if($scope.currentFace == 'izq'){
-            var izqFace = cuboProductos.querySelector('#izq');
-            var previous = cuboProductos.querySelector('#back');
-            var next = izqFace.nextElementSibling;
-            izqFace.querySelector('.container').innerHTML = $scope.productos[$scope.numero].contenido;
-            if($scope.numero == 7){
-              next.querySelector('.container').innerHTML = $scope.productos[0].contenido;
-              $scope.limit = true;
-            } else {
-              next.querySelector('.container').innerHTML = $scope.productos[$scope.numero + 1].contenido;
-            }    
-            if($scope.numero == 0){
-              previous.querySelector('.container').innerHTML = $scope.productos[$scope.productos.length - 1].contenido;
-              $scope.limit = true;
-            } else {
-              previous.querySelector('.container').innerHTML = $scope.productos[$scope.numero - 1].contenido;
-            }
-         }
+    // -------------- Product Modal ------------------------------
+      $scope.openProduct = function(index){
+        var productModal = document.querySelector('#productosModal');
+        var windowWidth = window.innerWidth;
+        var closeModalRight = document.querySelector('.landing .closeModal-right');
+        var closeProduct = document.querySelector('.landing .closeModal-product');
+        var modalElement = document.querySelector('.modal-section-down');
+        var menuButton = document.querySelector('.landing .menuButton');
+        var menuHover = document.querySelector('.landing .menuHover');
+        if(windowWidth > 750){
+          productModal.style.right = "-23%";
+          contenidoProducto(index);
+          closeProduct.style.right = "4%";
+          closeModalRight.style.right = "-100%";
+          menuButton.style.left = "-20%";
+          menuHover.style.left = "-30%";
+        } else{
+          productModal.style.bottom = "0%";
+          contenidoProducto(index);
+          closeModalRight.style.right = "-100%";
+          menuButton.style.left = "-100%";
+          closeProduct.style.right = "4%";
+        }
+        $scope.productIsOpen = true;
       }
+
+      $scope.closeProduct = function () {
+        var productModal = document.querySelector('#productosModal');
+        var windowWidth = window.innerWidth;
+        var closeModalRight = document.querySelector('.landing .closeModal-right');
+        var closeProduct = document.querySelector('.landing .closeModal-product');
+        var modalElement = document.querySelector('.modal-section-down');
+        var menuButton = document.querySelector('.landing .menuButton');
+        var menuHover = document.querySelector('.landing .menuHover');
+        if(windowWidth > 750){
+          productModal.style.right = "-100%";
+          closeProduct.style.right = "-50%";
+          closeModalRight.style.right = "5%";
+          menuButton.style.left = "-1%";
+          menuHover.style.left = "0%";
+        } else{
+          productModal.style.bottom = "-100%";
+          closeModalRight.style.right = "5%";
+          menuButton.style.left = "5%";
+          closeProduct.style.right = "-10%";
+        }
+        $scope.productIsOpen = false;
+      }
+      function isProductVideo(){
+        var playButton = document.querySelector('#abrirVideo');
+        console.log('numero: ' + $scope.numero);
+        console.log('pepe: ' + $scope.pepe);
+        console.log($scope.videoNum);
+        $scope.videoNum = $scope.numero - $scope.pepe;
+        if($scope.pepe && $scope.videoNum == -1){
+          console.log('adentro video');
+          $scope.videoNum = 7;
+        }
+        if($scope.productos[$scope.videoNum].video){
+          playButton.style.display = "block"
+          $timeout(function () {playButton.style.opacity = "1"}, 200);
+        } else {
+          playButton.style.opacity = "0";
+          $timeout(function () {playButton.style.display = "none"}, 400);
+        }
+        $scope.pepe = 0;
+      }
+
+      $scope.openProductVideo = function (){
+        if($scope.productos[$scope.numero].video){
+          var play = document.querySelector('.landing .abrir-video');
+          var fullScreen = document.querySelector('#productFullScreen');
+          var video = fullScreen.querySelector('.image-container');
+          var closeProduct = document.querySelector('.closeModal-product');
+          play.style.display = "block";
+          productFullScreen.style.display = "block";
+          $timeout(function(){video.style.width = "95%";}, 100);
+          closeProduct.style.display = 'none';
+          $timeout(function(){
+            $scope.videoUrl = $scope.productos[$scope.videoNum].video;video.style.width = "95%";
+          }, 300);
+        }
+      }
+      $scope.closeProductVideo = function (){
+          var play = document.querySelector('.landing .abrir-video');
+          var fullScreen = document.querySelector('#productFullScreen');
+          var video = fullScreen.querySelector('.image-container');
+          var closeProduct = document.querySelector('.closeModal-product');
+          productFullScreen.style.display = "none";
+          video.style.width = "0%";
+          closeProduct.style.display = 'block';
+          $scope.videoUrl = "";
+      }
+
+      $scope.giro = "izquierda";
+
+      $scope.animarProductCubeLeft = function() {
+        
+        $scope.frontFaceProduct = $scope.frontFaceProduct - 90;
+        $scope.izqFaceProduct = $scope.izqFaceProduct - 90;
+        $scope.derFaceProduct = $scope.derFaceProduct - 90;
+        $scope.backFaceProduct = $scope.backFaceProduct -90;
+
+        var faces = [
+          {
+            face: 'front',
+            position:  $scope.frontFaceProduct
+          },
+          {
+            face: 'izq',
+            position:  $scope.izqFaceProduct
+          },
+          {
+            face: 'der',
+            position:  $scope.derFaceProduct
+          },
+          {
+            face: 'back',
+            position:  $scope.backFaceProduct
+          }
+        ];
+        for(var i = 0; i < faces.length; i++){
+          if((faces[i].position/180)%2 == 0){
+            $scope.currentFace = faces[i].face;
+            console.log('Current Face: ' + $scope.currentFace);
+          }
+        }
+        
+        if($scope.limitNext){
+          $scope.numero = 0;
+        } else {
+          if($scope.giro == "izquierda"){
+            $scope.numero++;
+          } else {
+            $scope.pepe = 0;
+          }
+          
+        }
+        contenidoProducto($scope.numero);
+        $scope.giro = "izquierda";
+      }
+      $scope.pepe = 0;
+      $scope.animarProductCubeRight = function() {
+
+        var index = $scope.indexAux;
+        $scope.frontFaceProduct = $scope.frontFaceProduct + 90;
+        $scope.izqFaceProduct = $scope.izqFaceProduct + 90;
+        $scope.derFaceProduct = $scope.derFaceProduct + 90;
+        $scope.backFaceProduct = $scope.backFaceProduct + 90;
+
+        var faces = [
+          {
+            face: 'front',
+            position:  $scope.frontFaceProduct
+          },
+          {
+            face: 'izq',
+            position:  $scope.izqFaceProduct
+          },
+          {
+            face: 'der',
+            position:  $scope.derFaceProduct
+          },
+          {
+            face: 'back',
+            position:  $scope.backFaceProduct
+          }
+        ];
+        if($scope.limitAtras){
+          $scope.numero = 7;
+        } else {
+          if($scope.giro == "derecha"){
+            $scope.numero--;
+            $scope.pepe = 1;
+          }else {
+            $scope.pepe = 1;
+          }
+        }
+        contenidoProducto($scope.numero);
+        for(var i = 0; i < faces.length; i++){
+          if((faces[i].position/180)%2 == 0){
+            $scope.currentFace = faces[i].face;
+          }
+
+        }
+        $scope.giro = "derecha";
+      }
+
+        
+      function contenidoProducto(index){
+        $scope.numero = index;
+        $scope.limitNext = false;
+        $scope.limitAtras = false;
+        isProductVideo();
+        var cuboProductos = document.querySelector('#productosModal');
+
+        if($scope.currentFace == 'front'){
+          var frontFace = cuboProductos.querySelector('#front');
+          var previous = frontFace.previousElementSibling;
+          var next = frontFace.nextElementSibling;
+
+
+          frontFace.querySelector('.container').innerHTML = $scope.productos[$scope.numero].contenido;
+
+          if($scope.numero == 7){
+            next.querySelector('.container').innerHTML = $scope.productos[0].contenido;
+            $scope.limitNext = true;
+          } else {
+            next.querySelector('.container').innerHTML = $scope.productos[$scope.numero + 1].contenido;
+          }
+          
+          if($scope.numero == 0){
+            previous.querySelector('.container').innerHTML = $scope.productos[$scope.productos.length - 1].contenido;
+            $scope.limitAtras = true;
+          } else {
+            previous.querySelector('.container').innerHTML = $scope.productos[$scope.numero - 1].contenido;
+          }     
+        }
+
+        if($scope.currentFace == 'der'){
+          var derFace = cuboProductos.querySelector('#der');
+          var previous = derFace.previousElementSibling;
+          var next = derFace.nextElementSibling;
+          derFace.querySelector('.container').innerHTML = $scope.productos[$scope.numero].contenido;
+          if($scope.numero == 7){
+            next.querySelector('.container').innerHTML = $scope.productos[0].contenido;
+            $scope.limitNext = true;
+          } else {
+            next.querySelector('.container').innerHTML = $scope.productos[$scope.numero + 1].contenido;
+          }
+          
+          if($scope.numero == 0){
+            previous.querySelector('.container').innerHTML = $scope.productos[$scope.productos.length - 1].contenido;
+            $scope.limitAtras = true;
+          } else {
+            previous.querySelector('.container').innerHTML = $scope.productos[$scope.numero - 1].contenido;
+
+          }   
+        }
+
+        if($scope.currentFace == 'back'){
+          var backFace = cuboProductos.querySelector('#back');
+          var previous = backFace.previousElementSibling;
+          var next = cuboProductos.querySelector('#izq');
+          backFace.querySelector('.container').innerHTML = $scope.productos[$scope.numero].contenido
+          if($scope.numero == 7){
+            next.querySelector('.container').innerHTML = $scope.productos[0].contenido;
+            $scope.limitNext = true;
+          } else {
+            next.querySelector('.container').innerHTML = $scope.productos[$scope.numero + 1].contenido;
+          }   
+          if($scope.numero == 0){
+            previous.querySelector('.container').innerHTML = $scope.productos[$scope.productos.length - 1].contenido;
+            $scope.limitAtras = true;
+          } else {
+            previous.querySelector('.container').innerHTML = $scope.productos[$scope.numero - 1].contenido;
+          }    
+        }
+
+        if($scope.currentFace == 'izq'){
+          var izqFace = cuboProductos.querySelector('#izq');
+          var previous = cuboProductos.querySelector('#back');
+          var next = izqFace.nextElementSibling;
+          izqFace.querySelector('.container').innerHTML = $scope.productos[$scope.numero].contenido;
+          if($scope.numero == 7){
+            next.querySelector('.container').innerHTML = $scope.productos[0].contenido;
+            $scope.limitNext = true;
+          } else {
+            next.querySelector('.container').innerHTML = $scope.productos[$scope.numero + 1].contenido;
+          }    
+          if($scope.numero == 0){
+            previous.querySelector('.container').innerHTML = $scope.productos[$scope.productos.length - 1].contenido;
+            $scope.limitAtras = true;
+          } else {
+            previous.querySelector('.container').innerHTML = $scope.productos[$scope.numero - 1].contenido;
+          }
+        }
+    }
     
     //Si se hace click en client modal
       $scope.clientModal = false;
@@ -313,17 +460,22 @@ $scope.indexAux = 3;
       // Swipe Right -------------------------------------------------------------------------
           hammertime.on('swiperight', function(ev) {
             var windowWidth = window.innerWidth;
-
-            if(windowWidth < 650){
+            var trigger = $('#hamburger');
+            if(windowWidth < 750){
               if(!$scope.menuIsOpen && !$scope.modalIsOpen){
                 // console.log('enter');
                 $scope.openMenu();
+                trigger.removeClass('is-closed');
+                trigger.addClass('is-open');
                 $scope.menuIsOpen = true; 
               }
               if($scope.showInstruction){
                 var instructions = document.querySelector('.nav-landing-mobile .handswipe');
                 instructions.style.display = 'none';
                 $scope.showInstruction = false;
+              }
+              if($scope.productIsOpen){
+                $scope.animarProductCubeRight();
               }
               if ($scope.modalIsOpen && !$scope.showInstruction){
                 $scope.clientModal = false;
@@ -342,6 +494,7 @@ $scope.indexAux = 3;
 
                   }, 75);
               }
+              
 
             }
             
@@ -350,15 +503,21 @@ $scope.indexAux = 3;
       // Swipe Left -------------------------------------------------------------------------
           hammertime.on('swipeleft', function(ev) {
             var windowWidth = window.innerWidth;
-            if (windowWidth < 650){
+            var trigger = $('#hamburger');
+            if (windowWidth < 750){
               if($scope.menuIsOpen){
                 $scope.closeMenu();
+                trigger.removeClass('is-open');
+                trigger.addClass('is-closed');
                 $scope.menuIsOpen = false;
               }     
               if($scope.showInstruction){
                 var instructions = document.querySelector('.nav-landing-mobile .handswipe');
                 instructions.style.display = 'none';
                 $scope.showInstruction = false;
+              }
+              if($scope.productIsOpen){
+                $scope.animarProductCubeLeft();
               }
               if ($scope.modalIsOpen && !$scope.showInstruction){
                 $scope.clientModal = false;
@@ -376,6 +535,7 @@ $scope.indexAux = 3;
 
                   }, 75);
               }
+              
 
             }
                  
@@ -384,42 +544,58 @@ $scope.indexAux = 3;
       // Swipe Down -------------------------------------------------------------------------
         hammertime.on('swipedown', function(ev) {
           var windowWidth = window.innerWidth;
-          if(windowWidth < 650){
+          if(windowWidth < 750){
             if(!$scope.contactModalIsOpen){
-              if($scope.modalIsOpenUp){
+              if($scope.modalIsOpenUp && !$scope.productIsOpen){
                 var closeModalRight = document.querySelector('.landing .closeModal-right');
                 var modalElement = document.querySelector('.modal-section-down');
                 var menuButton = document.querySelector('.landing .menuButton');
                 if(!$scope.menuIsOpen){
                   modalElement.style.bottom = '-20%';
                   closeModalRight.style.right = '5%';
-                  menuButton.style.left = '5%';
+                  menuButton.style.left = '-1%';
                   $timeout(function () {$scope.modalIsOpenUp = false}, 1000);
                 }
      
               } else{
-                var menuButton = document.querySelector('.landing .menuButton');
-                menuButton.style.left = '5%';
-                closeModalMobile();
-                $scope.modalIsOpen = false;
-              }
-            } else{
-                if($scope.modalContactIsOpenUp){
-                  var contactModal = document.querySelector('.landing .contacto');
-                  var closeModalRight = document.querySelector('.landing .closeModal-right');
-                  var menuButton = document.querySelector('.landing .menuButton');
-                  if(!$scope.menuIsOpen){
-                    contactModal.style.bottom = '-20%';
-                    closeModalRight.style.right = '5%';
-                    menuButton.style.left = '5%';
-                    $timeout(function () {$scope.modalContactIsOpenUp = false;}, 1000);
-                  }
+                
+                if($scope.productIsOpen){
+                  $scope.closeProduct();
+                  $scope.$apply(function (){
+                    $scope.clientModal = false;
+                    $scope.modalContentId = 5;
+                    contenidoModal($scope.modalContentId);
+                  });
+                  
+                  $timeout(function () {$scope.productIsOpen = false}, 1000);
+                  
                 } else {
                   var menuButton = document.querySelector('.landing .menuButton');
-                  menuButton.style.left = '5%';
-                  closeContactModalMobile();
-                  $scope.contactModalIsOpen = false;
-                }       
+                  menuButton.style.left = '-1%';
+                  closeModalMobile();
+                  $scope.modalIsOpen = false;
+                }
+              }
+            } else{
+              if($scope.modalContactIsOpenUp){
+                var contactModal = document.querySelector('.landing .contacto');
+                var closeModalRight = document.querySelector('.landing .closeModal-right');
+                var menuButton = document.querySelector('.landing .menuButton');
+                if(!$scope.menuIsOpen){
+                  contactModal.style.bottom = '-20%';
+                  closeModalRight.style.right = '5%';
+                  menuButton.style.left = '-1%';
+                  $timeout(function () {$scope.modalContactIsOpenUp = false;}, 1000);
+                }
+              } else {
+                var menuButton = document.querySelector('.landing .menuButton');
+                menuButton.style.left = '5%';
+                closeContactModalMobile();
+                $scope.contactModalIsOpen = false;
+                
+              } 
+
+
             }            
           }
           
@@ -429,10 +605,10 @@ $scope.indexAux = 3;
       // Swipe Up -------------------------------------------------------------------------
         hammertime.on('swipeup', function(ev) {
           var windowWidth = window.innerWidth;
-          if(windowWidth < 650){
+          if(windowWidth < 750){
             //Show Modal Swipping Up ---------------------------------------------------------
               if(!$scope.modalIsOpen && !$scope.contactModalIsOpen){
-                $scope.openModalMobile($scope.modalContentId);
+                $scope.openModalMobile($scope.modalContentId, $scope.modalMobileOpened );
                 $timeout(function(){$scope.modalIsOpen = true;}, 800);               
                 $scope.$apply(function(){
                   contenidoModal($scope.modalContentId);
@@ -473,30 +649,63 @@ $scope.indexAux = 3;
 
     //-------------------Landing Functions---------------------------------------
 
-      $scope.textOnHover = function (index) {
+      $scope.navHover = function (id, index){
+        var activeZoneGroup = document.getElementById(id);
+        var activeZone = activeZoneGroup.querySelector('rect');
+        var text = activeZone.previousElementSibling;
+        var button = activeZone.previousElementSibling.previousElementSibling;
         var landingBanner = document.querySelector('.banner h1');
-        landingBanner.style.paddingTop = "2em";
-
-        var navText = document.querySelector('.nav-' + index);
-        navText.style.transform = 'scale(1.2)';
-        // console.log(navText);
         $scope.onHover = true;
 
+        if(activeZoneGroup.className.animVal == "upper"){
+          button.style.fill = '#104b77';
+        } else{
+          button.style.fill = '#2c8e7d';
+          
+        }
+        $scope.onHover = true;
+        landingBanner.style.paddingTop = "1.5em";
         $timeout(function() {
           if($scope.onHover){
+            landingBanner.style.paddingTop = "0em";
+            $scope.hoverText = $scope.modalContentObj[index].hover;
+            
+          }
+          
+        }, 300);
+        text.style.fontSize = '2.5em';      
+      }
+      $scope.navNotHover = function (id){
+        var activeZoneGroup = document.getElementById(id);
+        var activeZone = activeZoneGroup.querySelector('rect');
+        var text = activeZone.previousElementSibling;
+        var button = activeZone.previousElementSibling.previousElementSibling;
+        var landingBanner = document.querySelector('.banner h1');
+        $scope.onHover = false;
+        if(activeZoneGroup.className.animVal == "upper"){
+          button.style.fill = '#509CD5';
+        } else{
+          button.style.fill = '#6CBFB1';
+        
+        }
+        landingBanner.style.paddingTop = "2em";
+        $timeout(function() {
+          if(!$scope.onHover){
             var landingBanner = document.querySelector('.banner h1');
-            contenidoHover(index);
-            landingBanner.style.paddingTop = "0em";;
-          } 
-        }, 200);
-      };
-
+            $scope.hoverText = "TECHNOLOGIES";
+            landingBanner.style.paddingTop = "0em";
+          }
+          
+        }, 400);
+        text.style.fontSize = '2em';
+        
+      }
       $scope.textNotOnHover = function (index) {
         var landingBanner = document.querySelector('.banner h1');
         landingBanner.style.paddingTop = "2em";
         var navText = document.querySelector('.nav-' + index);
         navText.style.transform = 'scale(1)';
-        $scope.onHover = false;
+        
 
         $timeout(function() {
           if(!$scope.onHover){
@@ -512,8 +721,9 @@ $scope.indexAux = 3;
         //Landing variables
           var landing = document.querySelector('.landing');
           var navContainer = document.querySelector('.landing .navContainer');
-          var navs = document.querySelectorAll('.landing .nav');
-          var allButtons = document.querySelectorAll('.logo .button');
+          var navs = document.querySelectorAll('.landing .logo svg text');
+          var allButtons = document.querySelectorAll('.logo svg .overlay');
+          var activeZone = document.querySelectorAll('.logo svg rect');
           var elem = document.getElementById(id);
           var bgModalRight = document.querySelector('.bg-modal-right');
           var bgModalDown = document.querySelector('.bg-modal-down');
@@ -530,7 +740,7 @@ $scope.indexAux = 3;
             //Mostrar Modal
               contactModal.style.bottom = '-40%';
               closeModalRight.style.right = '5%';
-              navContainer.style.top = '37.5%';
+              navContainer.style.top = '42.5%';
               closeModalRight.style.color = '#fff'; 
 
             //Cambiar color fondo modal a verde
@@ -541,12 +751,17 @@ $scope.indexAux = 3;
               }
 
             //Opacidad 0 el resto de los botones
-              for (var i = 0; i < allButtons.length; i++){
-                allButtons[i].style.opacity = "0";
-                allButtons[i].style.pointerEvents = "none";
+              $timeout(function () {
+                  for (var i = 0; i < allButtons.length; i++){
+                  allButtons[i].style.opacity = '0';
+                }
+              }, 300);
+              //Opacidad 0 el resto de los botones
+              for (var i = 0; i < activeZone.length; i++){
+                activeZone[i].style.pointerEvents = "none";
               }
             //Trasladar todos los botones del navegador hacia la izquierda
-              for (var i = 0; i < navs.length; i++){navs[i].style.transform = "translateY(400%)";navs[i].style.opacity = "0";};
+              $timeout(function () {for (var i = 0; i < navs.length; i++){navs[i].style.opacity = "0"}}, 300);
               $scope.modalIsOpen = true;
               $scope.modalOpened = id;
             //Click en el CloseBotton
@@ -569,17 +784,22 @@ $scope.indexAux = 3;
                 //Mostrar Modal
                   modalDown.style.bottom = '-40%';
                   closeModalRight.style.right = '5%';
-                  navContainer.style.top = '37.5%';
+                  navContainer.style.top = '42.5%';
                   closeModalRight.style.color = '#fff';
                   bgModalDown.style.top = '0%';
                   bgModalDown.style.backgroundPosition = "0% 0%"; 
                 //Opacidad 0 el resto de los botones
-                  for (var i = 0; i < allButtons.length; i++){
-                    allButtons[i].style.opacity = "0";
-                    allButtons[i].style.pointerEvents = "none";
+                  $timeout(function () {
+                    for (var i = 0; i < allButtons.length; i++){
+                      allButtons[i].style.opacity = '0';
+                    }
+                  }, 300);
+                //Opacidad 0 el resto de los botones
+                  for (var i = 0; i < activeZone.length; i++){
+                    activeZone[i].style.pointerEvents = "none";
                   }
                 //Trasladar todos los botones del navegador hacia la izquierda
-                  for (var i = 0; i < navs.length; i++){navs[i].style.transform = "translateY(400%)";navs[i].style.opacity = "0";};
+                  $timeout(function () {for (var i = 0; i < navs.length; i++){navs[i].style.opacity = "0"}}, 300);
                   $scope.modalIsOpen = true;
                   $scope.modalOpened = id;
 
@@ -598,17 +818,28 @@ $scope.indexAux = 3;
                 bgModalRight.style.left = '00%';
                 
               //Opacidad 0 el resto de los botones
-                for (var i = 0; i < allButtons.length; i++){
-                  allButtons[i].style.opacity = "0";
-                  allButtons[i].style.pointerEvents = "none";
-                }
+                $timeout(function () {
+                    for (var i = 0; i < allButtons.length; i++){
+                      allButtons[i].style.opacity = '0';
+                    }
+                  }, 300);
+              //Opacidad 0 el resto de los botones
+                  for (var i = 0; i < activeZone.length; i++){
+                    activeZone[i].style.pointerEvents = "none";
+                  }
               //Trasladar todos los botones del navegador hacia la izquierda
-                for (var i = 0; i < navs.length; i++){navs[i].style.transform = "translateX(10%)";navs[i].style.opacity = "0";};
+                $timeout(function () {for (var i = 0; i < navs.length; i++){navs[i].style.opacity = "0"}}, 300);
               //Mover el fondo
                 bgModalRight.style.backgroundPosition = '-100%';
 
               $scope.modalIsOpen = true;
               $scope.modalOpened = id;
+              if($scope.modalOpened === "productosButton"){
+                $scope.productSpinner = true;
+                $timeout(function () {
+                  $scope.productSpinner = false;
+                }, 3000);
+              } 
               // console.log($scope.modalOpened);
 
               //Click en el CloseBotton
@@ -623,17 +854,18 @@ $scope.indexAux = 3;
 
                   for (var i = 0; i < allButtons.length; i++){
                     allButtons[i].style.opacity = "1";
-                    allButtons[i].style.pointerEvents = "auto";  
                   };
-
-                  for (var i = 0; i < navs.length; i++){navs[i].style.transform = "translateX(0%)";navs[i].style.opacity = "1";};
+                  for (var i = 0; i < activeZone.length; i++){
+                    activeZone[i].style.pointerEvents = "auto";
+                  };
+                  for (var i = 0; i < navs.length; i++){navs[i].style.opacity = "1";};
 
                   $scope.modalIsOpen = false;
                 
                 });
               } //End else
               //Cambiar contenido de Modal
-                contenidoModal(index);
+              contenidoModal(index);
           }
 
       
@@ -642,21 +874,39 @@ $scope.indexAux = 3;
       }// End openModal()   
 
     // --------------------Menu Hover--------------------------------------- 
+      $scope.menuButton = function () {
+        if(!$scope.menuIsOpen){
+          $scope.openMenu();
+        } else {
+          $scope.closeMenu();
+        }
+      }
+
       $scope.openMenu = function (){
         var menuHover = document.querySelector('.menuHover');
         var menuButton = document.querySelector('.menuButton');
         var menu = document.querySelector('.sideBar');
         var sideBarBg = document.querySelector('.sideBarBg');
         var windowWidth = window.innerWidth;
-        // console.log('modal abierto: ' + $scope.modalIsOpen);
-        if(windowWidth >= 600){
-          menuButton.style.left = '36%';
-        }else{
-          menuButton.style.left = '58%';
+        var hamburguer = document.querySelector('#hamburger');
+        if($scope.menuIsOpen == false){
+          console.log('menu abierto: ' + $scope.menuIsOpen);
+          if(windowWidth >= 600){
+            menuButton.style.left = '36%';
+          }else{
+            menuButton.style.left = '51%';
+          }
+          menu.style.left = '0%';
+          sideBarBg.style.right = '0';
+          $scope.menuIsOpen = true;
         }
-        menu.style.left = '0%';
-        sideBarBg.style.right = '0';
-        $scope.menuIsOpen = true;
+        
+        
+        // hamburguer.addEventListener('click', function () {
+        //   if($scope.menuIsOpen == true){
+        //     $scope.closeMenu();
+        //   }
+        // });
       }
 
       $scope.mouseenterMenu = function () {
@@ -687,44 +937,56 @@ $scope.indexAux = 3;
         var menu = document.querySelector('.sideBar');
         var sideBarBg = document.querySelector('.sideBarBg');
         var windowWidth = window.innerWidth;
+        $scope.menuIsOpen = false;
 
-        if ($scope.menuIsOpen){
           menu.style.left = '-80%';
           menuButton.style.left = '-1%';
           sideBarBg.style.right = '-101%';
           menuButton.style.color = 'rgba(255,255,255,.4)';
-          $scope.menuIsOpen = false;
+          
 
           if(windowWidth >= 600){
             menuButton.style.left = '-1%';
           }else{
             menuButton.style.left = '-3%';
           }
-        }
       }
 
 
-    $scope.goTo = function (id, index){
+    $scope.goTo = function (id, index, idMobile){
 
     
       var elemGoTo = document.getElementById(id);
       var elemOpened = document.getElementById($scope.modalOpened);
       var modalFaces = document.querySelectorAll('.landing .modal-section-down .cube .face');
       var windowWidth = window.innerWidth;
+      var trigger = $('#hamburger');
       $scope.clientModal = false;
 
-      if(windowWidth >= 600){
+      if(windowWidth >= 750){
         if($scope.menuIsOpen && !$scope.modalIsOpen){
             $scope.closeMenu();
             $scope.openModal(id, index);
+            trigger.removeClass('is-open');
+            trigger.addClass('is-closed');
         } else {
           if(elemGoTo.className.animVal == elemOpened.className.animVal){
             if(elemOpened.className.animVal == "button upper"){
               animateCubeDown();
               $timeout(function (){contenidoModal(index)}, 150);
+              trigger.removeClass('is-open');
+              trigger.addClass('is-closed');
             } else {
               animateCubeRight();
+              if(id === "productosButton"){
+                $scope.productSpinner = true;
+                $timeout(function () {
+                  $scope.productSpinner = false;
+                }, 3000);
+              } 
               $timeout(function (){contenidoModal(index)}, 400);
+              trigger.removeClass('is-open');
+              trigger.addClass('is-closed');
             }
             $scope.closeMenu();
             
@@ -743,6 +1005,8 @@ $scope.indexAux = 3;
               } else {
                 closeModalRight();
               }
+              trigger.removeClass('is-open');
+              trigger.addClass('is-closed');
               $scope.closeMenu();
               
               $timeout(function (){
@@ -759,11 +1023,13 @@ $scope.indexAux = 3;
             if($scope.modalIsOpen){
               animateCubeDown();
               $scope.closeMenu();
-              $scope.openModalMobile(index);
+              $scope.openModalMobile(index, idMobile);
             } else {
               $scope.closeMenu();
-              $scope.openModalMobile(index);
+              $scope.openModalMobile(index, idMobile);
             }
+            trigger.removeClass('is-open');
+            trigger.addClass('is-closed');
           } else {
             //Si el contact modal esta abierto cerrar el contact modal y abir el cubo
             var contactModal = document.querySelector('.landing .contacto');
@@ -772,6 +1038,8 @@ $scope.indexAux = 3;
             $timeout(function (){
               $scope.openModalMobile(index);
             }, 600);
+            trigger.removeClass('is-open');
+            trigger.addClass('is-closed');
           }
             
         } else{
@@ -785,7 +1053,10 @@ $scope.indexAux = 3;
           } else {
             $scope.closeMenu();
             openContactModalMobile(id);
+
           }
+          trigger.removeClass('is-open');
+          trigger.addClass('is-closed');
           
         }
       }
@@ -808,11 +1079,12 @@ $scope.indexAux = 3;
       function closeModalDown(){
         var landing = document.querySelector('.landing');
         var navContainer = document.querySelector('.landing .navContainer');
-        var navs = document.querySelectorAll('.landing .nav');
-        var allButtons = document.querySelectorAll('.logo .button');
+        var navs = document.querySelectorAll('.landing .logo svg text');
+        var allButtons = document.querySelectorAll('.logo svg .overlay');
         var modalDown = document.querySelector('.modal-section-down');
         var closeModalRight = document.querySelector('.landing .closeModal-right');
         var bgModalDown = document.querySelector('.bg-modal-down');
+        var activeZone = document.querySelectorAll('.logo svg rect');
         //Ocultar el modalDown
             navContainer.style.top = '47.5%';
             modalDown.style.bottom = '-100%';
@@ -820,23 +1092,27 @@ $scope.indexAux = 3;
             bgModalDown.style.top = '-100%';
             bgModalDown.style.backgroundPosition = "0% 100%"; 
 
+            $timeout(function () {
+              for (var i = 0; i < activeZone.length; i++){
+                activeZone[i].style.pointerEvents = "auto"; 
+              };
+            }, 300);
             for (var i = 0; i < allButtons.length; i++){
-              allButtons[i].style.opacity = "1";
-              allButtons[i].style.pointerEvents = "auto"; 
+              allButtons[i].style.opacity = "1"; 
             };
-
-            for (var i = 0; i < navs.length; i++){navs[i].style.transform = "translateY(0%)";navs[i].style.opacity = "1";};
+            $timeout(function () {for (var i = 0; i < navs.length; i++){navs[i].style.opacity = "1"}}, 300);
 
             $scope.modalIsOpen = false;
       }
       function closeModalRight(){
         var landing = document.querySelector('.landing');
         var navContainer = document.querySelector('.landing .navContainer');
-        var navs = document.querySelectorAll('.landing .nav');
-        var allButtons = document.querySelectorAll('.logo .button');
+        var navs = document.querySelectorAll('.landing .logo svg text');
+        var allButtons = document.querySelectorAll('.logo svg .overlay');
         var modalRight = document.querySelector('.modal-section-right');
         var closeModalRight = document.querySelector('.landing .closeModal-right');
         var bgModalRight = document.querySelector('.bg-modal-right');
+        var activeZone = document.querySelectorAll('.logo svg rect');
         //Ocultar el modalDown
             navContainer.style.left = '50%';
             modalRight.style.right = '-105%';
@@ -844,23 +1120,27 @@ $scope.indexAux = 3;
             bgModalRight.style.left = '-100%';
             bgModalRight.style.backgroundPosition = '0%';
 
+            $timeout(function () {
+              for (var i = 0; i < activeZone.length; i++){
+                activeZone[i].style.pointerEvents = "auto"; 
+              };
+            }, 300);
             for (var i = 0; i < allButtons.length; i++){
-              allButtons[i].style.opacity = "1";
-              allButtons[i].style.pointerEvents = "auto";  
+              allButtons[i].style.opacity = "1"; 
             };
-
-            for (var i = 0; i < navs.length; i++){navs[i].style.transform = "translateX(0%)";navs[i].style.opacity = "1";};
+            $timeout(function () {for (var i = 0; i < navs.length; i++){navs[i].style.opacity = "1"}}, 300);
 
             $scope.modalIsOpen = false;
       }
       function closeContactModal() {
         var landing = document.querySelector('.landing');
         var navContainer = document.querySelector('.landing .navContainer');
-        var navs = document.querySelectorAll('.landing .nav');
-        var allButtons = document.querySelectorAll('.logo .button');
+        var navs = document.querySelectorAll('.landing svg text');
+        var allButtons = document.querySelectorAll('.logo svg .overlay');
         var contactModal = document.querySelector('.landing .contacto');
         var closeModalRight = document.querySelector('.landing .closeModal-right');
         var bgModalDown = document.querySelector('.bg-modal-down');
+        var activeZone = document.querySelectorAll('.logo svg rect');
         //Ocultar el modalDown
             navContainer.style.top = '47.5%';
             contactModal.style.bottom = '-110%';
@@ -868,10 +1148,11 @@ $scope.indexAux = 3;
 
             for (var i = 0; i < allButtons.length; i++){
               allButtons[i].style.opacity = "1";
-              allButtons[i].style.pointerEvents = "auto"; 
             };
-
-            for (var i = 0; i < navs.length; i++){navs[i].style.transform = "translateY(0%)";navs[i].style.opacity = "1";};
+            for (var i = 0; i < activeZone.length; i++){
+              activeZone[i].style.pointerEvents = "auto"; 
+            };
+            for (var i = 0; i < navs.length; i++){navs[i].style.opacity = "1";};
 
             $scope.modalIsOpen = false;
       }
@@ -958,7 +1239,7 @@ $scope.indexAux = 3;
           //Mostrar Modal
             modalDown.style.bottom = '-40%';
             closeModalRight.style.right = '5%';
-            navContainer.style.top = '37.5%';
+            navContainer.style.top = '42.5%';
             closeModalRight.style.color = '#fff';
             bgModalDown.style.top = '0%';
             bgModalDown.style.backgroundPosition = "0% 0%"; 
@@ -983,7 +1264,7 @@ $scope.indexAux = 3;
           contenidoModal(index);
     }
     // Mobile functions ------------------------------------------------------------------------------------
-      $scope.openModalMobile = function (index) {
+      $scope.openModalMobile = function (index, id) {
         var modalDown = document.querySelector('.modal-section-down');
         var bgModalDown = document.querySelector('.bg-modal-down');
         var logoMobile = document.querySelector('.nav-landing-mobile .logo-landing-mobile');
@@ -993,7 +1274,10 @@ $scope.indexAux = 3;
         var windowWidth = window.innerWidth;
         var menuHover = document.querySelector('.menuHover');
         var instructions = document.querySelector('.nav-landing-mobile .handswipe');
-        // console.log(instructions);
+        var touchButton = document.getElementById(id);
+        var button = touchButton.lastElementChild;
+        $scope.modalMobileOpened = id;
+        console.log(touchButton);
         $scope.clientModal = false;
         $scope.modalOpenedTimes += 1;
         if($scope.modalOpenedTimes > 1){
@@ -1008,8 +1292,21 @@ $scope.indexAux = 3;
           }, 1000);
           
         }
-
-
+        if($scope.modalMobileOpened === "productosButtonMobile"){
+          $scope.productSpinner = true;
+          $timeout(function () {
+            $scope.productSpinner = false;
+          }, 3000);
+        } 
+        button.style.fill = "white";
+        $timeout(function () {
+          if(button.className.animVal == "buttonMobile blue"){
+            button.style.fill = "#509CD5";
+            console.log(button);
+          }else{
+            button.style.fill = "#6CBFB1";
+          }
+        }, 400);
         modalDown.style.bottom = '-20%';
         logoMobile.style.opacity = '0';
         SVGlogoMobile.style.transform = 'translate(25%, 5%)';
@@ -1043,25 +1340,27 @@ $scope.indexAux = 3;
         var windowWidth = window.innerWidth;
         var windowHeight = window.innerHeight;
         var menuHover = document.querySelector('.menuHover');
-        
+        var touchButton = document.getElementById($scope.modalMobileOpened);
+        var button = touchButton.lastElementChild;
+
         menuHover.style.zIndex = '15';
         modalDown.style.bottom = '-110%';
         logoMobile.style.opacity = '1';
         if(windowWidth >= 350){
           if(windowWidth >= 400){
-            SVGlogoMobile.style.transform = 'translate(25%, -7%)';
+            SVGlogoMobile.style.transform = 'translate(20%, 0%)';
           }else {
             if(windowHeight >= 639){
-              SVGlogoMobile.style.transform = 'translate(24%, -10%)';
+              SVGlogoMobile.style.transform = 'translate(19%, -4%)';
             } else {
-              SVGlogoMobile.style.transform = 'translate(29%, -17%)';
+              SVGlogoMobile.style.transform = 'translate(27%, -20%)';
             }
           }
         } else{
           if(windowHeight <= 480){
-            SVGlogoMobile.style.transform = 'translate(28%, -20%)';
+            SVGlogoMobile.style.transform = 'translate(22%, -20%)';
           }else{
-            SVGlogoMobile.style.transform = 'translate(25%, -16%)';
+            SVGlogoMobile.style.transform = 'translate(15%, -11%)';
           }
         }
         if(windowWidth >= 400 && windowHeight >= 639){
@@ -1156,7 +1455,7 @@ $scope.indexAux = 3;
           }
         } else{
           if(windowHeight <= 480){
-            SVGlogoMobile.style.transform = 'translate(28%, -20%)';
+            SVGlogoMobile.style.transform = 'translate(22%, -20%)';
           }else{
             SVGlogoMobile.style.transform = 'translate(25%, -16%)';
           }
@@ -1170,6 +1469,45 @@ $scope.indexAux = 3;
         
       } 
       
+    //burger
+      $('document').ready(function () {
+        var trigger = $('#hamburger');
+        var navMenu = $('#navMenu');
+        var bodyclick= $('#mainContent');
+        var sideBarBg = document.querySelector('.sideBarBg');
+        var menuHover = document.querySelector('.menuHover');
+
+        trigger.click(function () {
+          burgerTime();
+        });
+
+        sideBarBg.addEventListener('click', function () {
+          if ($scope.menuIsOpen == false) {  
+            trigger.removeClass('is-open');
+            trigger.addClass('is-closed');
+          } 
+        });
+        menuHover.addEventListener('click', function () {
+          if ($scope.menuIsOpen == false) {  
+            trigger.removeClass('is-open');
+            trigger.addClass('is-closed');
+          } else {
+            trigger.removeClass('is-closed');
+            trigger.addClass('is-open');
+          }
+        });
+
+        function burgerTime() {
+          if ($scope.menuIsOpen == true) {
+            trigger.removeClass('is-closed');
+            trigger.addClass('is-open');
+          } else {
+            trigger.removeClass('is-open');
+            trigger.addClass('is-closed');
+          }
+        }
+      });
+
   });
     
 })();

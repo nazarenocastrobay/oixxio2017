@@ -3,20 +3,29 @@ $logo-letter: logo-letter;
 .logo-loader{
 	width: 100%;
 	position: absolute;
-    top: 0;
+    top: 0%;
     left: 0;
     z-index: 30;
 	background: rgb(237,237,237); /* Old browsers */
 	background: -moz-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(255,255,255,1) 50%, rgba(237,237,237,1) 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top, rgba(237,237,237,1) 0%,rgba(255,255,255,1) 50%,rgba(237,237,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
 	animation: opacity-logo 3s 6s 1 forwards;
-
 	transition: left 2s ease-in-out;
+
 	.logo-loader-black{
 		position: absolute;
-		top: 50%;
+		top: 47%;
 		left: 50%;
 		transform: translate(-50%,-50%);
+		@media screen and (max-width: 750px){
+			left: 39%;
+		}
+		.logo-loader-svg {
+			@media screen and (max-width: 750px){
+				width: 128%;
+			}
+		}
+		
 		@for $i from 1 through 6{
 		  .#{$logo-letter}-#{$i}{
 		  		opacity: 0;

@@ -53,6 +53,9 @@
 			padding: 0;
 			margin-top: 2.5em;
 			margin-bottom: 3em;
+			@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+				padding-left: 1em;	
+			}
 			@media screen and (max-width: $breakSmallLarge) {
 			    padding: 0;
 			    margin-top: 1.5em;
@@ -88,6 +91,9 @@
 					@media screen and (min-width: $breakSmall) and (max-width: $breakSmallMedium) and (max-height: $breakHeightSmallLarge){
 					    font-size: 1.7em;
 					}
+					@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+				    	font-size: 2.1em;
+				  	}
 	    		}
 	    		span{
 	    			font-size: 2.3em;
@@ -107,6 +113,9 @@
 					@media screen and (min-width: $breakSmall) and (max-width: $breakSmallMedium) and (max-height: $breakHeightSmallLarge){
 					    font-size: 1.7em;
 					}
+					@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+				    	font-size: 2.1em;
+				  	}
 	    		}
 	    		&:nth-child(odd) span{
 					color: $upperButtonColor;
@@ -170,6 +179,11 @@
 					    bottom: 31%;
     					left: 18%;
 					}
+					@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+						font-size: 13em;
+						bottom: 47%;
+    					left: 35%;		
+			  		}
 	    		}
 	    	}
 	    	.socialIcons{
@@ -212,6 +226,10 @@
 				    left: 72%;
 				    width: 70%;
 				}
+			  	@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+				   bottom: -131%;
+				   left: 59%;	
+				}
 				a{
 					position: absolute;
 					-webkit-transform: translate(-50%,-50%);
@@ -227,12 +245,21 @@
 						@media screen and (max-width: $breakSmallLarge) {
 							left: 28%;
 						}
+						@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+							left: 21%;		
+				  		}
 					}
 					&:nth-child(3){
 						left: 25%;
 						@media screen and (max-width: $breakSmallLarge) {
 							left: 28%;
 						}
+						@media screen and (min-width: $breakSmall) and (max-width: $breakSmallMedium) and (max-height: $breakHeightSmallLarge){
+							left: 45%;
+						}
+						@media screen and (min-width: $breakTabletSmall) and (max-width: $breakTabletLarge){
+							left: 37%;		
+				  		}
 					}
 					i{
 						color: white;
@@ -276,6 +303,9 @@
 		transition: .4s all ease-in;
 		background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2) 00%, transparent 100%);
 		opacity: 0;
+		@media screen and (max-width: $breakTabletLarge){
+	    	display: none;
+	   	}
 	}
 	.menuButton{
 		z-index:  21;
@@ -297,3 +327,5 @@
 		}
 	}
 }
+
+

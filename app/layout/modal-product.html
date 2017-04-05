@@ -4,29 +4,32 @@
 
                   
 		</div>
-        <a href="" ng-click="animarProductCubeLeft()">Ver</a>
-        <a href="" ng-click="animarProductCubeRight()" style="float: left">Ver</a>  
+
     </div>
     <div id="front" class="face front"   style="transform: rotateY(-90deg) translateX(-50%) rotateY({{frontFaceProduct}}deg) translateX(50%) rotateY(90deg)">
         <div class="container">
-        <a href="" ng-click="contenidoProducto(0)">Ver</a>
+        
             
         </div>
-        <a href="" ng-click="animarProductCubeLeft()">Ver</a>
-        <a href="" ng-click="animarProductCubeRight()" style="float: left">Ver</a>  
+ 
     </div>
     <div id="der" class="face der" style="transform: rotateY(-90deg) translateX(-50%) rotateY({{derFaceProduct}}deg) translateX(50%) rotateY(90deg)">
         <div class="container">
         		
 		</div>
-        <a href="" ng-click="animarProductCubeLeft()">Ver</a>   
-        <a href="" ng-click="animarProductCubeRight()" style="float: left">Ver</a>  
+ 
     </div>
     <div id="back" class="face back" style="transform: rotateY(-90deg) translateX(-50%) rotateY({{backFaceProduct}}deg) translateX(50%) rotateY(90deg)">
         <div class="container">
             	
 		</div>
-        <a href="" ng-click="animarProductCubeLeft()">Ver</a>   
-            <a href="" ng-click="animarProductCubeRight()" style="float: left">Ver</a> 
+
     </div>
 </div>
+<div class="fullscreen" id="productFullScreen">
+    <div class="image-container" compile="videoUrl"></div>
+    <i class="zmdi zmdi-close cerrar-video" aria-hidden="true" ng-click="closeProductVideo()"></i>
+</div>
+
+<i class="fa fa-play abrir-video" id="abrirVideo" aria-hidden="true" ng-click="openProductVideo()" ></i>
+
